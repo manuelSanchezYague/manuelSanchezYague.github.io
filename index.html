@@ -4,6 +4,13 @@
 		<title>Yenes a Euros</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#ffc40d">
+		<meta name="theme-color" content="#ffffff">
 		<style>
 			table {
 			  border-collapse: collapse;
@@ -26,29 +33,29 @@
 		<table id="demo"></table>
 
 		<script>
-		function getYensToEuros(yens, fixedPos){
-			var yenRateAgainstDollar = frCrExRs.jpy.rate;
-			var euroRateAgainstDollar = frCrExRs.eur.rate;
-			var yensToDollars = yens / yenRateAgainstDollar;
-			var dollarsToEuros = yensToDollars * euroRateAgainstDollar;
-			return dollarsToEuros.toFixed(fixedPos);
-		}
-
-		function printTableDataTr() {
-			var table="<tr><th>Yenes</th><th>Euros</th></tr>";
-			var euros;
-			for (i = 10000; i > 2000; i = i - 1000) {
-				euros = getYensToEuros(i, 2).replace(/\./g, ',');
-				table += "<tr><td>" + i + " ¥</td><td>" + euros + " €</td></tr>";
+			function getYensToEuros(yens, fixedPos){
+				var yenRateAgainstDollar = frCrExRs.jpy.rate;
+				var euroRateAgainstDollar = frCrExRs.eur.rate;
+				var yensToDollars = yens / yenRateAgainstDollar;
+				var dollarsToEuros = yensToDollars * euroRateAgainstDollar;
+				return dollarsToEuros.toFixed(fixedPos);
 			}
-			for (i = 2000; i >= 50; i = i - 50) {
-				euros = getYensToEuros(i, 2).replace(/\./g, ',');
-				table += "<tr><td>" + i + " ¥</td><td>" + euros + " €</td></tr>";
-			}
-			document.getElementById("demo").innerHTML = table;
-		}
 
-		printTableDataTr();
+			function printTableDataTr() {
+				var table="<tr><th>Yenes</th><th>Euros</th></tr>";
+				var euros;
+				for (i = 10000; i > 2000; i = i - 1000) {
+					euros = getYensToEuros(i, 2).replace(/\./g, ',');
+					table += "<tr><td>" + i + " ¥</td><td>" + euros + " €</td></tr>";
+				}
+				for (i = 2000; i >= 50; i = i - 50) {
+					euros = getYensToEuros(i, 2).replace(/\./g, ',');
+					table += "<tr><td>" + i + " ¥</td><td>" + euros + " €</td></tr>";
+				}
+				document.getElementById("demo").innerHTML = table;
+			}
+
+			printTableDataTr();
 		</script>
 	</body>
 </html>
