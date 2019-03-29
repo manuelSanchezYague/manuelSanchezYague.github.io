@@ -2,69 +2,54 @@
 <html lang="es-ES">
 <head>
 	<title>Yenes a Euros</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-}
+		table {
+		  border-collapse: collapse;
+		  border-spacing: 0;
+		  width: 100%;
+		  border: 1px solid #ddd;
+		}
 
-th, td {
-  text-align: left;
-  padding: 8px;
-}
+		th, td {
+		  text-align: left;
+		  padding: 8px;
+		}
 
-tr:nth-child(even){background-color: #f2f2f2}
+		tr:nth-child(even){background-color: #f2f2f2}
 	</style>
+	<script src="http://www.floatrates.com/scripts/converter.js" type="text/javascript" ></script>
 </head>
 <body>
-
+<!-- https://stackoverflow.com/questions/10068963/how-to-parse-xml-cross-domain-in-jquery -->
 <h1>Yenes a Euros</h1>
 <table id="demo"></table>
 
 <script>
-function printTableDataTr(yens) {
+function getYensToEuros(yens, fixedPos){
+	var yenRateAgainstDollar = frCrExRs.jpy.rate;
+	var euroRateAgainstDollar = frCrExRs.eur.rate;
+	var yensToDollars = yens / yenRateAgainstDollar;
+	var dollarsToEuros = yensToDollars * euroRateAgainstDollar;
+	return dollarsToEuros.toFixed(fixedPos);
+}
+
+function printTableDataTr() {
 	var table="<tr><th>Yenes</th><th>Euros</th></tr>";
 	var euros;
 	for (i = 10000; i > 2000; i = i - 1000) {
-		euros = (i/yens).toFixed(2).replace(/\./g, ',');
+		euros = getYensToEuros(i, 2).replace(/\./g, ',');
 		table += "<tr><td>" + i + " ¥</td><td>" + euros + " €</td></tr>";
 	}
 	for (i = 2000; i >= 50; i = i - 50) {
-		euros = (i/yens).toFixed(2).replace(/\./g, ',');
+		euros = getYensToEuros(i, 2).replace(/\./g, ',');
 		table += "<tr><td>" + i + " ¥</td><td>" + euros + " €</td></tr>";
 	}
 	document.getElementById("demo").innerHTML = table;
 }
 
-function printTableData(xml) {
-	var i;
-	var xmlDoc = xml.responseXML;
-	var cubes = xmlDoc.getElementsByTagName("Cube");
-	var currency;
-	for (i = 0; i <cubes.length; i++) { 
-		currency = cubes[i].getAttribute('currency');
-		if (currency == "JPY") {
-			printTableDataTr(cubes[i].getAttribute('rate'));
-			break;
-		}
-	}
-}
-
-function main() {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			printTableData(this);
-		}
-	};
-	xhttp.open("GET", "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml", true);
-	xhttp.send();
-}
-
-main();
+printTableDataTr();
 </script>
 
 </body>
