@@ -1,0 +1,1376 @@
+/*
+for (var i=19;i<=81;i++) {
+	console.log(".c-dice-set__die" + i + "{ background: url(../images/dice_sprites.png) 0 -" + (i-1) + "00px;}");
+	if (i%9==0) {
+		console.log("");
+	}
+}
+Luego remplazar " debugger eval code.*" por vacío usando expresión regular y "<empty string>" por vacío en modo normal.
+*/
+.c-dice-set__die1{ background: url(../images/dice_sprites.png) 0 0;}
+.c-dice-set__die2{ background: url(../images/dice_sprites.png) 0 -100px;}
+.c-dice-set__die3{ background: url(../images/dice_sprites.png) 0 -200px;}
+.c-dice-set__die4{ background: url(../images/dice_sprites.png) 0 -300px;}
+.c-dice-set__die5{ background: url(../images/dice_sprites.png) 0 -400px;}
+.c-dice-set__die6{ background: url(../images/dice_sprites.png) 0 -500px;}
+.c-dice-set__die7{ background: url(../images/dice_sprites.png) 0 -600px;}
+.c-dice-set__die8{ background: url(../images/dice_sprites.png) 0 -700px;}
+.c-dice-set__die9{ background: url(../images/dice_sprites.png) 0 -800px;}
+
+.c-dice-set__die10{ background: url(../images/dice_sprites.png) 0 -900px;}
+.c-dice-set__die11{ background: url(../images/dice_sprites.png) 0 -1000px;}
+.c-dice-set__die12{ background: url(../images/dice_sprites.png) 0 -1100px;}
+.c-dice-set__die13{ background: url(../images/dice_sprites.png) 0 -1200px;}
+.c-dice-set__die14{ background: url(../images/dice_sprites.png) 0 -1300px;}
+.c-dice-set__die15{ background: url(../images/dice_sprites.png) 0 -1400px;}
+.c-dice-set__die16{ background: url(../images/dice_sprites.png) 0 -1500px;}
+.c-dice-set__die17{ background: url(../images/dice_sprites.png) 0 -1600px;}
+.c-dice-set__die18{ background: url(../images/dice_sprites.png) 0 -1700px;}
+
+.c-dice-set__die19{ background: url(../images/dice_sprites.png) 0 -1800px;}
+.c-dice-set__die20{ background: url(../images/dice_sprites.png) 0 -1900px;}
+.c-dice-set__die21{ background: url(../images/dice_sprites.png) 0 -2000px;}
+.c-dice-set__die22{ background: url(../images/dice_sprites.png) 0 -2100px;}
+.c-dice-set__die23{ background: url(../images/dice_sprites.png) 0 -2200px;}
+.c-dice-set__die24{ background: url(../images/dice_sprites.png) 0 -2300px;}
+.c-dice-set__die25{ background: url(../images/dice_sprites.png) 0 -2400px;}
+.c-dice-set__die26{ background: url(../images/dice_sprites.png) 0 -2500px;}
+.c-dice-set__die27{ background: url(../images/dice_sprites.png) 0 -2600px;}
+
+.c-dice-set__die28{ background: url(../images/dice_sprites.png) 0 -2700px;}
+.c-dice-set__die29{ background: url(../images/dice_sprites.png) 0 -2800px;}
+.c-dice-set__die30{ background: url(../images/dice_sprites.png) 0 -2900px;}
+.c-dice-set__die31{ background: url(../images/dice_sprites.png) 0 -3000px;}
+.c-dice-set__die32{ background: url(../images/dice_sprites.png) 0 -3100px;}
+.c-dice-set__die33{ background: url(../images/dice_sprites.png) 0 -3200px;}
+.c-dice-set__die34{ background: url(../images/dice_sprites.png) 0 -3300px;}
+.c-dice-set__die35{ background: url(../images/dice_sprites.png) 0 -3400px;}
+.c-dice-set__die36{ background: url(../images/dice_sprites.png) 0 -3500px;}
+
+.c-dice-set__die37{ background: url(../images/dice_sprites.png) 0 -3600px;}
+.c-dice-set__die38{ background: url(../images/dice_sprites.png) 0 -3700px;}
+.c-dice-set__die39{ background: url(../images/dice_sprites.png) 0 -3800px;}
+.c-dice-set__die40{ background: url(../images/dice_sprites.png) 0 -3900px;}
+.c-dice-set__die41{ background: url(../images/dice_sprites.png) 0 -4000px;}
+.c-dice-set__die42{ background: url(../images/dice_sprites.png) 0 -4100px;}
+.c-dice-set__die43{ background: url(../images/dice_sprites.png) 0 -4200px;}
+.c-dice-set__die44{ background: url(../images/dice_sprites.png) 0 -4300px;}
+.c-dice-set__die45{ background: url(../images/dice_sprites.png) 0 -4400px;}
+
+.c-dice-set__die46{ background: url(../images/dice_sprites.png) 0 -4500px;}
+.c-dice-set__die47{ background: url(../images/dice_sprites.png) 0 -4600px;}
+.c-dice-set__die48{ background: url(../images/dice_sprites.png) 0 -4700px;}
+.c-dice-set__die49{ background: url(../images/dice_sprites.png) 0 -4800px;}
+.c-dice-set__die50{ background: url(../images/dice_sprites.png) 0 -4900px;}
+.c-dice-set__die51{ background: url(../images/dice_sprites.png) 0 -5000px;}
+.c-dice-set__die52{ background: url(../images/dice_sprites.png) 0 -5100px;}
+.c-dice-set__die53{ background: url(../images/dice_sprites.png) 0 -5200px;}
+.c-dice-set__die54{ background: url(../images/dice_sprites.png) 0 -5300px;}
+
+.c-dice-set__die55{ background: url(../images/dice_sprites.png) 0 -5400px;}
+.c-dice-set__die56{ background: url(../images/dice_sprites.png) 0 -5500px;}
+.c-dice-set__die57{ background: url(../images/dice_sprites.png) 0 -5600px;}
+.c-dice-set__die58{ background: url(../images/dice_sprites.png) 0 -5700px;}
+.c-dice-set__die59{ background: url(../images/dice_sprites.png) 0 -5800px;}
+.c-dice-set__die60{ background: url(../images/dice_sprites.png) 0 -5900px;}
+.c-dice-set__die61{ background: url(../images/dice_sprites.png) 0 -6000px;}
+.c-dice-set__die62{ background: url(../images/dice_sprites.png) 0 -6100px;}
+.c-dice-set__die63{ background: url(../images/dice_sprites.png) 0 -6200px;}
+
+.c-dice-set__die64{ background: url(../images/dice_sprites.png) 0 -6300px;}
+.c-dice-set__die65{ background: url(../images/dice_sprites.png) 0 -6400px;}
+.c-dice-set__die66{ background: url(../images/dice_sprites.png) 0 -6500px;}
+.c-dice-set__die67{ background: url(../images/dice_sprites.png) 0 -6600px;}
+.c-dice-set__die68{ background: url(../images/dice_sprites.png) 0 -6700px;}
+.c-dice-set__die69{ background: url(../images/dice_sprites.png) 0 -6800px;}
+.c-dice-set__die70{ background: url(../images/dice_sprites.png) 0 -6900px;}
+.c-dice-set__die71{ background: url(../images/dice_sprites.png) 0 -7000px;}
+.c-dice-set__die72{ background: url(../images/dice_sprites.png) 0 -7100px;}
+
+.c-dice-set__die73{ background: url(../images/dice_sprites.png) 0 -7200px;}
+.c-dice-set__die74{ background: url(../images/dice_sprites.png) 0 -7300px;}
+.c-dice-set__die75{ background: url(../images/dice_sprites.png) 0 -7400px;}
+.c-dice-set__die76{ background: url(../images/dice_sprites.png) 0 -7500px;}
+.c-dice-set__die77{ background: url(../images/dice_sprites.png) 0 -7600px;}
+.c-dice-set__die78{ background: url(../images/dice_sprites.png) 0 -7700px;}
+.c-dice-set__die79{ background: url(../images/dice_sprites.png) 0 -7800px;}
+.c-dice-set__die80{ background: url(../images/dice_sprites.png) 0 -7900px;}
+.c-dice-set__die81{ background: url(../images/dice_sprites.png) 0 -8000px;}
+
+/*
+for (var i=82;i<=162;i++) {
+	console.log(".c-dice-set__die" + i + "{ background: url(../images/dice_sprites_thematic.png) 0 -" + (i-82) + "00px;}");
+	if (i%9==0) {
+		console.log("");
+	}
+}
+Luego remplazar " debugger eval code.*" por vacío usando expresión regular y "<empty string>" por vacío en modo normal.
+*/
+
+.c-dice-set__die82{ background: url(../images/dice_sprites_thematic.png) 0 -000px;}
+.c-dice-set__die83{ background: url(../images/dice_sprites_thematic.png) 0 -100px;}
+.c-dice-set__die84{ background: url(../images/dice_sprites_thematic.png) 0 -200px;}
+.c-dice-set__die85{ background: url(../images/dice_sprites_thematic.png) 0 -300px;}
+.c-dice-set__die86{ background: url(../images/dice_sprites_thematic.png) 0 -400px;}
+.c-dice-set__die87{ background: url(../images/dice_sprites_thematic.png) 0 -500px;}
+.c-dice-set__die88{ background: url(../images/dice_sprites_thematic.png) 0 -600px;}
+.c-dice-set__die89{ background: url(../images/dice_sprites_thematic.png) 0 -700px;}
+.c-dice-set__die90{ background: url(../images/dice_sprites_thematic.png) 0 -800px;}
+
+.c-dice-set__die91{ background: url(../images/dice_sprites_thematic.png) 0 -900px;}
+.c-dice-set__die92{ background: url(../images/dice_sprites_thematic.png) 0 -1000px;}
+.c-dice-set__die93{ background: url(../images/dice_sprites_thematic.png) 0 -1100px;}
+.c-dice-set__die94{ background: url(../images/dice_sprites_thematic.png) 0 -1200px;}
+.c-dice-set__die95{ background: url(../images/dice_sprites_thematic.png) 0 -1300px;}
+.c-dice-set__die96{ background: url(../images/dice_sprites_thematic.png) 0 -1400px;}
+.c-dice-set__die97{ background: url(../images/dice_sprites_thematic.png) 0 -1500px;}
+.c-dice-set__die98{ background: url(../images/dice_sprites_thematic.png) 0 -1600px;}
+.c-dice-set__die99{ background: url(../images/dice_sprites_thematic.png) 0 -1700px;}
+
+.c-dice-set__die100{ background: url(../images/dice_sprites_thematic.png) 0 -1800px;}
+.c-dice-set__die101{ background: url(../images/dice_sprites_thematic.png) 0 -1900px;}
+.c-dice-set__die102{ background: url(../images/dice_sprites_thematic.png) 0 -2000px;}
+.c-dice-set__die103{ background: url(../images/dice_sprites_thematic.png) 0 -2100px;}
+.c-dice-set__die104{ background: url(../images/dice_sprites_thematic.png) 0 -2200px;}
+.c-dice-set__die105{ background: url(../images/dice_sprites_thematic.png) 0 -2300px;}
+.c-dice-set__die106{ background: url(../images/dice_sprites_thematic.png) 0 -2400px;}
+.c-dice-set__die107{ background: url(../images/dice_sprites_thematic.png) 0 -2500px;}
+.c-dice-set__die108{ background: url(../images/dice_sprites_thematic.png) 0 -2600px;}
+
+.c-dice-set__die109{ background: url(../images/dice_sprites_thematic.png) 0 -2700px;}
+.c-dice-set__die110{ background: url(../images/dice_sprites_thematic.png) 0 -2800px;}
+.c-dice-set__die111{ background: url(../images/dice_sprites_thematic.png) 0 -2900px;}
+.c-dice-set__die112{ background: url(../images/dice_sprites_thematic.png) 0 -3000px;}
+.c-dice-set__die113{ background: url(../images/dice_sprites_thematic.png) 0 -3100px;}
+.c-dice-set__die114{ background: url(../images/dice_sprites_thematic.png) 0 -3200px;}
+.c-dice-set__die115{ background: url(../images/dice_sprites_thematic.png) 0 -3300px;}
+.c-dice-set__die116{ background: url(../images/dice_sprites_thematic.png) 0 -3400px;}
+.c-dice-set__die117{ background: url(../images/dice_sprites_thematic.png) 0 -3500px;}
+
+.c-dice-set__die118{ background: url(../images/dice_sprites_thematic.png) 0 -3600px;}
+.c-dice-set__die119{ background: url(../images/dice_sprites_thematic.png) 0 -3700px;}
+.c-dice-set__die120{ background: url(../images/dice_sprites_thematic.png) 0 -3800px;}
+.c-dice-set__die121{ background: url(../images/dice_sprites_thematic.png) 0 -3900px;}
+.c-dice-set__die122{ background: url(../images/dice_sprites_thematic.png) 0 -4000px;}
+.c-dice-set__die123{ background: url(../images/dice_sprites_thematic.png) 0 -4100px;}
+.c-dice-set__die124{ background: url(../images/dice_sprites_thematic.png) 0 -4200px;}
+.c-dice-set__die125{ background: url(../images/dice_sprites_thematic.png) 0 -4300px;}
+.c-dice-set__die126{ background: url(../images/dice_sprites_thematic.png) 0 -4400px;}
+
+.c-dice-set__die127{ background: url(../images/dice_sprites_thematic.png) 0 -4500px;}
+.c-dice-set__die128{ background: url(../images/dice_sprites_thematic.png) 0 -4600px;}
+.c-dice-set__die129{ background: url(../images/dice_sprites_thematic.png) 0 -4700px;}
+.c-dice-set__die130{ background: url(../images/dice_sprites_thematic.png) 0 -4800px;}
+.c-dice-set__die131{ background: url(../images/dice_sprites_thematic.png) 0 -4900px;}
+.c-dice-set__die132{ background: url(../images/dice_sprites_thematic.png) 0 -5000px;}
+.c-dice-set__die133{ background: url(../images/dice_sprites_thematic.png) 0 -5100px;}
+.c-dice-set__die134{ background: url(../images/dice_sprites_thematic.png) 0 -5200px;}
+.c-dice-set__die135{ background: url(../images/dice_sprites_thematic.png) 0 -5300px;}
+
+.c-dice-set__die136{ background: url(../images/dice_sprites_thematic.png) 0 -5400px;}
+.c-dice-set__die137{ background: url(../images/dice_sprites_thematic.png) 0 -5500px;}
+.c-dice-set__die138{ background: url(../images/dice_sprites_thematic.png) 0 -5600px;}
+.c-dice-set__die139{ background: url(../images/dice_sprites_thematic.png) 0 -5700px;}
+.c-dice-set__die140{ background: url(../images/dice_sprites_thematic.png) 0 -5800px;}
+.c-dice-set__die141{ background: url(../images/dice_sprites_thematic.png) 0 -5900px;}
+.c-dice-set__die142{ background: url(../images/dice_sprites_thematic.png) 0 -6000px;}
+.c-dice-set__die143{ background: url(../images/dice_sprites_thematic.png) 0 -6100px;}
+.c-dice-set__die144{ background: url(../images/dice_sprites_thematic.png) 0 -6200px;}
+
+.c-dice-set__die145{ background: url(../images/dice_sprites_thematic.png) 0 -6300px;}
+.c-dice-set__die146{ background: url(../images/dice_sprites_thematic.png) 0 -6400px;}
+.c-dice-set__die147{ background: url(../images/dice_sprites_thematic.png) 0 -6500px;}
+.c-dice-set__die148{ background: url(../images/dice_sprites_thematic.png) 0 -6600px;}
+.c-dice-set__die149{ background: url(../images/dice_sprites_thematic.png) 0 -6700px;}
+.c-dice-set__die150{ background: url(../images/dice_sprites_thematic.png) 0 -6800px;}
+.c-dice-set__die151{ background: url(../images/dice_sprites_thematic.png) 0 -6900px;}
+.c-dice-set__die152{ background: url(../images/dice_sprites_thematic.png) 0 -7000px;}
+.c-dice-set__die153{ background: url(../images/dice_sprites_thematic.png) 0 -7100px;}
+
+.c-dice-set__die154{ background: url(../images/dice_sprites_thematic.png) 0 -7200px;}
+.c-dice-set__die155{ background: url(../images/dice_sprites_thematic.png) 0 -7300px;}
+.c-dice-set__die156{ background: url(../images/dice_sprites_thematic.png) 0 -7400px;}
+.c-dice-set__die157{ background: url(../images/dice_sprites_thematic.png) 0 -7500px;}
+.c-dice-set__die158{ background: url(../images/dice_sprites_thematic.png) 0 -7600px;}
+.c-dice-set__die159{ background: url(../images/dice_sprites_thematic.png) 0 -7700px;}
+.c-dice-set__die160{ background: url(../images/dice_sprites_thematic.png) 0 -7800px;}
+.c-dice-set__die161{ background: url(../images/dice_sprites_thematic.png) 0 -7900px;}
+.c-dice-set__die162{ background: url(../images/dice_sprites_thematic.png) 0 -8000px;}
+
+.dice-layout { height: 100%; padding: 10px; text-align: center;}
+.dice-faces { height: 100%; padding: 10px 10px 30px 10px; text-align: center;}
+
+.bespoke-die-face-selected {
+  position: relative;
+}
+
+.bespoke-die-face-selected:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  background-color: rgba(0, 255, 0, 0.5);
+}
+/*
+for (var i=1;i<=81;i++) {
+	for (var j=1;j<=6;j++) {
+		var x = j==1 ? "0" : (-(j-1)*100) + "px";
+		var y = i==1 ? "0" : (-(i-1)*100) + "px";
+		console.log(".thrownDie" + i + "_" + j + "{ background: url(../images/dice_sprites.png)      " + x + " " + y + ";}");
+		if (j==6) {
+			console.log("");
+		}
+	}
+}
+Luego remplazar " debugger eval code.*" por vacío usando expresión regular y "<empty string>" por vacío en modo normal.
+*/
+.thrownDie{ display: inline-block; height: 100px; width: 100px; }
+.thrownDie1_1{ background: url(../images/dice_sprites.png)      0 0;}
+.thrownDie1_2{ background: url(../images/dice_sprites.png)      -100px 0;}
+.thrownDie1_3{ background: url(../images/dice_sprites.png)      -200px 0;}
+.thrownDie1_4{ background: url(../images/dice_sprites.png)      -300px 0;}
+.thrownDie1_5{ background: url(../images/dice_sprites.png)      -400px 0;}
+.thrownDie1_6{ background: url(../images/dice_sprites.png)      -500px 0;}
+
+.thrownDie2_1{ background: url(../images/dice_sprites.png)      0 -100px;}
+.thrownDie2_2{ background: url(../images/dice_sprites.png)      -100px -100px;}
+.thrownDie2_3{ background: url(../images/dice_sprites.png)      -200px -100px;}
+.thrownDie2_4{ background: url(../images/dice_sprites.png)      -300px -100px;}
+.thrownDie2_5{ background: url(../images/dice_sprites.png)      -400px -100px;}
+.thrownDie2_6{ background: url(../images/dice_sprites.png)      -500px -100px;}
+
+.thrownDie3_1{ background: url(../images/dice_sprites.png)      0 -200px;}
+.thrownDie3_2{ background: url(../images/dice_sprites.png)      -100px -200px;}
+.thrownDie3_3{ background: url(../images/dice_sprites.png)      -200px -200px;}
+.thrownDie3_4{ background: url(../images/dice_sprites.png)      -300px -200px;}
+.thrownDie3_5{ background: url(../images/dice_sprites.png)      -400px -200px;}
+.thrownDie3_6{ background: url(../images/dice_sprites.png)      -500px -200px;}
+
+.thrownDie4_1{ background: url(../images/dice_sprites.png)      0 -300px;}
+.thrownDie4_2{ background: url(../images/dice_sprites.png)      -100px -300px;}
+.thrownDie4_3{ background: url(../images/dice_sprites.png)      -200px -300px;}
+.thrownDie4_4{ background: url(../images/dice_sprites.png)      -300px -300px;}
+.thrownDie4_5{ background: url(../images/dice_sprites.png)      -400px -300px;}
+.thrownDie4_6{ background: url(../images/dice_sprites.png)      -500px -300px;}
+
+.thrownDie5_1{ background: url(../images/dice_sprites.png)      0 -400px;}
+.thrownDie5_2{ background: url(../images/dice_sprites.png)      -100px -400px;}
+.thrownDie5_3{ background: url(../images/dice_sprites.png)      -200px -400px;}
+.thrownDie5_4{ background: url(../images/dice_sprites.png)      -300px -400px;}
+.thrownDie5_5{ background: url(../images/dice_sprites.png)      -400px -400px;}
+.thrownDie5_6{ background: url(../images/dice_sprites.png)      -500px -400px;}
+
+.thrownDie6_1{ background: url(../images/dice_sprites.png)      0 -500px;}
+.thrownDie6_2{ background: url(../images/dice_sprites.png)      -100px -500px;}
+.thrownDie6_3{ background: url(../images/dice_sprites.png)      -200px -500px;}
+.thrownDie6_4{ background: url(../images/dice_sprites.png)      -300px -500px;}
+.thrownDie6_5{ background: url(../images/dice_sprites.png)      -400px -500px;}
+.thrownDie6_6{ background: url(../images/dice_sprites.png)      -500px -500px;}
+
+.thrownDie7_1{ background: url(../images/dice_sprites.png)      0 -600px;}
+.thrownDie7_2{ background: url(../images/dice_sprites.png)      -100px -600px;}
+.thrownDie7_3{ background: url(../images/dice_sprites.png)      -200px -600px;}
+.thrownDie7_4{ background: url(../images/dice_sprites.png)      -300px -600px;}
+.thrownDie7_5{ background: url(../images/dice_sprites.png)      -400px -600px;}
+.thrownDie7_6{ background: url(../images/dice_sprites.png)      -500px -600px;}
+
+.thrownDie8_1{ background: url(../images/dice_sprites.png)      0 -700px;}
+.thrownDie8_2{ background: url(../images/dice_sprites.png)      -100px -700px;}
+.thrownDie8_3{ background: url(../images/dice_sprites.png)      -200px -700px;}
+.thrownDie8_4{ background: url(../images/dice_sprites.png)      -300px -700px;}
+.thrownDie8_5{ background: url(../images/dice_sprites.png)      -400px -700px;}
+.thrownDie8_6{ background: url(../images/dice_sprites.png)      -500px -700px;}
+
+.thrownDie9_1{ background: url(../images/dice_sprites.png)      0 -800px;}
+.thrownDie9_2{ background: url(../images/dice_sprites.png)      -100px -800px;}
+.thrownDie9_3{ background: url(../images/dice_sprites.png)      -200px -800px;}
+.thrownDie9_4{ background: url(../images/dice_sprites.png)      -300px -800px;}
+.thrownDie9_5{ background: url(../images/dice_sprites.png)      -400px -800px;}
+.thrownDie9_6{ background: url(../images/dice_sprites.png)      -500px -800px;}
+
+.thrownDie10_1{ background: url(../images/dice_sprites.png)      0 -900px;}
+.thrownDie10_2{ background: url(../images/dice_sprites.png)      -100px -900px;}
+.thrownDie10_3{ background: url(../images/dice_sprites.png)      -200px -900px;}
+.thrownDie10_4{ background: url(../images/dice_sprites.png)      -300px -900px;}
+.thrownDie10_5{ background: url(../images/dice_sprites.png)      -400px -900px;}
+.thrownDie10_6{ background: url(../images/dice_sprites.png)      -500px -900px;}
+
+.thrownDie11_1{ background: url(../images/dice_sprites.png)      0 -1000px;}
+.thrownDie11_2{ background: url(../images/dice_sprites.png)      -100px -1000px;}
+.thrownDie11_3{ background: url(../images/dice_sprites.png)      -200px -1000px;}
+.thrownDie11_4{ background: url(../images/dice_sprites.png)      -300px -1000px;}
+.thrownDie11_5{ background: url(../images/dice_sprites.png)      -400px -1000px;}
+.thrownDie11_6{ background: url(../images/dice_sprites.png)      -500px -1000px;}
+
+.thrownDie12_1{ background: url(../images/dice_sprites.png)      0 -1100px;}
+.thrownDie12_2{ background: url(../images/dice_sprites.png)      -100px -1100px;}
+.thrownDie12_3{ background: url(../images/dice_sprites.png)      -200px -1100px;}
+.thrownDie12_4{ background: url(../images/dice_sprites.png)      -300px -1100px;}
+.thrownDie12_5{ background: url(../images/dice_sprites.png)      -400px -1100px;}
+.thrownDie12_6{ background: url(../images/dice_sprites.png)      -500px -1100px;}
+
+.thrownDie13_1{ background: url(../images/dice_sprites.png)      0 -1200px;}
+.thrownDie13_2{ background: url(../images/dice_sprites.png)      -100px -1200px;}
+.thrownDie13_3{ background: url(../images/dice_sprites.png)      -200px -1200px;}
+.thrownDie13_4{ background: url(../images/dice_sprites.png)      -300px -1200px;}
+.thrownDie13_5{ background: url(../images/dice_sprites.png)      -400px -1200px;}
+.thrownDie13_6{ background: url(../images/dice_sprites.png)      -500px -1200px;}
+
+.thrownDie14_1{ background: url(../images/dice_sprites.png)      0 -1300px;}
+.thrownDie14_2{ background: url(../images/dice_sprites.png)      -100px -1300px;}
+.thrownDie14_3{ background: url(../images/dice_sprites.png)      -200px -1300px;}
+.thrownDie14_4{ background: url(../images/dice_sprites.png)      -300px -1300px;}
+.thrownDie14_5{ background: url(../images/dice_sprites.png)      -400px -1300px;}
+.thrownDie14_6{ background: url(../images/dice_sprites.png)      -500px -1300px;}
+
+.thrownDie15_1{ background: url(../images/dice_sprites.png)      0 -1400px;}
+.thrownDie15_2{ background: url(../images/dice_sprites.png)      -100px -1400px;}
+.thrownDie15_3{ background: url(../images/dice_sprites.png)      -200px -1400px;}
+.thrownDie15_4{ background: url(../images/dice_sprites.png)      -300px -1400px;}
+.thrownDie15_5{ background: url(../images/dice_sprites.png)      -400px -1400px;}
+.thrownDie15_6{ background: url(../images/dice_sprites.png)      -500px -1400px;}
+
+.thrownDie16_1{ background: url(../images/dice_sprites.png)      0 -1500px;}
+.thrownDie16_2{ background: url(../images/dice_sprites.png)      -100px -1500px;}
+.thrownDie16_3{ background: url(../images/dice_sprites.png)      -200px -1500px;}
+.thrownDie16_4{ background: url(../images/dice_sprites.png)      -300px -1500px;}
+.thrownDie16_5{ background: url(../images/dice_sprites.png)      -400px -1500px;}
+.thrownDie16_6{ background: url(../images/dice_sprites.png)      -500px -1500px;}
+
+.thrownDie17_1{ background: url(../images/dice_sprites.png)      0 -1600px;}
+.thrownDie17_2{ background: url(../images/dice_sprites.png)      -100px -1600px;}
+.thrownDie17_3{ background: url(../images/dice_sprites.png)      -200px -1600px;}
+.thrownDie17_4{ background: url(../images/dice_sprites.png)      -300px -1600px;}
+.thrownDie17_5{ background: url(../images/dice_sprites.png)      -400px -1600px;}
+.thrownDie17_6{ background: url(../images/dice_sprites.png)      -500px -1600px;}
+
+.thrownDie18_1{ background: url(../images/dice_sprites.png)      0 -1700px;}
+.thrownDie18_2{ background: url(../images/dice_sprites.png)      -100px -1700px;}
+.thrownDie18_3{ background: url(../images/dice_sprites.png)      -200px -1700px;}
+.thrownDie18_4{ background: url(../images/dice_sprites.png)      -300px -1700px;}
+.thrownDie18_5{ background: url(../images/dice_sprites.png)      -400px -1700px;}
+.thrownDie18_6{ background: url(../images/dice_sprites.png)      -500px -1700px;}
+
+.thrownDie19_1{ background: url(../images/dice_sprites.png)      0 -1800px;}
+.thrownDie19_2{ background: url(../images/dice_sprites.png)      -100px -1800px;}
+.thrownDie19_3{ background: url(../images/dice_sprites.png)      -200px -1800px;}
+.thrownDie19_4{ background: url(../images/dice_sprites.png)      -300px -1800px;}
+.thrownDie19_5{ background: url(../images/dice_sprites.png)      -400px -1800px;}
+.thrownDie19_6{ background: url(../images/dice_sprites.png)      -500px -1800px;}
+
+.thrownDie20_1{ background: url(../images/dice_sprites.png)      0 -1900px;}
+.thrownDie20_2{ background: url(../images/dice_sprites.png)      -100px -1900px;}
+.thrownDie20_3{ background: url(../images/dice_sprites.png)      -200px -1900px;}
+.thrownDie20_4{ background: url(../images/dice_sprites.png)      -300px -1900px;}
+.thrownDie20_5{ background: url(../images/dice_sprites.png)      -400px -1900px;}
+.thrownDie20_6{ background: url(../images/dice_sprites.png)      -500px -1900px;}
+
+.thrownDie21_1{ background: url(../images/dice_sprites.png)      0 -2000px;}
+.thrownDie21_2{ background: url(../images/dice_sprites.png)      -100px -2000px;}
+.thrownDie21_3{ background: url(../images/dice_sprites.png)      -200px -2000px;}
+.thrownDie21_4{ background: url(../images/dice_sprites.png)      -300px -2000px;}
+.thrownDie21_5{ background: url(../images/dice_sprites.png)      -400px -2000px;}
+.thrownDie21_6{ background: url(../images/dice_sprites.png)      -500px -2000px;}
+
+.thrownDie22_1{ background: url(../images/dice_sprites.png)      0 -2100px;}
+.thrownDie22_2{ background: url(../images/dice_sprites.png)      -100px -2100px;}
+.thrownDie22_3{ background: url(../images/dice_sprites.png)      -200px -2100px;}
+.thrownDie22_4{ background: url(../images/dice_sprites.png)      -300px -2100px;}
+.thrownDie22_5{ background: url(../images/dice_sprites.png)      -400px -2100px;}
+.thrownDie22_6{ background: url(../images/dice_sprites.png)      -500px -2100px;}
+
+.thrownDie23_1{ background: url(../images/dice_sprites.png)      0 -2200px;}
+.thrownDie23_2{ background: url(../images/dice_sprites.png)      -100px -2200px;}
+.thrownDie23_3{ background: url(../images/dice_sprites.png)      -200px -2200px;}
+.thrownDie23_4{ background: url(../images/dice_sprites.png)      -300px -2200px;}
+.thrownDie23_5{ background: url(../images/dice_sprites.png)      -400px -2200px;}
+.thrownDie23_6{ background: url(../images/dice_sprites.png)      -500px -2200px;}
+
+.thrownDie24_1{ background: url(../images/dice_sprites.png)      0 -2300px;}
+.thrownDie24_2{ background: url(../images/dice_sprites.png)      -100px -2300px;}
+.thrownDie24_3{ background: url(../images/dice_sprites.png)      -200px -2300px;}
+.thrownDie24_4{ background: url(../images/dice_sprites.png)      -300px -2300px;}
+.thrownDie24_5{ background: url(../images/dice_sprites.png)      -400px -2300px;}
+.thrownDie24_6{ background: url(../images/dice_sprites.png)      -500px -2300px;}
+
+.thrownDie25_1{ background: url(../images/dice_sprites.png)      0 -2400px;}
+.thrownDie25_2{ background: url(../images/dice_sprites.png)      -100px -2400px;}
+.thrownDie25_3{ background: url(../images/dice_sprites.png)      -200px -2400px;}
+.thrownDie25_4{ background: url(../images/dice_sprites.png)      -300px -2400px;}
+.thrownDie25_5{ background: url(../images/dice_sprites.png)      -400px -2400px;}
+.thrownDie25_6{ background: url(../images/dice_sprites.png)      -500px -2400px;}
+
+.thrownDie26_1{ background: url(../images/dice_sprites.png)      0 -2500px;}
+.thrownDie26_2{ background: url(../images/dice_sprites.png)      -100px -2500px;}
+.thrownDie26_3{ background: url(../images/dice_sprites.png)      -200px -2500px;}
+.thrownDie26_4{ background: url(../images/dice_sprites.png)      -300px -2500px;}
+.thrownDie26_5{ background: url(../images/dice_sprites.png)      -400px -2500px;}
+.thrownDie26_6{ background: url(../images/dice_sprites.png)      -500px -2500px;}
+
+.thrownDie27_1{ background: url(../images/dice_sprites.png)      0 -2600px;}
+.thrownDie27_2{ background: url(../images/dice_sprites.png)      -100px -2600px;}
+.thrownDie27_3{ background: url(../images/dice_sprites.png)      -200px -2600px;}
+.thrownDie27_4{ background: url(../images/dice_sprites.png)      -300px -2600px;}
+.thrownDie27_5{ background: url(../images/dice_sprites.png)      -400px -2600px;}
+.thrownDie27_6{ background: url(../images/dice_sprites.png)      -500px -2600px;}
+
+.thrownDie28_1{ background: url(../images/dice_sprites.png)      0 -2700px;}
+.thrownDie28_2{ background: url(../images/dice_sprites.png)      -100px -2700px;}
+.thrownDie28_3{ background: url(../images/dice_sprites.png)      -200px -2700px;}
+.thrownDie28_4{ background: url(../images/dice_sprites.png)      -300px -2700px;}
+.thrownDie28_5{ background: url(../images/dice_sprites.png)      -400px -2700px;}
+.thrownDie28_6{ background: url(../images/dice_sprites.png)      -500px -2700px;}
+
+.thrownDie29_1{ background: url(../images/dice_sprites.png)      0 -2800px;}
+.thrownDie29_2{ background: url(../images/dice_sprites.png)      -100px -2800px;}
+.thrownDie29_3{ background: url(../images/dice_sprites.png)      -200px -2800px;}
+.thrownDie29_4{ background: url(../images/dice_sprites.png)      -300px -2800px;}
+.thrownDie29_5{ background: url(../images/dice_sprites.png)      -400px -2800px;}
+.thrownDie29_6{ background: url(../images/dice_sprites.png)      -500px -2800px;}
+
+.thrownDie30_1{ background: url(../images/dice_sprites.png)      0 -2900px;}
+.thrownDie30_2{ background: url(../images/dice_sprites.png)      -100px -2900px;}
+.thrownDie30_3{ background: url(../images/dice_sprites.png)      -200px -2900px;}
+.thrownDie30_4{ background: url(../images/dice_sprites.png)      -300px -2900px;}
+.thrownDie30_5{ background: url(../images/dice_sprites.png)      -400px -2900px;}
+.thrownDie30_6{ background: url(../images/dice_sprites.png)      -500px -2900px;}
+
+.thrownDie31_1{ background: url(../images/dice_sprites.png)      0 -3000px;}
+.thrownDie31_2{ background: url(../images/dice_sprites.png)      -100px -3000px;}
+.thrownDie31_3{ background: url(../images/dice_sprites.png)      -200px -3000px;}
+.thrownDie31_4{ background: url(../images/dice_sprites.png)      -300px -3000px;}
+.thrownDie31_5{ background: url(../images/dice_sprites.png)      -400px -3000px;}
+.thrownDie31_6{ background: url(../images/dice_sprites.png)      -500px -3000px;}
+
+.thrownDie32_1{ background: url(../images/dice_sprites.png)      0 -3100px;}
+.thrownDie32_2{ background: url(../images/dice_sprites.png)      -100px -3100px;}
+.thrownDie32_3{ background: url(../images/dice_sprites.png)      -200px -3100px;}
+.thrownDie32_4{ background: url(../images/dice_sprites.png)      -300px -3100px;}
+.thrownDie32_5{ background: url(../images/dice_sprites.png)      -400px -3100px;}
+.thrownDie32_6{ background: url(../images/dice_sprites.png)      -500px -3100px;}
+
+.thrownDie33_1{ background: url(../images/dice_sprites.png)      0 -3200px;}
+.thrownDie33_2{ background: url(../images/dice_sprites.png)      -100px -3200px;}
+.thrownDie33_3{ background: url(../images/dice_sprites.png)      -200px -3200px;}
+.thrownDie33_4{ background: url(../images/dice_sprites.png)      -300px -3200px;}
+.thrownDie33_5{ background: url(../images/dice_sprites.png)      -400px -3200px;}
+.thrownDie33_6{ background: url(../images/dice_sprites.png)      -500px -3200px;}
+
+.thrownDie34_1{ background: url(../images/dice_sprites.png)      0 -3300px;}
+.thrownDie34_2{ background: url(../images/dice_sprites.png)      -100px -3300px;}
+.thrownDie34_3{ background: url(../images/dice_sprites.png)      -200px -3300px;}
+.thrownDie34_4{ background: url(../images/dice_sprites.png)      -300px -3300px;}
+.thrownDie34_5{ background: url(../images/dice_sprites.png)      -400px -3300px;}
+.thrownDie34_6{ background: url(../images/dice_sprites.png)      -500px -3300px;}
+
+.thrownDie35_1{ background: url(../images/dice_sprites.png)      0 -3400px;}
+.thrownDie35_2{ background: url(../images/dice_sprites.png)      -100px -3400px;}
+.thrownDie35_3{ background: url(../images/dice_sprites.png)      -200px -3400px;}
+.thrownDie35_4{ background: url(../images/dice_sprites.png)      -300px -3400px;}
+.thrownDie35_5{ background: url(../images/dice_sprites.png)      -400px -3400px;}
+.thrownDie35_6{ background: url(../images/dice_sprites.png)      -500px -3400px;}
+
+.thrownDie36_1{ background: url(../images/dice_sprites.png)      0 -3500px;}
+.thrownDie36_2{ background: url(../images/dice_sprites.png)      -100px -3500px;}
+.thrownDie36_3{ background: url(../images/dice_sprites.png)      -200px -3500px;}
+.thrownDie36_4{ background: url(../images/dice_sprites.png)      -300px -3500px;}
+.thrownDie36_5{ background: url(../images/dice_sprites.png)      -400px -3500px;}
+.thrownDie36_6{ background: url(../images/dice_sprites.png)      -500px -3500px;}
+
+.thrownDie37_1{ background: url(../images/dice_sprites.png)      0 -3600px;}
+.thrownDie37_2{ background: url(../images/dice_sprites.png)      -100px -3600px;}
+.thrownDie37_3{ background: url(../images/dice_sprites.png)      -200px -3600px;}
+.thrownDie37_4{ background: url(../images/dice_sprites.png)      -300px -3600px;}
+.thrownDie37_5{ background: url(../images/dice_sprites.png)      -400px -3600px;}
+.thrownDie37_6{ background: url(../images/dice_sprites.png)      -500px -3600px;}
+
+.thrownDie38_1{ background: url(../images/dice_sprites.png)      0 -3700px;}
+.thrownDie38_2{ background: url(../images/dice_sprites.png)      -100px -3700px;}
+.thrownDie38_3{ background: url(../images/dice_sprites.png)      -200px -3700px;}
+.thrownDie38_4{ background: url(../images/dice_sprites.png)      -300px -3700px;}
+.thrownDie38_5{ background: url(../images/dice_sprites.png)      -400px -3700px;}
+.thrownDie38_6{ background: url(../images/dice_sprites.png)      -500px -3700px;}
+
+.thrownDie39_1{ background: url(../images/dice_sprites.png)      0 -3800px;}
+.thrownDie39_2{ background: url(../images/dice_sprites.png)      -100px -3800px;}
+.thrownDie39_3{ background: url(../images/dice_sprites.png)      -200px -3800px;}
+.thrownDie39_4{ background: url(../images/dice_sprites.png)      -300px -3800px;}
+.thrownDie39_5{ background: url(../images/dice_sprites.png)      -400px -3800px;}
+.thrownDie39_6{ background: url(../images/dice_sprites.png)      -500px -3800px;}
+
+.thrownDie40_1{ background: url(../images/dice_sprites.png)      0 -3900px;}
+.thrownDie40_2{ background: url(../images/dice_sprites.png)      -100px -3900px;}
+.thrownDie40_3{ background: url(../images/dice_sprites.png)      -200px -3900px;}
+.thrownDie40_4{ background: url(../images/dice_sprites.png)      -300px -3900px;}
+.thrownDie40_5{ background: url(../images/dice_sprites.png)      -400px -3900px;}
+.thrownDie40_6{ background: url(../images/dice_sprites.png)      -500px -3900px;}
+
+.thrownDie41_1{ background: url(../images/dice_sprites.png)      0 -4000px;}
+.thrownDie41_2{ background: url(../images/dice_sprites.png)      -100px -4000px;}
+.thrownDie41_3{ background: url(../images/dice_sprites.png)      -200px -4000px;}
+.thrownDie41_4{ background: url(../images/dice_sprites.png)      -300px -4000px;}
+.thrownDie41_5{ background: url(../images/dice_sprites.png)      -400px -4000px;}
+.thrownDie41_6{ background: url(../images/dice_sprites.png)      -500px -4000px;}
+
+.thrownDie42_1{ background: url(../images/dice_sprites.png)      0 -4100px;}
+.thrownDie42_2{ background: url(../images/dice_sprites.png)      -100px -4100px;}
+.thrownDie42_3{ background: url(../images/dice_sprites.png)      -200px -4100px;}
+.thrownDie42_4{ background: url(../images/dice_sprites.png)      -300px -4100px;}
+.thrownDie42_5{ background: url(../images/dice_sprites.png)      -400px -4100px;}
+.thrownDie42_6{ background: url(../images/dice_sprites.png)      -500px -4100px;}
+
+.thrownDie43_1{ background: url(../images/dice_sprites.png)      0 -4200px;}
+.thrownDie43_2{ background: url(../images/dice_sprites.png)      -100px -4200px;}
+.thrownDie43_3{ background: url(../images/dice_sprites.png)      -200px -4200px;}
+.thrownDie43_4{ background: url(../images/dice_sprites.png)      -300px -4200px;}
+.thrownDie43_5{ background: url(../images/dice_sprites.png)      -400px -4200px;}
+.thrownDie43_6{ background: url(../images/dice_sprites.png)      -500px -4200px;}
+
+.thrownDie44_1{ background: url(../images/dice_sprites.png)      0 -4300px;}
+.thrownDie44_2{ background: url(../images/dice_sprites.png)      -100px -4300px;}
+.thrownDie44_3{ background: url(../images/dice_sprites.png)      -200px -4300px;}
+.thrownDie44_4{ background: url(../images/dice_sprites.png)      -300px -4300px;}
+.thrownDie44_5{ background: url(../images/dice_sprites.png)      -400px -4300px;}
+.thrownDie44_6{ background: url(../images/dice_sprites.png)      -500px -4300px;}
+
+.thrownDie45_1{ background: url(../images/dice_sprites.png)      0 -4400px;}
+.thrownDie45_2{ background: url(../images/dice_sprites.png)      -100px -4400px;}
+.thrownDie45_3{ background: url(../images/dice_sprites.png)      -200px -4400px;}
+.thrownDie45_4{ background: url(../images/dice_sprites.png)      -300px -4400px;}
+.thrownDie45_5{ background: url(../images/dice_sprites.png)      -400px -4400px;}
+.thrownDie45_6{ background: url(../images/dice_sprites.png)      -500px -4400px;}
+
+.thrownDie46_1{ background: url(../images/dice_sprites.png)      0 -4500px;}
+.thrownDie46_2{ background: url(../images/dice_sprites.png)      -100px -4500px;}
+.thrownDie46_3{ background: url(../images/dice_sprites.png)      -200px -4500px;}
+.thrownDie46_4{ background: url(../images/dice_sprites.png)      -300px -4500px;}
+.thrownDie46_5{ background: url(../images/dice_sprites.png)      -400px -4500px;}
+.thrownDie46_6{ background: url(../images/dice_sprites.png)      -500px -4500px;}
+
+.thrownDie47_1{ background: url(../images/dice_sprites.png)      0 -4600px;}
+.thrownDie47_2{ background: url(../images/dice_sprites.png)      -100px -4600px;}
+.thrownDie47_3{ background: url(../images/dice_sprites.png)      -200px -4600px;}
+.thrownDie47_4{ background: url(../images/dice_sprites.png)      -300px -4600px;}
+.thrownDie47_5{ background: url(../images/dice_sprites.png)      -400px -4600px;}
+.thrownDie47_6{ background: url(../images/dice_sprites.png)      -500px -4600px;}
+
+.thrownDie48_1{ background: url(../images/dice_sprites.png)      0 -4700px;}
+.thrownDie48_2{ background: url(../images/dice_sprites.png)      -100px -4700px;}
+.thrownDie48_3{ background: url(../images/dice_sprites.png)      -200px -4700px;}
+.thrownDie48_4{ background: url(../images/dice_sprites.png)      -300px -4700px;}
+.thrownDie48_5{ background: url(../images/dice_sprites.png)      -400px -4700px;}
+.thrownDie48_6{ background: url(../images/dice_sprites.png)      -500px -4700px;}
+
+.thrownDie49_1{ background: url(../images/dice_sprites.png)      0 -4800px;}
+.thrownDie49_2{ background: url(../images/dice_sprites.png)      -100px -4800px;}
+.thrownDie49_3{ background: url(../images/dice_sprites.png)      -200px -4800px;}
+.thrownDie49_4{ background: url(../images/dice_sprites.png)      -300px -4800px;}
+.thrownDie49_5{ background: url(../images/dice_sprites.png)      -400px -4800px;}
+.thrownDie49_6{ background: url(../images/dice_sprites.png)      -500px -4800px;}
+
+.thrownDie50_1{ background: url(../images/dice_sprites.png)      0 -4900px;}
+.thrownDie50_2{ background: url(../images/dice_sprites.png)      -100px -4900px;}
+.thrownDie50_3{ background: url(../images/dice_sprites.png)      -200px -4900px;}
+.thrownDie50_4{ background: url(../images/dice_sprites.png)      -300px -4900px;}
+.thrownDie50_5{ background: url(../images/dice_sprites.png)      -400px -4900px;}
+.thrownDie50_6{ background: url(../images/dice_sprites.png)      -500px -4900px;}
+
+.thrownDie51_1{ background: url(../images/dice_sprites.png)      0 -5000px;}
+.thrownDie51_2{ background: url(../images/dice_sprites.png)      -100px -5000px;}
+.thrownDie51_3{ background: url(../images/dice_sprites.png)      -200px -5000px;}
+.thrownDie51_4{ background: url(../images/dice_sprites.png)      -300px -5000px;}
+.thrownDie51_5{ background: url(../images/dice_sprites.png)      -400px -5000px;}
+.thrownDie51_6{ background: url(../images/dice_sprites.png)      -500px -5000px;}
+
+.thrownDie52_1{ background: url(../images/dice_sprites.png)      0 -5100px;}
+.thrownDie52_2{ background: url(../images/dice_sprites.png)      -100px -5100px;}
+.thrownDie52_3{ background: url(../images/dice_sprites.png)      -200px -5100px;}
+.thrownDie52_4{ background: url(../images/dice_sprites.png)      -300px -5100px;}
+.thrownDie52_5{ background: url(../images/dice_sprites.png)      -400px -5100px;}
+.thrownDie52_6{ background: url(../images/dice_sprites.png)      -500px -5100px;}
+
+.thrownDie53_1{ background: url(../images/dice_sprites.png)      0 -5200px;}
+.thrownDie53_2{ background: url(../images/dice_sprites.png)      -100px -5200px;}
+.thrownDie53_3{ background: url(../images/dice_sprites.png)      -200px -5200px;}
+.thrownDie53_4{ background: url(../images/dice_sprites.png)      -300px -5200px;}
+.thrownDie53_5{ background: url(../images/dice_sprites.png)      -400px -5200px;}
+.thrownDie53_6{ background: url(../images/dice_sprites.png)      -500px -5200px;}
+
+.thrownDie54_1{ background: url(../images/dice_sprites.png)      0 -5300px;}
+.thrownDie54_2{ background: url(../images/dice_sprites.png)      -100px -5300px;}
+.thrownDie54_3{ background: url(../images/dice_sprites.png)      -200px -5300px;}
+.thrownDie54_4{ background: url(../images/dice_sprites.png)      -300px -5300px;}
+.thrownDie54_5{ background: url(../images/dice_sprites.png)      -400px -5300px;}
+.thrownDie54_6{ background: url(../images/dice_sprites.png)      -500px -5300px;}
+
+.thrownDie55_1{ background: url(../images/dice_sprites.png)      0 -5400px;}
+.thrownDie55_2{ background: url(../images/dice_sprites.png)      -100px -5400px;}
+.thrownDie55_3{ background: url(../images/dice_sprites.png)      -200px -5400px;}
+.thrownDie55_4{ background: url(../images/dice_sprites.png)      -300px -5400px;}
+.thrownDie55_5{ background: url(../images/dice_sprites.png)      -400px -5400px;}
+.thrownDie55_6{ background: url(../images/dice_sprites.png)      -500px -5400px;}
+
+.thrownDie56_1{ background: url(../images/dice_sprites.png)      0 -5500px;}
+.thrownDie56_2{ background: url(../images/dice_sprites.png)      -100px -5500px;}
+.thrownDie56_3{ background: url(../images/dice_sprites.png)      -200px -5500px;}
+.thrownDie56_4{ background: url(../images/dice_sprites.png)      -300px -5500px;}
+.thrownDie56_5{ background: url(../images/dice_sprites.png)      -400px -5500px;}
+.thrownDie56_6{ background: url(../images/dice_sprites.png)      -500px -5500px;}
+
+.thrownDie57_1{ background: url(../images/dice_sprites.png)      0 -5600px;}
+.thrownDie57_2{ background: url(../images/dice_sprites.png)      -100px -5600px;}
+.thrownDie57_3{ background: url(../images/dice_sprites.png)      -200px -5600px;}
+.thrownDie57_4{ background: url(../images/dice_sprites.png)      -300px -5600px;}
+.thrownDie57_5{ background: url(../images/dice_sprites.png)      -400px -5600px;}
+.thrownDie57_6{ background: url(../images/dice_sprites.png)      -500px -5600px;}
+
+.thrownDie58_1{ background: url(../images/dice_sprites.png)      0 -5700px;}
+.thrownDie58_2{ background: url(../images/dice_sprites.png)      -100px -5700px;}
+.thrownDie58_3{ background: url(../images/dice_sprites.png)      -200px -5700px;}
+.thrownDie58_4{ background: url(../images/dice_sprites.png)      -300px -5700px;}
+.thrownDie58_5{ background: url(../images/dice_sprites.png)      -400px -5700px;}
+.thrownDie58_6{ background: url(../images/dice_sprites.png)      -500px -5700px;}
+
+.thrownDie59_1{ background: url(../images/dice_sprites.png)      0 -5800px;}
+.thrownDie59_2{ background: url(../images/dice_sprites.png)      -100px -5800px;}
+.thrownDie59_3{ background: url(../images/dice_sprites.png)      -200px -5800px;}
+.thrownDie59_4{ background: url(../images/dice_sprites.png)      -300px -5800px;}
+.thrownDie59_5{ background: url(../images/dice_sprites.png)      -400px -5800px;}
+.thrownDie59_6{ background: url(../images/dice_sprites.png)      -500px -5800px;}
+
+.thrownDie60_1{ background: url(../images/dice_sprites.png)      0 -5900px;}
+.thrownDie60_2{ background: url(../images/dice_sprites.png)      -100px -5900px;}
+.thrownDie60_3{ background: url(../images/dice_sprites.png)      -200px -5900px;}
+.thrownDie60_4{ background: url(../images/dice_sprites.png)      -300px -5900px;}
+.thrownDie60_5{ background: url(../images/dice_sprites.png)      -400px -5900px;}
+.thrownDie60_6{ background: url(../images/dice_sprites.png)      -500px -5900px;}
+
+.thrownDie61_1{ background: url(../images/dice_sprites.png)      0 -6000px;}
+.thrownDie61_2{ background: url(../images/dice_sprites.png)      -100px -6000px;}
+.thrownDie61_3{ background: url(../images/dice_sprites.png)      -200px -6000px;}
+.thrownDie61_4{ background: url(../images/dice_sprites.png)      -300px -6000px;}
+.thrownDie61_5{ background: url(../images/dice_sprites.png)      -400px -6000px;}
+.thrownDie61_6{ background: url(../images/dice_sprites.png)      -500px -6000px;}
+
+.thrownDie62_1{ background: url(../images/dice_sprites.png)      0 -6100px;}
+.thrownDie62_2{ background: url(../images/dice_sprites.png)      -100px -6100px;}
+.thrownDie62_3{ background: url(../images/dice_sprites.png)      -200px -6100px;}
+.thrownDie62_4{ background: url(../images/dice_sprites.png)      -300px -6100px;}
+.thrownDie62_5{ background: url(../images/dice_sprites.png)      -400px -6100px;}
+.thrownDie62_6{ background: url(../images/dice_sprites.png)      -500px -6100px;}
+
+.thrownDie63_1{ background: url(../images/dice_sprites.png)      0 -6200px;}
+.thrownDie63_2{ background: url(../images/dice_sprites.png)      -100px -6200px;}
+.thrownDie63_3{ background: url(../images/dice_sprites.png)      -200px -6200px;}
+.thrownDie63_4{ background: url(../images/dice_sprites.png)      -300px -6200px;}
+.thrownDie63_5{ background: url(../images/dice_sprites.png)      -400px -6200px;}
+.thrownDie63_6{ background: url(../images/dice_sprites.png)      -500px -6200px;}
+
+.thrownDie64_1{ background: url(../images/dice_sprites.png)      0 -6300px;}
+.thrownDie64_2{ background: url(../images/dice_sprites.png)      -100px -6300px;}
+.thrownDie64_3{ background: url(../images/dice_sprites.png)      -200px -6300px;}
+.thrownDie64_4{ background: url(../images/dice_sprites.png)      -300px -6300px;}
+.thrownDie64_5{ background: url(../images/dice_sprites.png)      -400px -6300px;}
+.thrownDie64_6{ background: url(../images/dice_sprites.png)      -500px -6300px;}
+
+.thrownDie65_1{ background: url(../images/dice_sprites.png)      0 -6400px;}
+.thrownDie65_2{ background: url(../images/dice_sprites.png)      -100px -6400px;}
+.thrownDie65_3{ background: url(../images/dice_sprites.png)      -200px -6400px;}
+.thrownDie65_4{ background: url(../images/dice_sprites.png)      -300px -6400px;}
+.thrownDie65_5{ background: url(../images/dice_sprites.png)      -400px -6400px;}
+.thrownDie65_6{ background: url(../images/dice_sprites.png)      -500px -6400px;}
+
+.thrownDie66_1{ background: url(../images/dice_sprites.png)      0 -6500px;}
+.thrownDie66_2{ background: url(../images/dice_sprites.png)      -100px -6500px;}
+.thrownDie66_3{ background: url(../images/dice_sprites.png)      -200px -6500px;}
+.thrownDie66_4{ background: url(../images/dice_sprites.png)      -300px -6500px;}
+.thrownDie66_5{ background: url(../images/dice_sprites.png)      -400px -6500px;}
+.thrownDie66_6{ background: url(../images/dice_sprites.png)      -500px -6500px;}
+
+.thrownDie67_1{ background: url(../images/dice_sprites.png)      0 -6600px;}
+.thrownDie67_2{ background: url(../images/dice_sprites.png)      -100px -6600px;}
+.thrownDie67_3{ background: url(../images/dice_sprites.png)      -200px -6600px;}
+.thrownDie67_4{ background: url(../images/dice_sprites.png)      -300px -6600px;}
+.thrownDie67_5{ background: url(../images/dice_sprites.png)      -400px -6600px;}
+.thrownDie67_6{ background: url(../images/dice_sprites.png)      -500px -6600px;}
+
+.thrownDie68_1{ background: url(../images/dice_sprites.png)      0 -6700px;}
+.thrownDie68_2{ background: url(../images/dice_sprites.png)      -100px -6700px;}
+.thrownDie68_3{ background: url(../images/dice_sprites.png)      -200px -6700px;}
+.thrownDie68_4{ background: url(../images/dice_sprites.png)      -300px -6700px;}
+.thrownDie68_5{ background: url(../images/dice_sprites.png)      -400px -6700px;}
+.thrownDie68_6{ background: url(../images/dice_sprites.png)      -500px -6700px;}
+
+.thrownDie69_1{ background: url(../images/dice_sprites.png)      0 -6800px;}
+.thrownDie69_2{ background: url(../images/dice_sprites.png)      -100px -6800px;}
+.thrownDie69_3{ background: url(../images/dice_sprites.png)      -200px -6800px;}
+.thrownDie69_4{ background: url(../images/dice_sprites.png)      -300px -6800px;}
+.thrownDie69_5{ background: url(../images/dice_sprites.png)      -400px -6800px;}
+.thrownDie69_6{ background: url(../images/dice_sprites.png)      -500px -6800px;}
+
+.thrownDie70_1{ background: url(../images/dice_sprites.png)      0 -6900px;}
+.thrownDie70_2{ background: url(../images/dice_sprites.png)      -100px -6900px;}
+.thrownDie70_3{ background: url(../images/dice_sprites.png)      -200px -6900px;}
+.thrownDie70_4{ background: url(../images/dice_sprites.png)      -300px -6900px;}
+.thrownDie70_5{ background: url(../images/dice_sprites.png)      -400px -6900px;}
+.thrownDie70_6{ background: url(../images/dice_sprites.png)      -500px -6900px;}
+
+.thrownDie71_1{ background: url(../images/dice_sprites.png)      0 -7000px;}
+.thrownDie71_2{ background: url(../images/dice_sprites.png)      -100px -7000px;}
+.thrownDie71_3{ background: url(../images/dice_sprites.png)      -200px -7000px;}
+.thrownDie71_4{ background: url(../images/dice_sprites.png)      -300px -7000px;}
+.thrownDie71_5{ background: url(../images/dice_sprites.png)      -400px -7000px;}
+.thrownDie71_6{ background: url(../images/dice_sprites.png)      -500px -7000px;}
+
+.thrownDie72_1{ background: url(../images/dice_sprites.png)      0 -7100px;}
+.thrownDie72_2{ background: url(../images/dice_sprites.png)      -100px -7100px;}
+.thrownDie72_3{ background: url(../images/dice_sprites.png)      -200px -7100px;}
+.thrownDie72_4{ background: url(../images/dice_sprites.png)      -300px -7100px;}
+.thrownDie72_5{ background: url(../images/dice_sprites.png)      -400px -7100px;}
+.thrownDie72_6{ background: url(../images/dice_sprites.png)      -500px -7100px;}
+
+.thrownDie73_1{ background: url(../images/dice_sprites.png)      0 -7200px;}
+.thrownDie73_2{ background: url(../images/dice_sprites.png)      -100px -7200px;}
+.thrownDie73_3{ background: url(../images/dice_sprites.png)      -200px -7200px;}
+.thrownDie73_4{ background: url(../images/dice_sprites.png)      -300px -7200px;}
+.thrownDie73_5{ background: url(../images/dice_sprites.png)      -400px -7200px;}
+.thrownDie73_6{ background: url(../images/dice_sprites.png)      -500px -7200px;}
+
+.thrownDie74_1{ background: url(../images/dice_sprites.png)      0 -7300px;}
+.thrownDie74_2{ background: url(../images/dice_sprites.png)      -100px -7300px;}
+.thrownDie74_3{ background: url(../images/dice_sprites.png)      -200px -7300px;}
+.thrownDie74_4{ background: url(../images/dice_sprites.png)      -300px -7300px;}
+.thrownDie74_5{ background: url(../images/dice_sprites.png)      -400px -7300px;}
+.thrownDie74_6{ background: url(../images/dice_sprites.png)      -500px -7300px;}
+
+.thrownDie75_1{ background: url(../images/dice_sprites.png)      0 -7400px;}
+.thrownDie75_2{ background: url(../images/dice_sprites.png)      -100px -7400px;}
+.thrownDie75_3{ background: url(../images/dice_sprites.png)      -200px -7400px;}
+.thrownDie75_4{ background: url(../images/dice_sprites.png)      -300px -7400px;}
+.thrownDie75_5{ background: url(../images/dice_sprites.png)      -400px -7400px;}
+.thrownDie75_6{ background: url(../images/dice_sprites.png)      -500px -7400px;}
+
+.thrownDie76_1{ background: url(../images/dice_sprites.png)      0 -7500px;}
+.thrownDie76_2{ background: url(../images/dice_sprites.png)      -100px -7500px;}
+.thrownDie76_3{ background: url(../images/dice_sprites.png)      -200px -7500px;}
+.thrownDie76_4{ background: url(../images/dice_sprites.png)      -300px -7500px;}
+.thrownDie76_5{ background: url(../images/dice_sprites.png)      -400px -7500px;}
+.thrownDie76_6{ background: url(../images/dice_sprites.png)      -500px -7500px;}
+
+.thrownDie77_1{ background: url(../images/dice_sprites.png)      0 -7600px;}
+.thrownDie77_2{ background: url(../images/dice_sprites.png)      -100px -7600px;}
+.thrownDie77_3{ background: url(../images/dice_sprites.png)      -200px -7600px;}
+.thrownDie77_4{ background: url(../images/dice_sprites.png)      -300px -7600px;}
+.thrownDie77_5{ background: url(../images/dice_sprites.png)      -400px -7600px;}
+.thrownDie77_6{ background: url(../images/dice_sprites.png)      -500px -7600px;}
+
+.thrownDie78_1{ background: url(../images/dice_sprites.png)      0 -7700px;}
+.thrownDie78_2{ background: url(../images/dice_sprites.png)      -100px -7700px;}
+.thrownDie78_3{ background: url(../images/dice_sprites.png)      -200px -7700px;}
+.thrownDie78_4{ background: url(../images/dice_sprites.png)      -300px -7700px;}
+.thrownDie78_5{ background: url(../images/dice_sprites.png)      -400px -7700px;}
+.thrownDie78_6{ background: url(../images/dice_sprites.png)      -500px -7700px;}
+
+.thrownDie79_1{ background: url(../images/dice_sprites.png)      0 -7800px;}
+.thrownDie79_2{ background: url(../images/dice_sprites.png)      -100px -7800px;}
+.thrownDie79_3{ background: url(../images/dice_sprites.png)      -200px -7800px;}
+.thrownDie79_4{ background: url(../images/dice_sprites.png)      -300px -7800px;}
+.thrownDie79_5{ background: url(../images/dice_sprites.png)      -400px -7800px;}
+.thrownDie79_6{ background: url(../images/dice_sprites.png)      -500px -7800px;}
+
+.thrownDie80_1{ background: url(../images/dice_sprites.png)      0 -7900px;}
+.thrownDie80_2{ background: url(../images/dice_sprites.png)      -100px -7900px;}
+.thrownDie80_3{ background: url(../images/dice_sprites.png)      -200px -7900px;}
+.thrownDie80_4{ background: url(../images/dice_sprites.png)      -300px -7900px;}
+.thrownDie80_5{ background: url(../images/dice_sprites.png)      -400px -7900px;}
+.thrownDie80_6{ background: url(../images/dice_sprites.png)      -500px -7900px;}
+
+.thrownDie81_1{ background: url(../images/dice_sprites.png)      0 -8000px;}
+.thrownDie81_2{ background: url(../images/dice_sprites.png)      -100px -8000px;}
+.thrownDie81_3{ background: url(../images/dice_sprites.png)      -200px -8000px;}
+.thrownDie81_4{ background: url(../images/dice_sprites.png)      -300px -8000px;}
+.thrownDie81_5{ background: url(../images/dice_sprites.png)      -400px -8000px;}
+.thrownDie81_6{ background: url(../images/dice_sprites.png)      -500px -8000px;}
+
+/*
+for (var i=82;i<=162;i++) {
+	for (var j=1;j<=6;j++) {
+		var x = j==1 ? "0" : (-(j-1)*100) + "px";
+		var y = i==82 ? "0" : (-(i-82)*100) + "px";
+		console.log(".thrownDie" + i + "_" + j + "{ background: url(../images/dice_sprites_thematic.png)      " + x + " " + y + ";}");
+		if (j==6) {
+			console.log("");
+		}
+	}
+}
+Luego remplazar " debugger eval code.*" por vacío usando expresión regular y "<empty string>" por vacío en modo normal.
+*/
+.thrownDie82_1{ background: url(../images/dice_sprites_thematic.png)      0 0;}
+.thrownDie82_2{ background: url(../images/dice_sprites_thematic.png)      -100px 0;}
+.thrownDie82_3{ background: url(../images/dice_sprites_thematic.png)      -200px 0;}
+.thrownDie82_4{ background: url(../images/dice_sprites_thematic.png)      -300px 0;}
+.thrownDie82_5{ background: url(../images/dice_sprites_thematic.png)      -400px 0;}
+.thrownDie82_6{ background: url(../images/dice_sprites_thematic.png)      -500px 0;}
+
+.thrownDie83_1{ background: url(../images/dice_sprites_thematic.png)      0 -100px;}
+.thrownDie83_2{ background: url(../images/dice_sprites_thematic.png)      -100px -100px;}
+.thrownDie83_3{ background: url(../images/dice_sprites_thematic.png)      -200px -100px;}
+.thrownDie83_4{ background: url(../images/dice_sprites_thematic.png)      -300px -100px;}
+.thrownDie83_5{ background: url(../images/dice_sprites_thematic.png)      -400px -100px;}
+.thrownDie83_6{ background: url(../images/dice_sprites_thematic.png)      -500px -100px;}
+
+.thrownDie84_1{ background: url(../images/dice_sprites_thematic.png)      0 -200px;}
+.thrownDie84_2{ background: url(../images/dice_sprites_thematic.png)      -100px -200px;}
+.thrownDie84_3{ background: url(../images/dice_sprites_thematic.png)      -200px -200px;}
+.thrownDie84_4{ background: url(../images/dice_sprites_thematic.png)      -300px -200px;}
+.thrownDie84_5{ background: url(../images/dice_sprites_thematic.png)      -400px -200px;}
+.thrownDie84_6{ background: url(../images/dice_sprites_thematic.png)      -500px -200px;}
+
+.thrownDie85_1{ background: url(../images/dice_sprites_thematic.png)      0 -300px;}
+.thrownDie85_2{ background: url(../images/dice_sprites_thematic.png)      -100px -300px;}
+.thrownDie85_3{ background: url(../images/dice_sprites_thematic.png)      -200px -300px;}
+.thrownDie85_4{ background: url(../images/dice_sprites_thematic.png)      -300px -300px;}
+.thrownDie85_5{ background: url(../images/dice_sprites_thematic.png)      -400px -300px;}
+.thrownDie85_6{ background: url(../images/dice_sprites_thematic.png)      -500px -300px;}
+
+.thrownDie86_1{ background: url(../images/dice_sprites_thematic.png)      0 -400px;}
+.thrownDie86_2{ background: url(../images/dice_sprites_thematic.png)      -100px -400px;}
+.thrownDie86_3{ background: url(../images/dice_sprites_thematic.png)      -200px -400px;}
+.thrownDie86_4{ background: url(../images/dice_sprites_thematic.png)      -300px -400px;}
+.thrownDie86_5{ background: url(../images/dice_sprites_thematic.png)      -400px -400px;}
+.thrownDie86_6{ background: url(../images/dice_sprites_thematic.png)      -500px -400px;}
+
+.thrownDie87_1{ background: url(../images/dice_sprites_thematic.png)      0 -500px;}
+.thrownDie87_2{ background: url(../images/dice_sprites_thematic.png)      -100px -500px;}
+.thrownDie87_3{ background: url(../images/dice_sprites_thematic.png)      -200px -500px;}
+.thrownDie87_4{ background: url(../images/dice_sprites_thematic.png)      -300px -500px;}
+.thrownDie87_5{ background: url(../images/dice_sprites_thematic.png)      -400px -500px;}
+.thrownDie87_6{ background: url(../images/dice_sprites_thematic.png)      -500px -500px;}
+
+.thrownDie88_1{ background: url(../images/dice_sprites_thematic.png)      0 -600px;}
+.thrownDie88_2{ background: url(../images/dice_sprites_thematic.png)      -100px -600px;}
+.thrownDie88_3{ background: url(../images/dice_sprites_thematic.png)      -200px -600px;}
+.thrownDie88_4{ background: url(../images/dice_sprites_thematic.png)      -300px -600px;}
+.thrownDie88_5{ background: url(../images/dice_sprites_thematic.png)      -400px -600px;}
+.thrownDie88_6{ background: url(../images/dice_sprites_thematic.png)      -500px -600px;}
+
+.thrownDie89_1{ background: url(../images/dice_sprites_thematic.png)      0 -700px;}
+.thrownDie89_2{ background: url(../images/dice_sprites_thematic.png)      -100px -700px;}
+.thrownDie89_3{ background: url(../images/dice_sprites_thematic.png)      -200px -700px;}
+.thrownDie89_4{ background: url(../images/dice_sprites_thematic.png)      -300px -700px;}
+.thrownDie89_5{ background: url(../images/dice_sprites_thematic.png)      -400px -700px;}
+.thrownDie89_6{ background: url(../images/dice_sprites_thematic.png)      -500px -700px;}
+
+.thrownDie90_1{ background: url(../images/dice_sprites_thematic.png)      0 -800px;}
+.thrownDie90_2{ background: url(../images/dice_sprites_thematic.png)      -100px -800px;}
+.thrownDie90_3{ background: url(../images/dice_sprites_thematic.png)      -200px -800px;}
+.thrownDie90_4{ background: url(../images/dice_sprites_thematic.png)      -300px -800px;}
+.thrownDie90_5{ background: url(../images/dice_sprites_thematic.png)      -400px -800px;}
+.thrownDie90_6{ background: url(../images/dice_sprites_thematic.png)      -500px -800px;}
+
+.thrownDie91_1{ background: url(../images/dice_sprites_thematic.png)      0 -900px;}
+.thrownDie91_2{ background: url(../images/dice_sprites_thematic.png)      -100px -900px;}
+.thrownDie91_3{ background: url(../images/dice_sprites_thematic.png)      -200px -900px;}
+.thrownDie91_4{ background: url(../images/dice_sprites_thematic.png)      -300px -900px;}
+.thrownDie91_5{ background: url(../images/dice_sprites_thematic.png)      -400px -900px;}
+.thrownDie91_6{ background: url(../images/dice_sprites_thematic.png)      -500px -900px;}
+
+.thrownDie92_1{ background: url(../images/dice_sprites_thematic.png)      0 -1000px;}
+.thrownDie92_2{ background: url(../images/dice_sprites_thematic.png)      -100px -1000px;}
+.thrownDie92_3{ background: url(../images/dice_sprites_thematic.png)      -200px -1000px;}
+.thrownDie92_4{ background: url(../images/dice_sprites_thematic.png)      -300px -1000px;}
+.thrownDie92_5{ background: url(../images/dice_sprites_thematic.png)      -400px -1000px;}
+.thrownDie92_6{ background: url(../images/dice_sprites_thematic.png)      -500px -1000px;}
+
+.thrownDie93_1{ background: url(../images/dice_sprites_thematic.png)      0 -1100px;}
+.thrownDie93_2{ background: url(../images/dice_sprites_thematic.png)      -100px -1100px;}
+.thrownDie93_3{ background: url(../images/dice_sprites_thematic.png)      -200px -1100px;}
+.thrownDie93_4{ background: url(../images/dice_sprites_thematic.png)      -300px -1100px;}
+.thrownDie93_5{ background: url(../images/dice_sprites_thematic.png)      -400px -1100px;}
+.thrownDie93_6{ background: url(../images/dice_sprites_thematic.png)      -500px -1100px;}
+
+.thrownDie94_1{ background: url(../images/dice_sprites_thematic.png)      0 -1200px;}
+.thrownDie94_2{ background: url(../images/dice_sprites_thematic.png)      -100px -1200px;}
+.thrownDie94_3{ background: url(../images/dice_sprites_thematic.png)      -200px -1200px;}
+.thrownDie94_4{ background: url(../images/dice_sprites_thematic.png)      -300px -1200px;}
+.thrownDie94_5{ background: url(../images/dice_sprites_thematic.png)      -400px -1200px;}
+.thrownDie94_6{ background: url(../images/dice_sprites_thematic.png)      -500px -1200px;}
+
+.thrownDie95_1{ background: url(../images/dice_sprites_thematic.png)      0 -1300px;}
+.thrownDie95_2{ background: url(../images/dice_sprites_thematic.png)      -100px -1300px;}
+.thrownDie95_3{ background: url(../images/dice_sprites_thematic.png)      -200px -1300px;}
+.thrownDie95_4{ background: url(../images/dice_sprites_thematic.png)      -300px -1300px;}
+.thrownDie95_5{ background: url(../images/dice_sprites_thematic.png)      -400px -1300px;}
+.thrownDie95_6{ background: url(../images/dice_sprites_thematic.png)      -500px -1300px;}
+
+.thrownDie96_1{ background: url(../images/dice_sprites_thematic.png)      0 -1400px;}
+.thrownDie96_2{ background: url(../images/dice_sprites_thematic.png)      -100px -1400px;}
+.thrownDie96_3{ background: url(../images/dice_sprites_thematic.png)      -200px -1400px;}
+.thrownDie96_4{ background: url(../images/dice_sprites_thematic.png)      -300px -1400px;}
+.thrownDie96_5{ background: url(../images/dice_sprites_thematic.png)      -400px -1400px;}
+.thrownDie96_6{ background: url(../images/dice_sprites_thematic.png)      -500px -1400px;}
+
+.thrownDie97_1{ background: url(../images/dice_sprites_thematic.png)      0 -1500px;}
+.thrownDie97_2{ background: url(../images/dice_sprites_thematic.png)      -100px -1500px;}
+.thrownDie97_3{ background: url(../images/dice_sprites_thematic.png)      -200px -1500px;}
+.thrownDie97_4{ background: url(../images/dice_sprites_thematic.png)      -300px -1500px;}
+.thrownDie97_5{ background: url(../images/dice_sprites_thematic.png)      -400px -1500px;}
+.thrownDie97_6{ background: url(../images/dice_sprites_thematic.png)      -500px -1500px;}
+
+.thrownDie98_1{ background: url(../images/dice_sprites_thematic.png)      0 -1600px;}
+.thrownDie98_2{ background: url(../images/dice_sprites_thematic.png)      -100px -1600px;}
+.thrownDie98_3{ background: url(../images/dice_sprites_thematic.png)      -200px -1600px;}
+.thrownDie98_4{ background: url(../images/dice_sprites_thematic.png)      -300px -1600px;}
+.thrownDie98_5{ background: url(../images/dice_sprites_thematic.png)      -400px -1600px;}
+.thrownDie98_6{ background: url(../images/dice_sprites_thematic.png)      -500px -1600px;}
+
+.thrownDie99_1{ background: url(../images/dice_sprites_thematic.png)      0 -1700px;}
+.thrownDie99_2{ background: url(../images/dice_sprites_thematic.png)      -100px -1700px;}
+.thrownDie99_3{ background: url(../images/dice_sprites_thematic.png)      -200px -1700px;}
+.thrownDie99_4{ background: url(../images/dice_sprites_thematic.png)      -300px -1700px;}
+.thrownDie99_5{ background: url(../images/dice_sprites_thematic.png)      -400px -1700px;}
+.thrownDie99_6{ background: url(../images/dice_sprites_thematic.png)      -500px -1700px;}
+
+.thrownDie100_1{ background: url(../images/dice_sprites_thematic.png)      0 -1800px;}
+.thrownDie100_2{ background: url(../images/dice_sprites_thematic.png)      -100px -1800px;}
+.thrownDie100_3{ background: url(../images/dice_sprites_thematic.png)      -200px -1800px;}
+.thrownDie100_4{ background: url(../images/dice_sprites_thematic.png)      -300px -1800px;}
+.thrownDie100_5{ background: url(../images/dice_sprites_thematic.png)      -400px -1800px;}
+.thrownDie100_6{ background: url(../images/dice_sprites_thematic.png)      -500px -1800px;}
+
+.thrownDie101_1{ background: url(../images/dice_sprites_thematic.png)      0 -1900px;}
+.thrownDie101_2{ background: url(../images/dice_sprites_thematic.png)      -100px -1900px;}
+.thrownDie101_3{ background: url(../images/dice_sprites_thematic.png)      -200px -1900px;}
+.thrownDie101_4{ background: url(../images/dice_sprites_thematic.png)      -300px -1900px;}
+.thrownDie101_5{ background: url(../images/dice_sprites_thematic.png)      -400px -1900px;}
+.thrownDie101_6{ background: url(../images/dice_sprites_thematic.png)      -500px -1900px;}
+
+.thrownDie102_1{ background: url(../images/dice_sprites_thematic.png)      0 -2000px;}
+.thrownDie102_2{ background: url(../images/dice_sprites_thematic.png)      -100px -2000px;}
+.thrownDie102_3{ background: url(../images/dice_sprites_thematic.png)      -200px -2000px;}
+.thrownDie102_4{ background: url(../images/dice_sprites_thematic.png)      -300px -2000px;}
+.thrownDie102_5{ background: url(../images/dice_sprites_thematic.png)      -400px -2000px;}
+.thrownDie102_6{ background: url(../images/dice_sprites_thematic.png)      -500px -2000px;}
+
+.thrownDie103_1{ background: url(../images/dice_sprites_thematic.png)      0 -2100px;}
+.thrownDie103_2{ background: url(../images/dice_sprites_thematic.png)      -100px -2100px;}
+.thrownDie103_3{ background: url(../images/dice_sprites_thematic.png)      -200px -2100px;}
+.thrownDie103_4{ background: url(../images/dice_sprites_thematic.png)      -300px -2100px;}
+.thrownDie103_5{ background: url(../images/dice_sprites_thematic.png)      -400px -2100px;}
+.thrownDie103_6{ background: url(../images/dice_sprites_thematic.png)      -500px -2100px;}
+
+.thrownDie104_1{ background: url(../images/dice_sprites_thematic.png)      0 -2200px;}
+.thrownDie104_2{ background: url(../images/dice_sprites_thematic.png)      -100px -2200px;}
+.thrownDie104_3{ background: url(../images/dice_sprites_thematic.png)      -200px -2200px;}
+.thrownDie104_4{ background: url(../images/dice_sprites_thematic.png)      -300px -2200px;}
+.thrownDie104_5{ background: url(../images/dice_sprites_thematic.png)      -400px -2200px;}
+.thrownDie104_6{ background: url(../images/dice_sprites_thematic.png)      -500px -2200px;}
+
+.thrownDie105_1{ background: url(../images/dice_sprites_thematic.png)      0 -2300px;}
+.thrownDie105_2{ background: url(../images/dice_sprites_thematic.png)      -100px -2300px;}
+.thrownDie105_3{ background: url(../images/dice_sprites_thematic.png)      -200px -2300px;}
+.thrownDie105_4{ background: url(../images/dice_sprites_thematic.png)      -300px -2300px;}
+.thrownDie105_5{ background: url(../images/dice_sprites_thematic.png)      -400px -2300px;}
+.thrownDie105_6{ background: url(../images/dice_sprites_thematic.png)      -500px -2300px;}
+
+.thrownDie106_1{ background: url(../images/dice_sprites_thematic.png)      0 -2400px;}
+.thrownDie106_2{ background: url(../images/dice_sprites_thematic.png)      -100px -2400px;}
+.thrownDie106_3{ background: url(../images/dice_sprites_thematic.png)      -200px -2400px;}
+.thrownDie106_4{ background: url(../images/dice_sprites_thematic.png)      -300px -2400px;}
+.thrownDie106_5{ background: url(../images/dice_sprites_thematic.png)      -400px -2400px;}
+.thrownDie106_6{ background: url(../images/dice_sprites_thematic.png)      -500px -2400px;}
+
+.thrownDie107_1{ background: url(../images/dice_sprites_thematic.png)      0 -2500px;}
+.thrownDie107_2{ background: url(../images/dice_sprites_thematic.png)      -100px -2500px;}
+.thrownDie107_3{ background: url(../images/dice_sprites_thematic.png)      -200px -2500px;}
+.thrownDie107_4{ background: url(../images/dice_sprites_thematic.png)      -300px -2500px;}
+.thrownDie107_5{ background: url(../images/dice_sprites_thematic.png)      -400px -2500px;}
+.thrownDie107_6{ background: url(../images/dice_sprites_thematic.png)      -500px -2500px;}
+
+.thrownDie108_1{ background: url(../images/dice_sprites_thematic.png)      0 -2600px;}
+.thrownDie108_2{ background: url(../images/dice_sprites_thematic.png)      -100px -2600px;}
+.thrownDie108_3{ background: url(../images/dice_sprites_thematic.png)      -200px -2600px;}
+.thrownDie108_4{ background: url(../images/dice_sprites_thematic.png)      -300px -2600px;}
+.thrownDie108_5{ background: url(../images/dice_sprites_thematic.png)      -400px -2600px;}
+.thrownDie108_6{ background: url(../images/dice_sprites_thematic.png)      -500px -2600px;}
+
+.thrownDie109_1{ background: url(../images/dice_sprites_thematic.png)      0 -2700px;}
+.thrownDie109_2{ background: url(../images/dice_sprites_thematic.png)      -100px -2700px;}
+.thrownDie109_3{ background: url(../images/dice_sprites_thematic.png)      -200px -2700px;}
+.thrownDie109_4{ background: url(../images/dice_sprites_thematic.png)      -300px -2700px;}
+.thrownDie109_5{ background: url(../images/dice_sprites_thematic.png)      -400px -2700px;}
+.thrownDie109_6{ background: url(../images/dice_sprites_thematic.png)      -500px -2700px;}
+
+.thrownDie110_1{ background: url(../images/dice_sprites_thematic.png)      0 -2800px;}
+.thrownDie110_2{ background: url(../images/dice_sprites_thematic.png)      -100px -2800px;}
+.thrownDie110_3{ background: url(../images/dice_sprites_thematic.png)      -200px -2800px;}
+.thrownDie110_4{ background: url(../images/dice_sprites_thematic.png)      -300px -2800px;}
+.thrownDie110_5{ background: url(../images/dice_sprites_thematic.png)      -400px -2800px;}
+.thrownDie110_6{ background: url(../images/dice_sprites_thematic.png)      -500px -2800px;}
+
+.thrownDie111_1{ background: url(../images/dice_sprites_thematic.png)      0 -2900px;}
+.thrownDie111_2{ background: url(../images/dice_sprites_thematic.png)      -100px -2900px;}
+.thrownDie111_3{ background: url(../images/dice_sprites_thematic.png)      -200px -2900px;}
+.thrownDie111_4{ background: url(../images/dice_sprites_thematic.png)      -300px -2900px;}
+.thrownDie111_5{ background: url(../images/dice_sprites_thematic.png)      -400px -2900px;}
+.thrownDie111_6{ background: url(../images/dice_sprites_thematic.png)      -500px -2900px;}
+
+.thrownDie112_1{ background: url(../images/dice_sprites_thematic.png)      0 -3000px;}
+.thrownDie112_2{ background: url(../images/dice_sprites_thematic.png)      -100px -3000px;}
+.thrownDie112_3{ background: url(../images/dice_sprites_thematic.png)      -200px -3000px;}
+.thrownDie112_4{ background: url(../images/dice_sprites_thematic.png)      -300px -3000px;}
+.thrownDie112_5{ background: url(../images/dice_sprites_thematic.png)      -400px -3000px;}
+.thrownDie112_6{ background: url(../images/dice_sprites_thematic.png)      -500px -3000px;}
+
+.thrownDie113_1{ background: url(../images/dice_sprites_thematic.png)      0 -3100px;}
+.thrownDie113_2{ background: url(../images/dice_sprites_thematic.png)      -100px -3100px;}
+.thrownDie113_3{ background: url(../images/dice_sprites_thematic.png)      -200px -3100px;}
+.thrownDie113_4{ background: url(../images/dice_sprites_thematic.png)      -300px -3100px;}
+.thrownDie113_5{ background: url(../images/dice_sprites_thematic.png)      -400px -3100px;}
+.thrownDie113_6{ background: url(../images/dice_sprites_thematic.png)      -500px -3100px;}
+
+.thrownDie114_1{ background: url(../images/dice_sprites_thematic.png)      0 -3200px;}
+.thrownDie114_2{ background: url(../images/dice_sprites_thematic.png)      -100px -3200px;}
+.thrownDie114_3{ background: url(../images/dice_sprites_thematic.png)      -200px -3200px;}
+.thrownDie114_4{ background: url(../images/dice_sprites_thematic.png)      -300px -3200px;}
+.thrownDie114_5{ background: url(../images/dice_sprites_thematic.png)      -400px -3200px;}
+.thrownDie114_6{ background: url(../images/dice_sprites_thematic.png)      -500px -3200px;}
+
+.thrownDie115_1{ background: url(../images/dice_sprites_thematic.png)      0 -3300px;}
+.thrownDie115_2{ background: url(../images/dice_sprites_thematic.png)      -100px -3300px;}
+.thrownDie115_3{ background: url(../images/dice_sprites_thematic.png)      -200px -3300px;}
+.thrownDie115_4{ background: url(../images/dice_sprites_thematic.png)      -300px -3300px;}
+.thrownDie115_5{ background: url(../images/dice_sprites_thematic.png)      -400px -3300px;}
+.thrownDie115_6{ background: url(../images/dice_sprites_thematic.png)      -500px -3300px;}
+
+.thrownDie116_1{ background: url(../images/dice_sprites_thematic.png)      0 -3400px;}
+.thrownDie116_2{ background: url(../images/dice_sprites_thematic.png)      -100px -3400px;}
+.thrownDie116_3{ background: url(../images/dice_sprites_thematic.png)      -200px -3400px;}
+.thrownDie116_4{ background: url(../images/dice_sprites_thematic.png)      -300px -3400px;}
+.thrownDie116_5{ background: url(../images/dice_sprites_thematic.png)      -400px -3400px;}
+.thrownDie116_6{ background: url(../images/dice_sprites_thematic.png)      -500px -3400px;}
+
+.thrownDie117_1{ background: url(../images/dice_sprites_thematic.png)      0 -3500px;}
+.thrownDie117_2{ background: url(../images/dice_sprites_thematic.png)      -100px -3500px;}
+.thrownDie117_3{ background: url(../images/dice_sprites_thematic.png)      -200px -3500px;}
+.thrownDie117_4{ background: url(../images/dice_sprites_thematic.png)      -300px -3500px;}
+.thrownDie117_5{ background: url(../images/dice_sprites_thematic.png)      -400px -3500px;}
+.thrownDie117_6{ background: url(../images/dice_sprites_thematic.png)      -500px -3500px;}
+
+.thrownDie118_1{ background: url(../images/dice_sprites_thematic.png)      0 -3600px;}
+.thrownDie118_2{ background: url(../images/dice_sprites_thematic.png)      -100px -3600px;}
+.thrownDie118_3{ background: url(../images/dice_sprites_thematic.png)      -200px -3600px;}
+.thrownDie118_4{ background: url(../images/dice_sprites_thematic.png)      -300px -3600px;}
+.thrownDie118_5{ background: url(../images/dice_sprites_thematic.png)      -400px -3600px;}
+.thrownDie118_6{ background: url(../images/dice_sprites_thematic.png)      -500px -3600px;}
+
+.thrownDie119_1{ background: url(../images/dice_sprites_thematic.png)      0 -3700px;}
+.thrownDie119_2{ background: url(../images/dice_sprites_thematic.png)      -100px -3700px;}
+.thrownDie119_3{ background: url(../images/dice_sprites_thematic.png)      -200px -3700px;}
+.thrownDie119_4{ background: url(../images/dice_sprites_thematic.png)      -300px -3700px;}
+.thrownDie119_5{ background: url(../images/dice_sprites_thematic.png)      -400px -3700px;}
+.thrownDie119_6{ background: url(../images/dice_sprites_thematic.png)      -500px -3700px;}
+
+.thrownDie120_1{ background: url(../images/dice_sprites_thematic.png)      0 -3800px;}
+.thrownDie120_2{ background: url(../images/dice_sprites_thematic.png)      -100px -3800px;}
+.thrownDie120_3{ background: url(../images/dice_sprites_thematic.png)      -200px -3800px;}
+.thrownDie120_4{ background: url(../images/dice_sprites_thematic.png)      -300px -3800px;}
+.thrownDie120_5{ background: url(../images/dice_sprites_thematic.png)      -400px -3800px;}
+.thrownDie120_6{ background: url(../images/dice_sprites_thematic.png)      -500px -3800px;}
+
+.thrownDie121_1{ background: url(../images/dice_sprites_thematic.png)      0 -3900px;}
+.thrownDie121_2{ background: url(../images/dice_sprites_thematic.png)      -100px -3900px;}
+.thrownDie121_3{ background: url(../images/dice_sprites_thematic.png)      -200px -3900px;}
+.thrownDie121_4{ background: url(../images/dice_sprites_thematic.png)      -300px -3900px;}
+.thrownDie121_5{ background: url(../images/dice_sprites_thematic.png)      -400px -3900px;}
+.thrownDie121_6{ background: url(../images/dice_sprites_thematic.png)      -500px -3900px;}
+
+.thrownDie122_1{ background: url(../images/dice_sprites_thematic.png)      0 -4000px;}
+.thrownDie122_2{ background: url(../images/dice_sprites_thematic.png)      -100px -4000px;}
+.thrownDie122_3{ background: url(../images/dice_sprites_thematic.png)      -200px -4000px;}
+.thrownDie122_4{ background: url(../images/dice_sprites_thematic.png)      -300px -4000px;}
+.thrownDie122_5{ background: url(../images/dice_sprites_thematic.png)      -400px -4000px;}
+.thrownDie122_6{ background: url(../images/dice_sprites_thematic.png)      -500px -4000px;}
+
+.thrownDie123_1{ background: url(../images/dice_sprites_thematic.png)      0 -4100px;}
+.thrownDie123_2{ background: url(../images/dice_sprites_thematic.png)      -100px -4100px;}
+.thrownDie123_3{ background: url(../images/dice_sprites_thematic.png)      -200px -4100px;}
+.thrownDie123_4{ background: url(../images/dice_sprites_thematic.png)      -300px -4100px;}
+.thrownDie123_5{ background: url(../images/dice_sprites_thematic.png)      -400px -4100px;}
+.thrownDie123_6{ background: url(../images/dice_sprites_thematic.png)      -500px -4100px;}
+
+.thrownDie124_1{ background: url(../images/dice_sprites_thematic.png)      0 -4200px;}
+.thrownDie124_2{ background: url(../images/dice_sprites_thematic.png)      -100px -4200px;}
+.thrownDie124_3{ background: url(../images/dice_sprites_thematic.png)      -200px -4200px;}
+.thrownDie124_4{ background: url(../images/dice_sprites_thematic.png)      -300px -4200px;}
+.thrownDie124_5{ background: url(../images/dice_sprites_thematic.png)      -400px -4200px;}
+.thrownDie124_6{ background: url(../images/dice_sprites_thematic.png)      -500px -4200px;}
+
+.thrownDie125_1{ background: url(../images/dice_sprites_thematic.png)      0 -4300px;}
+.thrownDie125_2{ background: url(../images/dice_sprites_thematic.png)      -100px -4300px;}
+.thrownDie125_3{ background: url(../images/dice_sprites_thematic.png)      -200px -4300px;}
+.thrownDie125_4{ background: url(../images/dice_sprites_thematic.png)      -300px -4300px;}
+.thrownDie125_5{ background: url(../images/dice_sprites_thematic.png)      -400px -4300px;}
+.thrownDie125_6{ background: url(../images/dice_sprites_thematic.png)      -500px -4300px;}
+
+.thrownDie126_1{ background: url(../images/dice_sprites_thematic.png)      0 -4400px;}
+.thrownDie126_2{ background: url(../images/dice_sprites_thematic.png)      -100px -4400px;}
+.thrownDie126_3{ background: url(../images/dice_sprites_thematic.png)      -200px -4400px;}
+.thrownDie126_4{ background: url(../images/dice_sprites_thematic.png)      -300px -4400px;}
+.thrownDie126_5{ background: url(../images/dice_sprites_thematic.png)      -400px -4400px;}
+.thrownDie126_6{ background: url(../images/dice_sprites_thematic.png)      -500px -4400px;}
+
+.thrownDie127_1{ background: url(../images/dice_sprites_thematic.png)      0 -4500px;}
+.thrownDie127_2{ background: url(../images/dice_sprites_thematic.png)      -100px -4500px;}
+.thrownDie127_3{ background: url(../images/dice_sprites_thematic.png)      -200px -4500px;}
+.thrownDie127_4{ background: url(../images/dice_sprites_thematic.png)      -300px -4500px;}
+.thrownDie127_5{ background: url(../images/dice_sprites_thematic.png)      -400px -4500px;}
+.thrownDie127_6{ background: url(../images/dice_sprites_thematic.png)      -500px -4500px;}
+
+.thrownDie128_1{ background: url(../images/dice_sprites_thematic.png)      0 -4600px;}
+.thrownDie128_2{ background: url(../images/dice_sprites_thematic.png)      -100px -4600px;}
+.thrownDie128_3{ background: url(../images/dice_sprites_thematic.png)      -200px -4600px;}
+.thrownDie128_4{ background: url(../images/dice_sprites_thematic.png)      -300px -4600px;}
+.thrownDie128_5{ background: url(../images/dice_sprites_thematic.png)      -400px -4600px;}
+.thrownDie128_6{ background: url(../images/dice_sprites_thematic.png)      -500px -4600px;}
+
+.thrownDie129_1{ background: url(../images/dice_sprites_thematic.png)      0 -4700px;}
+.thrownDie129_2{ background: url(../images/dice_sprites_thematic.png)      -100px -4700px;}
+.thrownDie129_3{ background: url(../images/dice_sprites_thematic.png)      -200px -4700px;}
+.thrownDie129_4{ background: url(../images/dice_sprites_thematic.png)      -300px -4700px;}
+.thrownDie129_5{ background: url(../images/dice_sprites_thematic.png)      -400px -4700px;}
+.thrownDie129_6{ background: url(../images/dice_sprites_thematic.png)      -500px -4700px;}
+
+.thrownDie130_1{ background: url(../images/dice_sprites_thematic.png)      0 -4800px;}
+.thrownDie130_2{ background: url(../images/dice_sprites_thematic.png)      -100px -4800px;}
+.thrownDie130_3{ background: url(../images/dice_sprites_thematic.png)      -200px -4800px;}
+.thrownDie130_4{ background: url(../images/dice_sprites_thematic.png)      -300px -4800px;}
+.thrownDie130_5{ background: url(../images/dice_sprites_thematic.png)      -400px -4800px;}
+.thrownDie130_6{ background: url(../images/dice_sprites_thematic.png)      -500px -4800px;}
+
+.thrownDie131_1{ background: url(../images/dice_sprites_thematic.png)      0 -4900px;}
+.thrownDie131_2{ background: url(../images/dice_sprites_thematic.png)      -100px -4900px;}
+.thrownDie131_3{ background: url(../images/dice_sprites_thematic.png)      -200px -4900px;}
+.thrownDie131_4{ background: url(../images/dice_sprites_thematic.png)      -300px -4900px;}
+.thrownDie131_5{ background: url(../images/dice_sprites_thematic.png)      -400px -4900px;}
+.thrownDie131_6{ background: url(../images/dice_sprites_thematic.png)      -500px -4900px;}
+
+.thrownDie132_1{ background: url(../images/dice_sprites_thematic.png)      0 -5000px;}
+.thrownDie132_2{ background: url(../images/dice_sprites_thematic.png)      -100px -5000px;}
+.thrownDie132_3{ background: url(../images/dice_sprites_thematic.png)      -200px -5000px;}
+.thrownDie132_4{ background: url(../images/dice_sprites_thematic.png)      -300px -5000px;}
+.thrownDie132_5{ background: url(../images/dice_sprites_thematic.png)      -400px -5000px;}
+.thrownDie132_6{ background: url(../images/dice_sprites_thematic.png)      -500px -5000px;}
+
+.thrownDie133_1{ background: url(../images/dice_sprites_thematic.png)      0 -5100px;}
+.thrownDie133_2{ background: url(../images/dice_sprites_thematic.png)      -100px -5100px;}
+.thrownDie133_3{ background: url(../images/dice_sprites_thematic.png)      -200px -5100px;}
+.thrownDie133_4{ background: url(../images/dice_sprites_thematic.png)      -300px -5100px;}
+.thrownDie133_5{ background: url(../images/dice_sprites_thematic.png)      -400px -5100px;}
+.thrownDie133_6{ background: url(../images/dice_sprites_thematic.png)      -500px -5100px;}
+
+.thrownDie134_1{ background: url(../images/dice_sprites_thematic.png)      0 -5200px;}
+.thrownDie134_2{ background: url(../images/dice_sprites_thematic.png)      -100px -5200px;}
+.thrownDie134_3{ background: url(../images/dice_sprites_thematic.png)      -200px -5200px;}
+.thrownDie134_4{ background: url(../images/dice_sprites_thematic.png)      -300px -5200px;}
+.thrownDie134_5{ background: url(../images/dice_sprites_thematic.png)      -400px -5200px;}
+.thrownDie134_6{ background: url(../images/dice_sprites_thematic.png)      -500px -5200px;}
+
+.thrownDie135_1{ background: url(../images/dice_sprites_thematic.png)      0 -5300px;}
+.thrownDie135_2{ background: url(../images/dice_sprites_thematic.png)      -100px -5300px;}
+.thrownDie135_3{ background: url(../images/dice_sprites_thematic.png)      -200px -5300px;}
+.thrownDie135_4{ background: url(../images/dice_sprites_thematic.png)      -300px -5300px;}
+.thrownDie135_5{ background: url(../images/dice_sprites_thematic.png)      -400px -5300px;}
+.thrownDie135_6{ background: url(../images/dice_sprites_thematic.png)      -500px -5300px;}
+
+.thrownDie136_1{ background: url(../images/dice_sprites_thematic.png)      0 -5400px;}
+.thrownDie136_2{ background: url(../images/dice_sprites_thematic.png)      -100px -5400px;}
+.thrownDie136_3{ background: url(../images/dice_sprites_thematic.png)      -200px -5400px;}
+.thrownDie136_4{ background: url(../images/dice_sprites_thematic.png)      -300px -5400px;}
+.thrownDie136_5{ background: url(../images/dice_sprites_thematic.png)      -400px -5400px;}
+.thrownDie136_6{ background: url(../images/dice_sprites_thematic.png)      -500px -5400px;}
+
+.thrownDie137_1{ background: url(../images/dice_sprites_thematic.png)      0 -5500px;}
+.thrownDie137_2{ background: url(../images/dice_sprites_thematic.png)      -100px -5500px;}
+.thrownDie137_3{ background: url(../images/dice_sprites_thematic.png)      -200px -5500px;}
+.thrownDie137_4{ background: url(../images/dice_sprites_thematic.png)      -300px -5500px;}
+.thrownDie137_5{ background: url(../images/dice_sprites_thematic.png)      -400px -5500px;}
+.thrownDie137_6{ background: url(../images/dice_sprites_thematic.png)      -500px -5500px;}
+
+.thrownDie138_1{ background: url(../images/dice_sprites_thematic.png)      0 -5600px;}
+.thrownDie138_2{ background: url(../images/dice_sprites_thematic.png)      -100px -5600px;}
+.thrownDie138_3{ background: url(../images/dice_sprites_thematic.png)      -200px -5600px;}
+.thrownDie138_4{ background: url(../images/dice_sprites_thematic.png)      -300px -5600px;}
+.thrownDie138_5{ background: url(../images/dice_sprites_thematic.png)      -400px -5600px;}
+.thrownDie138_6{ background: url(../images/dice_sprites_thematic.png)      -500px -5600px;}
+
+.thrownDie139_1{ background: url(../images/dice_sprites_thematic.png)      0 -5700px;}
+.thrownDie139_2{ background: url(../images/dice_sprites_thematic.png)      -100px -5700px;}
+.thrownDie139_3{ background: url(../images/dice_sprites_thematic.png)      -200px -5700px;}
+.thrownDie139_4{ background: url(../images/dice_sprites_thematic.png)      -300px -5700px;}
+.thrownDie139_5{ background: url(../images/dice_sprites_thematic.png)      -400px -5700px;}
+.thrownDie139_6{ background: url(../images/dice_sprites_thematic.png)      -500px -5700px;}
+
+.thrownDie140_1{ background: url(../images/dice_sprites_thematic.png)      0 -5800px;}
+.thrownDie140_2{ background: url(../images/dice_sprites_thematic.png)      -100px -5800px;}
+.thrownDie140_3{ background: url(../images/dice_sprites_thematic.png)      -200px -5800px;}
+.thrownDie140_4{ background: url(../images/dice_sprites_thematic.png)      -300px -5800px;}
+.thrownDie140_5{ background: url(../images/dice_sprites_thematic.png)      -400px -5800px;}
+.thrownDie140_6{ background: url(../images/dice_sprites_thematic.png)      -500px -5800px;}
+
+.thrownDie141_1{ background: url(../images/dice_sprites_thematic.png)      0 -5900px;}
+.thrownDie141_2{ background: url(../images/dice_sprites_thematic.png)      -100px -5900px;}
+.thrownDie141_3{ background: url(../images/dice_sprites_thematic.png)      -200px -5900px;}
+.thrownDie141_4{ background: url(../images/dice_sprites_thematic.png)      -300px -5900px;}
+.thrownDie141_5{ background: url(../images/dice_sprites_thematic.png)      -400px -5900px;}
+.thrownDie141_6{ background: url(../images/dice_sprites_thematic.png)      -500px -5900px;}
+
+.thrownDie142_1{ background: url(../images/dice_sprites_thematic.png)      0 -6000px;}
+.thrownDie142_2{ background: url(../images/dice_sprites_thematic.png)      -100px -6000px;}
+.thrownDie142_3{ background: url(../images/dice_sprites_thematic.png)      -200px -6000px;}
+.thrownDie142_4{ background: url(../images/dice_sprites_thematic.png)      -300px -6000px;}
+.thrownDie142_5{ background: url(../images/dice_sprites_thematic.png)      -400px -6000px;}
+.thrownDie142_6{ background: url(../images/dice_sprites_thematic.png)      -500px -6000px;}
+
+.thrownDie143_1{ background: url(../images/dice_sprites_thematic.png)      0 -6100px;}
+.thrownDie143_2{ background: url(../images/dice_sprites_thematic.png)      -100px -6100px;}
+.thrownDie143_3{ background: url(../images/dice_sprites_thematic.png)      -200px -6100px;}
+.thrownDie143_4{ background: url(../images/dice_sprites_thematic.png)      -300px -6100px;}
+.thrownDie143_5{ background: url(../images/dice_sprites_thematic.png)      -400px -6100px;}
+.thrownDie143_6{ background: url(../images/dice_sprites_thematic.png)      -500px -6100px;}
+
+.thrownDie144_1{ background: url(../images/dice_sprites_thematic.png)      0 -6200px;}
+.thrownDie144_2{ background: url(../images/dice_sprites_thematic.png)      -100px -6200px;}
+.thrownDie144_3{ background: url(../images/dice_sprites_thematic.png)      -200px -6200px;}
+.thrownDie144_4{ background: url(../images/dice_sprites_thematic.png)      -300px -6200px;}
+.thrownDie144_5{ background: url(../images/dice_sprites_thematic.png)      -400px -6200px;}
+.thrownDie144_6{ background: url(../images/dice_sprites_thematic.png)      -500px -6200px;}
+
+.thrownDie145_1{ background: url(../images/dice_sprites_thematic.png)      0 -6300px;}
+.thrownDie145_2{ background: url(../images/dice_sprites_thematic.png)      -100px -6300px;}
+.thrownDie145_3{ background: url(../images/dice_sprites_thematic.png)      -200px -6300px;}
+.thrownDie145_4{ background: url(../images/dice_sprites_thematic.png)      -300px -6300px;}
+.thrownDie145_5{ background: url(../images/dice_sprites_thematic.png)      -400px -6300px;}
+.thrownDie145_6{ background: url(../images/dice_sprites_thematic.png)      -500px -6300px;}
+
+.thrownDie146_1{ background: url(../images/dice_sprites_thematic.png)      0 -6400px;}
+.thrownDie146_2{ background: url(../images/dice_sprites_thematic.png)      -100px -6400px;}
+.thrownDie146_3{ background: url(../images/dice_sprites_thematic.png)      -200px -6400px;}
+.thrownDie146_4{ background: url(../images/dice_sprites_thematic.png)      -300px -6400px;}
+.thrownDie146_5{ background: url(../images/dice_sprites_thematic.png)      -400px -6400px;}
+.thrownDie146_6{ background: url(../images/dice_sprites_thematic.png)      -500px -6400px;}
+
+.thrownDie147_1{ background: url(../images/dice_sprites_thematic.png)      0 -6500px;}
+.thrownDie147_2{ background: url(../images/dice_sprites_thematic.png)      -100px -6500px;}
+.thrownDie147_3{ background: url(../images/dice_sprites_thematic.png)      -200px -6500px;}
+.thrownDie147_4{ background: url(../images/dice_sprites_thematic.png)      -300px -6500px;}
+.thrownDie147_5{ background: url(../images/dice_sprites_thematic.png)      -400px -6500px;}
+.thrownDie147_6{ background: url(../images/dice_sprites_thematic.png)      -500px -6500px;}
+
+.thrownDie148_1{ background: url(../images/dice_sprites_thematic.png)      0 -6600px;}
+.thrownDie148_2{ background: url(../images/dice_sprites_thematic.png)      -100px -6600px;}
+.thrownDie148_3{ background: url(../images/dice_sprites_thematic.png)      -200px -6600px;}
+.thrownDie148_4{ background: url(../images/dice_sprites_thematic.png)      -300px -6600px;}
+.thrownDie148_5{ background: url(../images/dice_sprites_thematic.png)      -400px -6600px;}
+.thrownDie148_6{ background: url(../images/dice_sprites_thematic.png)      -500px -6600px;}
+
+.thrownDie149_1{ background: url(../images/dice_sprites_thematic.png)      0 -6700px;}
+.thrownDie149_2{ background: url(../images/dice_sprites_thematic.png)      -100px -6700px;}
+.thrownDie149_3{ background: url(../images/dice_sprites_thematic.png)      -200px -6700px;}
+.thrownDie149_4{ background: url(../images/dice_sprites_thematic.png)      -300px -6700px;}
+.thrownDie149_5{ background: url(../images/dice_sprites_thematic.png)      -400px -6700px;}
+.thrownDie149_6{ background: url(../images/dice_sprites_thematic.png)      -500px -6700px;}
+
+.thrownDie150_1{ background: url(../images/dice_sprites_thematic.png)      0 -6800px;}
+.thrownDie150_2{ background: url(../images/dice_sprites_thematic.png)      -100px -6800px;}
+.thrownDie150_3{ background: url(../images/dice_sprites_thematic.png)      -200px -6800px;}
+.thrownDie150_4{ background: url(../images/dice_sprites_thematic.png)      -300px -6800px;}
+.thrownDie150_5{ background: url(../images/dice_sprites_thematic.png)      -400px -6800px;}
+.thrownDie150_6{ background: url(../images/dice_sprites_thematic.png)      -500px -6800px;}
+
+.thrownDie151_1{ background: url(../images/dice_sprites_thematic.png)      0 -6900px;}
+.thrownDie151_2{ background: url(../images/dice_sprites_thematic.png)      -100px -6900px;}
+.thrownDie151_3{ background: url(../images/dice_sprites_thematic.png)      -200px -6900px;}
+.thrownDie151_4{ background: url(../images/dice_sprites_thematic.png)      -300px -6900px;}
+.thrownDie151_5{ background: url(../images/dice_sprites_thematic.png)      -400px -6900px;}
+.thrownDie151_6{ background: url(../images/dice_sprites_thematic.png)      -500px -6900px;}
+
+.thrownDie152_1{ background: url(../images/dice_sprites_thematic.png)      0 -7000px;}
+.thrownDie152_2{ background: url(../images/dice_sprites_thematic.png)      -100px -7000px;}
+.thrownDie152_3{ background: url(../images/dice_sprites_thematic.png)      -200px -7000px;}
+.thrownDie152_4{ background: url(../images/dice_sprites_thematic.png)      -300px -7000px;}
+.thrownDie152_5{ background: url(../images/dice_sprites_thematic.png)      -400px -7000px;}
+.thrownDie152_6{ background: url(../images/dice_sprites_thematic.png)      -500px -7000px;}
+
+.thrownDie153_1{ background: url(../images/dice_sprites_thematic.png)      0 -7100px;}
+.thrownDie153_2{ background: url(../images/dice_sprites_thematic.png)      -100px -7100px;}
+.thrownDie153_3{ background: url(../images/dice_sprites_thematic.png)      -200px -7100px;}
+.thrownDie153_4{ background: url(../images/dice_sprites_thematic.png)      -300px -7100px;}
+.thrownDie153_5{ background: url(../images/dice_sprites_thematic.png)      -400px -7100px;}
+.thrownDie153_6{ background: url(../images/dice_sprites_thematic.png)      -500px -7100px;}
+
+.thrownDie154_1{ background: url(../images/dice_sprites_thematic.png)      0 -7200px;}
+.thrownDie154_2{ background: url(../images/dice_sprites_thematic.png)      -100px -7200px;}
+.thrownDie154_3{ background: url(../images/dice_sprites_thematic.png)      -200px -7200px;}
+.thrownDie154_4{ background: url(../images/dice_sprites_thematic.png)      -300px -7200px;}
+.thrownDie154_5{ background: url(../images/dice_sprites_thematic.png)      -400px -7200px;}
+.thrownDie154_6{ background: url(../images/dice_sprites_thematic.png)      -500px -7200px;}
+
+.thrownDie155_1{ background: url(../images/dice_sprites_thematic.png)      0 -7300px;}
+.thrownDie155_2{ background: url(../images/dice_sprites_thematic.png)      -100px -7300px;}
+.thrownDie155_3{ background: url(../images/dice_sprites_thematic.png)      -200px -7300px;}
+.thrownDie155_4{ background: url(../images/dice_sprites_thematic.png)      -300px -7300px;}
+.thrownDie155_5{ background: url(../images/dice_sprites_thematic.png)      -400px -7300px;}
+.thrownDie155_6{ background: url(../images/dice_sprites_thematic.png)      -500px -7300px;}
+
+.thrownDie156_1{ background: url(../images/dice_sprites_thematic.png)      0 -7400px;}
+.thrownDie156_2{ background: url(../images/dice_sprites_thematic.png)      -100px -7400px;}
+.thrownDie156_3{ background: url(../images/dice_sprites_thematic.png)      -200px -7400px;}
+.thrownDie156_4{ background: url(../images/dice_sprites_thematic.png)      -300px -7400px;}
+.thrownDie156_5{ background: url(../images/dice_sprites_thematic.png)      -400px -7400px;}
+.thrownDie156_6{ background: url(../images/dice_sprites_thematic.png)      -500px -7400px;}
+
+.thrownDie157_1{ background: url(../images/dice_sprites_thematic.png)      0 -7500px;}
+.thrownDie157_2{ background: url(../images/dice_sprites_thematic.png)      -100px -7500px;}
+.thrownDie157_3{ background: url(../images/dice_sprites_thematic.png)      -200px -7500px;}
+.thrownDie157_4{ background: url(../images/dice_sprites_thematic.png)      -300px -7500px;}
+.thrownDie157_5{ background: url(../images/dice_sprites_thematic.png)      -400px -7500px;}
+.thrownDie157_6{ background: url(../images/dice_sprites_thematic.png)      -500px -7500px;}
+
+.thrownDie158_1{ background: url(../images/dice_sprites_thematic.png)      0 -7600px;}
+.thrownDie158_2{ background: url(../images/dice_sprites_thematic.png)      -100px -7600px;}
+.thrownDie158_3{ background: url(../images/dice_sprites_thematic.png)      -200px -7600px;}
+.thrownDie158_4{ background: url(../images/dice_sprites_thematic.png)      -300px -7600px;}
+.thrownDie158_5{ background: url(../images/dice_sprites_thematic.png)      -400px -7600px;}
+.thrownDie158_6{ background: url(../images/dice_sprites_thematic.png)      -500px -7600px;}
+
+.thrownDie159_1{ background: url(../images/dice_sprites_thematic.png)      0 -7700px;}
+.thrownDie159_2{ background: url(../images/dice_sprites_thematic.png)      -100px -7700px;}
+.thrownDie159_3{ background: url(../images/dice_sprites_thematic.png)      -200px -7700px;}
+.thrownDie159_4{ background: url(../images/dice_sprites_thematic.png)      -300px -7700px;}
+.thrownDie159_5{ background: url(../images/dice_sprites_thematic.png)      -400px -7700px;}
+.thrownDie159_6{ background: url(../images/dice_sprites_thematic.png)      -500px -7700px;}
+
+.thrownDie160_1{ background: url(../images/dice_sprites_thematic.png)      0 -7800px;}
+.thrownDie160_2{ background: url(../images/dice_sprites_thematic.png)      -100px -7800px;}
+.thrownDie160_3{ background: url(../images/dice_sprites_thematic.png)      -200px -7800px;}
+.thrownDie160_4{ background: url(../images/dice_sprites_thematic.png)      -300px -7800px;}
+.thrownDie160_5{ background: url(../images/dice_sprites_thematic.png)      -400px -7800px;}
+.thrownDie160_6{ background: url(../images/dice_sprites_thematic.png)      -500px -7800px;}
+
+.thrownDie161_1{ background: url(../images/dice_sprites_thematic.png)      0 -7900px;}
+.thrownDie161_2{ background: url(../images/dice_sprites_thematic.png)      -100px -7900px;}
+.thrownDie161_3{ background: url(../images/dice_sprites_thematic.png)      -200px -7900px;}
+.thrownDie161_4{ background: url(../images/dice_sprites_thematic.png)      -300px -7900px;}
+.thrownDie161_5{ background: url(../images/dice_sprites_thematic.png)      -400px -7900px;}
+.thrownDie161_6{ background: url(../images/dice_sprites_thematic.png)      -500px -7900px;}
+
+.thrownDie162_1{ background: url(../images/dice_sprites_thematic.png)      0 -8000px;}
+.thrownDie162_2{ background: url(../images/dice_sprites_thematic.png)      -100px -8000px;}
+.thrownDie162_3{ background: url(../images/dice_sprites_thematic.png)      -200px -8000px;}
+.thrownDie162_4{ background: url(../images/dice_sprites_thematic.png)      -300px -8000px;}
+.thrownDie162_5{ background: url(../images/dice_sprites_thematic.png)      -400px -8000px;}
+.thrownDie162_6{ background: url(../images/dice_sprites_thematic.png)      -500px -8000px;}

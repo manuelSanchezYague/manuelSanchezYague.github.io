@@ -1,0 +1,236 @@
+.is-hidden {
+  display: none;
+}
+
+/* Para tener sticky footer: https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3 */
+html, body {
+  height: 100%;
+}
+body {
+  background-color: #2a9d8f;
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+}
+main {
+  min-height: 518px;
+  padding-top: 58px;
+}
+@media (max-width: 317px) {
+  main {
+    padding-top: 109px;
+  }
+}
+
+/* 768px = 48em; 815px = 50.9375em */
+@media (min-width: 48em) and (max-width: 50.999em) {
+  main {
+    padding-top: 284px;
+  }
+}
+
+/* 816.16px = 51em; 1048px = 65.5em */
+@media (min-width: 51em) and (max-width: 65.5em) {
+  main {
+    padding-top: 225px;
+  }
+}
+
+/* 1048.16px = 65.51em; 1528px = 95.5em */
+@media (min-width: 65.51em) and (max-width: 95.5em) {
+  main {
+    padding-top: 167px;
+  }
+}
+
+/* 1528px = 95.5em; 2042px = 127.625em */
+@media (min-width: 95.51em) and (max-width: 127.625em) {
+  main {
+    padding-top: 117px;
+  }
+}
+
+/* 2042.0016px = 127.6251em; 2302px = 143.875em */
+@media (min-width: 127.6251em) and (max-width: 143.875em) {
+  .menu-left {
+	float:left;
+  }
+  
+  .menu-right {
+	float: right;
+  }
+  
+  main {
+    padding-top: 109px;
+  }
+}
+
+/* 2302.0016px = 143.875em */
+@media (min-width: 143.8751em) {
+  .menu-left {
+	float:left;
+  }
+  
+  .menu-right {
+	float: right;
+  }
+  
+  main {
+    padding-top: 58px;
+  }
+}
+
+/*  */
+
+a {
+  color: #000;
+}
+
+
+/* SELECTORES DE DADOS */
+/* https://stackoverflow.com/questions/30663562/use-images-like-checkboxes/30663705 */
+
+.c-dice-set {
+	padding: 17px 0;
+	text-align: center;
+}
+
+.c-dice-set__ul {
+  list-style-type: none;
+  margin: 30px 0;
+  padding: 0;
+}
+
+.c-dice-set__li {
+  display: inline-block;
+  margin: 3px 1px;
+}
+
+.c-dice-set__all-span{
+  border: none;
+  border-radius: 8px;
+  color: black;
+  cursor:pointer;
+  padding: 15px 15px 14px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.c-dice-set__all-checkbox{
+	display:none;
+}
+
+.c-dice-set__all-label input + span {
+    background-color: white;
+    color:black;
+}
+
+.c-dice-set__all-label input:checked + span {
+    background-color:black;
+    color:white;
+}
+
+.c-dice-set__label {
+  border: 1px solid #fff;
+  /*padding: 5px;*/
+  display: block;
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c-dice-set__label::before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+.c-dice-set__img {
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+.dice-set-selector-menu :checked+label {
+  border-color: #ddd;
+}
+
+.dice-set-selector-menu :checked+label::before {
+  content: "✓";
+  background-color: black;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.dice-set-selector-menu :checked+label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+}
+
+.c-dice-set__checkbox {
+	display: none;
+}
+
+.footer {
+  background-color: #e9c46a;
+  border-top: 3px #264653 solid;
+  bottom: 0;
+  left: 0;
+  padding: 10px 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+.c-button {
+  background-color: #264653;
+  border: none;
+  border-radius: 8px;
+  color: #f4a261;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.c-button--close{
+  background-color: #fff;
+  color: #000;
+  margin-left: 30px;
+  padding: 15px;
+}
+
+.c-button--white {
+    background-color: #fff;
+    color: #000;
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.c-buttons {
+	text-align: center;
+}
+
+.error-message {
+	color: white;
+	font-weight: bold;
+}

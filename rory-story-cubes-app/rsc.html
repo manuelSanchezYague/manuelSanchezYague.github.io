@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rory's Story Cubes App</title>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#f15a22">
+	<meta name="msapplication-TileColor" content="#f15a22">
+	<meta name="theme-color" content="#f15a22">
+
+	<link href="css/colors.css" type="text/css" rel="stylesheet">
+	<link href="css/rsc_menu.css" type="text/css" rel="stylesheet">
+	<link href="css/rsc.css" type="text/css" rel="stylesheet">
+	<link href="css/dice_sprites.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+	<a href="" class="logo">Rory's Story Cubes</a>
+	<input class="menu-btn" type="checkbox" id="menu-btn" />
+	<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+	<ul class="menu">
+		<div class="menu-left">
+		<li><a href="" id="menu_original" class="bg_original">Original</a></li>
+		<li><a href="" id="menu_actions" class="bg_actions">Actions</a></li>
+		<li><a href="" id="menu_voyages" class="bg_voyages">Voyages</a></li>
+		<li><a href="" id="menu_fantasia" class="bg_fantasia">Fantasia</a></li>
+		<li><a href="" id="menu_mystery" class="bg_mystery">Mystery</a></li>
+		<li><a href="" id="menu_primal" class="bg_primal">Primal</a></li>
+		<li><a href="" id="menu_emergency" class="bg_emergency">Emergency</a></li>
+		<li><a href="" id="menu_heroes" class="bg_heroes">Heroes</a></li>
+		<li><a href="" id="menu_astro" class="bg_astro">Astro</a></li>
+		<li><a href="" id="menu_bespoke" class="bg_bespoke">A medida</a></li>
+		</div>
+		<div class="menu-right">
+		<li><a href="" id="menu_looney-tunes" class="bg_looney-tunes">Looney Tunes</a></li>
+		<li><a href="" id="menu_moomin" class="bg_moomin">Moomin</a></li>
+		<li><a href="" id="menu_adventure-time" class="bg_adventure-time">Adventure Time</a></li>
+		<li><a href="" id="menu_scooby-doo" class="bg_scooby-doo">Scooby Doo</a></li>
+		<li><a href="" id="menu_doctor-who" class="bg_doctor-who">Doctor Who</a></li>
+		<li><a href="" id="menu_batman" class="bg_batman">Batman</a></li>
+		<li><a href="" id="menu_doraemon" class="bg_doraemon">Doraemon</a></li>
+		<li><a href="" id="menu_star-wars" class="bg_star-wars">Star Wars</a></li>
+		<li><a href="" id="menu_totoro" class="bg_totoro">Totoro</a></li>
+		</div>
+	</ul>
+</header>
+<main>
+	<div class="dice-set-selector-menu">
+		<div id="original" class="c-dice-set bg_original is-hidden">
+			<label class="c-dice-set__all-label">
+				<input type="checkbox" class="c-dice-set__all-checkbox" id="original_all_dice" value="all">
+				<span class="c-dice-set__all-span">Todos</span>
+			</label>
+			<input type="button" value="Cerrar" class="js-closeButton c-button c-button--close">
+			<ul class="c-dice-set__ul">
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="original_1" class="c-dice-set__checkbox" value="1" />
+					<label for="original_1" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die1" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="original_2" class="c-dice-set__checkbox" value="2" />
+					<label for="original_2" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die2" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="original_3" class="c-dice-set__checkbox" value="3" />
+					<label for="original_3" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die3" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="original_4" class="c-dice-set__checkbox" value="4" />
+					<label for="original_4" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die4" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="original_5" class="c-dice-set__checkbox" value="5" />
+					<label for="original_5" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die5" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="original_6" class="c-dice-set__checkbox" value="6" />
+					<label for="original_6" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die6" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="original_7" class="c-dice-set__checkbox" value="7" />
+					<label for="original_7" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die7" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="original_8" class="c-dice-set__checkbox" value="8" />
+					<label for="original_8" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die8" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="original_9" class="c-dice-set__checkbox" value="9" />
+					<label for="original_9" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die9" src="images/transparent_die.png" /></label>
+				</li>
+			</ul>
+		</div>
+		<div id="actions" class="c-dice-set bg_actions is-hidden">
+			<label class="c-dice-set__all-label">
+				<input type="checkbox" class="c-dice-set__all-checkbox" id="actions_all_dice" value="all">
+				<span class="c-dice-set__all-span">Todos</span>
+			</label>
+			<input type="button" value="Cerrar" class="js-closeButton c-button c-button--close">
+			<ul class="c-dice-set__ul">
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="actions_1" class="c-dice-set__checkbox" value="10" />
+					<label for="actions_1" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die10" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="actions_2" class="c-dice-set__checkbox" value="11" />
+					<label for="actions_2" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die11" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="actions_3" class="c-dice-set__checkbox" value="12" />
+					<label for="actions_3" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die12" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="actions_4" class="c-dice-set__checkbox" value="13" />
+					<label for="actions_4" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die13" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="actions_5" class="c-dice-set__checkbox" value="14" />
+					<label for="actions_5" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die14" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="actions_6" class="c-dice-set__checkbox" value="15" />
+					<label for="actions_6" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die15" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="actions_7" class="c-dice-set__checkbox" value="16" />
+					<label for="actions_7" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die16" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="actions_8" class="c-dice-set__checkbox" value="17" />
+					<label for="actions_8" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die17" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="actions_9" class="c-dice-set__checkbox" value="18" />
+					<label for="actions_9" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die18" src="images/transparent_die.png" /></label>
+				</li>
+			</ul>
+		</div>
+		<div id="voyages" class="c-dice-set bg_voyages is-hidden">
+			<label class="c-dice-set__all-label">
+				<input type="checkbox" class="c-dice-set__all-checkbox" id="voyages_all_dice" value="all">
+				<span class="c-dice-set__all-span">Todos</span>
+			</label>
+			<input type="button" value="Cerrar" class="js-closeButton c-button c-button--close">
+			<ul class="c-dice-set__ul">
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="voyages_1" class="c-dice-set__checkbox" value="19" />
+					<label for="voyages_1" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die19" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="voyages_2" class="c-dice-set__checkbox" value="20" />
+					<label for="voyages_2" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die20" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="voyages_3" class="c-dice-set__checkbox" value="21" />
+					<label for="voyages_3" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die21" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="voyages_4" class="c-dice-set__checkbox" value="22" />
+					<label for="voyages_4" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die22" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="voyages_5" class="c-dice-set__checkbox" value="23" />
+					<label for="voyages_5" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die23" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="voyages_6" class="c-dice-set__checkbox" value="24" />
+					<label for="voyages_6" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die24" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="voyages_7" class="c-dice-set__checkbox" value="25" />
+					<label for="voyages_7" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die25" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="voyages_8" class="c-dice-set__checkbox" value="26" />
+					<label for="voyages_8" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die26" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="voyages_9" class="c-dice-set__checkbox" value="27" />
+					<label for="voyages_9" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die27" src="images/transparent_die.png" /></label>
+				</li>
+			</ul>
+		</div>
+		<div id="fantasia" class="c-dice-set bg_fantasia is-hidden">
+			<label class="c-dice-set__all-label">
+				<input type="checkbox" class="c-dice-set__all-checkbox" id="fantasia_all_dice" value="all">
+				<span class="c-dice-set__all-span">Todos</span>
+			</label>
+			<input type="button" value="Cerrar" class="js-closeButton c-button c-button--close">
+			<ul class="c-dice-set__ul">
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="fantasia_1" class="c-dice-set__checkbox" value="28" />
+					<label for="fantasia_1" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die28" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="fantasia_2" class="c-dice-set__checkbox" value="29" />
+					<label for="fantasia_2" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die29" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="fantasia_3" class="c-dice-set__checkbox" value="30" />
+					<label for="fantasia_3" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die30" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="fantasia_4" class="c-dice-set__checkbox" value="31" />
+					<label for="fantasia_4" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die31" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="fantasia_5" class="c-dice-set__checkbox" value="32" />
+					<label for="fantasia_5" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die32" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="fantasia_6" class="c-dice-set__checkbox" value="33" />
+					<label for="fantasia_6" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die33" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="fantasia_7" class="c-dice-set__checkbox" value="34" />
+					<label for="fantasia_7" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die34" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="fantasia_8" class="c-dice-set__checkbox" value="35" />
+					<label for="fantasia_8" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die35" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="fantasia_9" class="c-dice-set__checkbox" value="36" />
+					<label for="fantasia_9" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die36" src="images/transparent_die.png" /></label>
+				</li>
+			</ul>
+		</div>
+		<div id="mystery" class="c-dice-set bg_mystery is-hidden">
+			<label class="c-dice-set__all-label">
+				<input type="checkbox" class="c-dice-set__all-checkbox" id="mystery_all_dice" value="all">
+				<span class="c-dice-set__all-span">Todos</span>
+			</label>
+			<input type="button" value="Cerrar" class="js-closeButton c-button c-button--close">
+			<ul class="c-dice-set__ul">
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="mystery_1" class="c-dice-set__checkbox" value="37" />
+					<label for="mystery_1" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die37" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="mystery_2" class="c-dice-set__checkbox" value="38" />
+					<label for="mystery_2" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die38" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="mystery_3" class="c-dice-set__checkbox" value="39" />
+					<label for="mystery_3" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die39" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="mystery_4" class="c-dice-set__checkbox" value="40" />
+					<label for="mystery_4" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die40" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="mystery_5" class="c-dice-set__checkbox" value="41" />
+					<label for="mystery_5" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die41" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="mystery_6" class="c-dice-set__checkbox" value="42" />
+					<label for="mystery_6" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die42" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="mystery_7" class="c-dice-set__checkbox" value="43" />
+					<label for="mystery_7" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die43" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="mystery_8" class="c-dice-set__checkbox" value="44" />
+					<label for="mystery_8" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die44" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="mystery_9" class="c-dice-set__checkbox" value="45" />
+					<label for="mystery_9" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die45" src="images/transparent_die.png" /></label>
+				</li>
+			</ul>
+		</div>
+		<div id="primal" class="c-dice-set bg_primal is-hidden">
+			<label class="c-dice-set__all-label">
+				<input type="checkbox" class="c-dice-set__all-checkbox" id="primal_all_dice" value="all">
+				<span class="c-dice-set__all-span">Todos</span>
+			</label>
+			<input type="button" value="Cerrar" class="js-closeButton c-button c-button--close">
+			<ul class="c-dice-set__ul">
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="primal_1" class="c-dice-set__checkbox" value="46" />
+					<label for="primal_1" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die46" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="primal_2" class="c-dice-set__checkbox" value="47" />
+					<label for="primal_2" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die47" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="primal_3" class="c-dice-set__checkbox" value="48" />
+					<label for="primal_3" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die48" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="primal_4" class="c-dice-set__checkbox" value="49" />
+					<label for="primal_4" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die49" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="primal_5" class="c-dice-set__checkbox" value="50" />
+					<label for="primal_5" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die50" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="primal_6" class="c-dice-set__checkbox" value="51" />
+					<label for="primal_6" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die51" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="primal_7" class="c-dice-set__checkbox" value="52" />
+					<label for="primal_7" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die52" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="primal_8" class="c-dice-set__checkbox" value="53" />
+					<label for="primal_8" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die53" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="primal_9" class="c-dice-set__checkbox" value="54" />
+					<label for="primal_9" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die54" src="images/transparent_die.png" /></label>
+				</li>
+			</ul>
+		</div>
+		<div id="emergency" class="c-dice-set bg_emergency is-hidden">
+			<label class="c-dice-set__all-label">
+				<input type="checkbox" class="c-dice-set__all-checkbox" id="emergency_all_dice" value="all">
+				<span class="c-dice-set__all-span">Todos</span>
+			</label>
+			<input type="button" value="Cerrar" class="js-closeButton c-button c-button--close">
+			<ul class="c-dice-set__ul">
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="emergency_1" class="c-dice-set__checkbox" value="55" />
+					<label for="emergency_1" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die55" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="emergency_2" class="c-dice-set__checkbox" value="56" />
+					<label for="emergency_2" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die56" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="emergency_3" class="c-dice-set__checkbox" value="57" />
+					<label for="emergency_3" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die57" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="emergency_4" class="c-dice-set__checkbox" value="58" />
+					<label for="emergency_4" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die58" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="emergency_5" class="c-dice-set__checkbox" value="59" />
+					<label for="emergency_5" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die59" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="emergency_6" class="c-dice-set__checkbox" value="60" />
+					<label for="emergency_6" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die60" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="emergency_7" class="c-dice-set__checkbox" value="61" />
+					<label for="emergency_7" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die61" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="emergency_8" class="c-dice-set__checkbox" value="62" />
+					<label for="emergency_8" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die62" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="emergency_9" class="c-dice-set__checkbox" value="63" />
+					<label for="emergency_9" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die63" src="images/transparent_die.png" /></label>
+				</li>
+			</ul>
+		</div>
+		<div id="heroes" class="c-dice-set bg_heroes is-hidden">
+			<label class="c-dice-set__all-label">
+				<input type="checkbox" class="c-dice-set__all-checkbox" id="heroes_all_dice" value="all">
+				<span class="c-dice-set__all-span">Todos</span>
+			</label>
+			<input type="button" value="Cerrar" class="js-closeButton c-button c-button--close">
+			<ul class="c-dice-set__ul">
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="heroes_1" class="c-dice-set__checkbox" value="64" />
+					<label for="heroes_1" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die64" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="heroes_2" class="c-dice-set__checkbox" value="65" />
+					<label for="heroes_2" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die65" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="heroes_3" class="c-dice-set__checkbox" value="66" />
+					<label for="heroes_3" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die66" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="heroes_4" class="c-dice-set__checkbox" value="67" />
+					<label for="heroes_4" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die67" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="heroes_5" class="c-dice-set__checkbox" value="68" />
+					<label for="heroes_5" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die68" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="heroes_6" class="c-dice-set__checkbox" value="69" />
+					<label for="heroes_6" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die69" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="heroes_7" class="c-dice-set__checkbox" value="70" />
+					<label for="heroes_7" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die70" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="heroes_8" class="c-dice-set__checkbox" value="71" />
+					<label for="heroes_8" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die71" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="heroes_9" class="c-dice-set__checkbox" value="72" />
+					<label for="heroes_9" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die72" src="images/transparent_die.png" /></label>
+				</li>
+			</ul>
+		</div>
+		<div id="astro" class="c-dice-set bg_astro is-hidden">
+			<label class="c-dice-set__all-label">
+				<input type="checkbox" class="c-dice-set__all-checkbox" id="astro_all_dice" value="all">
+				<span class="c-dice-set__all-span">Todos</span>
+			</label>
+			<input type="button" value="Cerrar" class="js-closeButton c-button c-button--close">
+			<ul class="c-dice-set__ul">
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="astro_1" class="c-dice-set__checkbox" value="73" />
+					<label for="astro_1" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die73" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="astro_2" class="c-dice-set__checkbox" value="74" />
+					<label for="astro_2" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die74" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="astro_3" class="c-dice-set__checkbox" value="75" />
+					<label for="astro_3" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die75" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="astro_4" class="c-dice-set__checkbox" value="76" />
+					<label for="astro_4" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die76" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="astro_5" class="c-dice-set__checkbox" value="77" />
+					<label for="astro_5" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die77" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="astro_6" class="c-dice-set__checkbox" value="78" />
+					<label for="astro_6" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die78" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="astro_7" class="c-dice-set__checkbox" value="79" />
+					<label for="astro_7" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die79" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="astro_8" class="c-dice-set__checkbox" value="80" />
+					<label for="astro_8" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die80" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="astro_9" class="c-dice-set__checkbox" value="81" />
+					<label for="astro_9" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die81" src="images/transparent_die.png" /></label>
+				</li>
+			</ul>
+		</div>
+
+
+
+
+		<div id="scooby-doo" class="c-dice-set bg_scooby-doo is-hidden">
+			<label class="c-dice-set__all-label">
+				<input type="checkbox" class="c-dice-set__all-checkbox" id="scooby-doo_all_dice" value="all">
+				<span class="c-dice-set__all-span">Todos</span>
+			</label>
+			<input type="button" value="Cerrar" class="js-closeButton c-button c-button--close">
+			<ul class="c-dice-set__ul">
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="scooby-doo_1" class="c-dice-set__checkbox" value="109" />
+					<label for="scooby-doo_1" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die109" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="scooby-doo_2" class="c-dice-set__checkbox" value="110" />
+					<label for="scooby-doo_2" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die110" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="scooby-doo_3" class="c-dice-set__checkbox" value="111" />
+					<label for="scooby-doo_3" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die111" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="scooby-doo_4" class="c-dice-set__checkbox" value="112" />
+					<label for="scooby-doo_4" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die112" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="scooby-doo_5" class="c-dice-set__checkbox" value="113" />
+					<label for="scooby-doo_5" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die113" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="scooby-doo_6" class="c-dice-set__checkbox" value="114" />
+					<label for="scooby-doo_6" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die114" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="scooby-doo_7" class="c-dice-set__checkbox" value="115" />
+					<label for="scooby-doo_7" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die115" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="scooby-doo_8" class="c-dice-set__checkbox" value="116" />
+					<label for="scooby-doo_8" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die116" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="scooby-doo_9" class="c-dice-set__checkbox" value="117" />
+					<label for="scooby-doo_9" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die117" src="images/transparent_die.png" /></label>
+				</li>
+			</ul>
+		</div>
+		<div id="doctor-who" class="c-dice-set bg_doctor-who is-hidden">
+			<label class="c-dice-set__all-label">
+				<input type="checkbox" class="c-dice-set__all-checkbox" id="doctor-who_all_dice" value="all">
+				<span class="c-dice-set__all-span">Todos</span>
+			</label>
+			<input type="button" value="Cerrar" class="js-closeButton c-button c-button--close">
+			<ul class="c-dice-set__ul">
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="doctor-who_1" class="c-dice-set__checkbox" value="118" />
+					<label for="doctor-who_1" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die118" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="doctor-who_2" class="c-dice-set__checkbox" value="119" />
+					<label for="doctor-who_2" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die119" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="doctor-who_3" class="c-dice-set__checkbox" value="120" />
+					<label for="doctor-who_3" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die120" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="doctor-who_4" class="c-dice-set__checkbox" value="121" />
+					<label for="doctor-who_4" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die121" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="doctor-who_5" class="c-dice-set__checkbox" value="122" />
+					<label for="doctor-who_5" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die122" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="doctor-who_6" class="c-dice-set__checkbox" value="123" />
+					<label for="doctor-who_6" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die123" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="doctor-who_7" class="c-dice-set__checkbox" value="124" />
+					<label for="doctor-who_7" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die124" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="doctor-who_8" class="c-dice-set__checkbox" value="125" />
+					<label for="doctor-who_8" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die125" src="images/transparent_die.png" /></label>
+				</li>
+				<li class="c-dice-set__li">
+					<input type="checkbox" id="doctor-who_9" class="c-dice-set__checkbox" value="126" />
+					<label for="doctor-who_9" class="c-dice-set__label"><img class="c-dice-set__img c-dice-set__die126" src="images/transparent_die.png" /></label>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="diceLayout" class="dice-layout"></div>
+	<div id="diceFaces" class="dice-faces"></div>
+</main>
+<footer class="footer">
+	<div class="c-buttons">
+		<input id="throwNineBasicRandomDice" type="button" value="9 básicos" class="c-button">
+		<input id="throwNineRandomDice" type="button" value="9 cualquiera" class="c-button">
+		<input id="throwDice" type="button" value="Lanzar" class="c-button">
+		<input id="clear" type="button" value="Limpiar" class="c-button">
+	</div>
+</footer>
+<script src="js/rsc.js"></script>
+</body>
+</html>
