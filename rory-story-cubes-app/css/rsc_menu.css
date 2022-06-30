@@ -142,6 +142,10 @@
 
 
 @media (max-width: 48em) {
+.header li a {
+  padding: 14.5px 19px;
+}
+
 .header .menu-btn:checked ~ .menu .menu-left {
   float: left;
   width: 49%;
