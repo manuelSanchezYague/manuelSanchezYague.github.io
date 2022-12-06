@@ -65,6 +65,11 @@ this.setDragAndDropListeners = function() {
 		scene.addEventListener('dragover', untold.dragOver);
 		scene.addEventListener('drop', untold.dragDrop);
 	});
+	const diceTrays = document.querySelectorAll('.dice-tray');
+	diceTrays.forEach(diceTray => {
+		diceTray.addEventListener('dragover', untold.dragOver);
+		diceTray.addEventListener('drop', untold.dragDrop);
+	});
 };
 
 this.setLanguageChangeListeners = function(){
