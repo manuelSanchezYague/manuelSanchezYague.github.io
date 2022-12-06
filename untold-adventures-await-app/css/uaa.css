@@ -12,14 +12,33 @@ html, body {
 	
 }
 
+.container{
+    display: flex;
+    font-family: "Trebuchet MS", sans-serif;
+    gap: 30px;
+}
+.scene{
+    background: #031C38;
+    border-radius: 10px;
+    flex-basis: 20%;
+    min-height: 70vh;
+    padding: 20px;
+}
+.scene__title{
+	color: #fff;
+    font-size: 22px;
+	margin-bottom: 10px;
+    min-height: 6vh;
+    text-align: center;
+}
+
 .footer {
 	border: 1px #024595 solid;
 }
 
-#div1, #div2 {
-  width: 100px;
-  height: 35px;
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid black;
+.dice-tray {
+    background: #024595;
+    border-radius: 10px;
+    min-height: 10vh;
+    padding: 20px;
 }

@@ -227,7 +227,7 @@ for (var i=1;i<=81;i++) {
 }
 Luego remplazar " debugger eval code.*" por vacío usando expresión regular y "<empty string>" por vacío en modo normal.
 */
-.thrownDie{ display: inline-block; height: 100px; width: 100px; }
+.thrownDie{ cursor: pointer; display: inline-block; height: 100px; width: 100px; }
 .thrownDie1_1{ background: url(../images/dice_sprites.png)      0 0;}
 .thrownDie1_2{ background: url(../images/dice_sprites.png)      -100px 0;}
 .thrownDie1_3{ background: url(../images/dice_sprites.png)      -200px 0;}

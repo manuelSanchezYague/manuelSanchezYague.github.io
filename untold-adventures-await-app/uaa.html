@@ -8,6 +8,7 @@
 	<link href="css/reset.css" type="text/css" rel="stylesheet">
 	<link href="css/uaa_menu.css" type="text/css" rel="stylesheet">
 	<link href="css/uaa.css" type="text/css" rel="stylesheet">
+	<link href="css/dice_sprites.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 	<header class="header">
@@ -37,21 +38,44 @@
 				<li><a href="" id="menu_bespoke" class="bg_bespoke" data-langkey="bespoke" >A medida</a></li>
 			</div>
 			<div class="menu-right">
-				<li><a href="" id="langEsLink" class="bg_looney-tunes">Español</a></li>
-				<li><a href="" id="langEnLink" class="bg_moomin">English</a></li>
+				<li><a href="#" id="langEsLink" class="bg_looney-tunes">Español</a></li>
+				<li><a href="#" id="langEnLink" class="bg_moomin">English</a></li>
 			</div>
 		</ul>
 		
 	</header>
 	<main class="main">
-		<div id="div1" ondrop="untold.drop(event)" ondragover="untold.allowDrop(event)">
-			<img src="https://www.w3schools.com/html/img_w3slogo.gif" draggable="true" ondragstart="untold.drag(event)" id="drag1" width="88" height="31">
+		<div class="container">
+			<div class="scene">
+				<h2 class="scene__title" data-langkey="scene1__title">UN DILEMA PELIGROSO</h2>
+			</div>
+			<div class="scene">
+				<h2 class="scene__title" data-langkey="scene2__title">LA TRAMA SE COMPLICA</h2>
+			</div>
+			<div class="scene">
+				<h2 class="scene__title" data-langkey="scene3__title">UN COMBATE HEROICO</h2>
+			</div>
+			<div class="scene">
+				<h2 class="scene__title" data-langkey="scene4__title">LA VERDAD REVELADA</h2>
+			</div>
+			<div class="scene">
+				<h2 class="scene__title" data-langkey="scene5__title">EL DUELO FINAL</h2>
+			</div>
 		</div>
-
-		<div id="div2" ondrop="untold.drop(event)" ondragover="untold.allowDrop(event)"></div>
 	</main>
 	<footer class="footer">
 		<p>FOOTER</p>
+		<div class="dice-tray">
+			<div class="thrownDie thrownDie1_1" draggable="true"></div>
+			<div class="thrownDie thrownDie2_1" draggable="true"></div>
+			<div class="thrownDie thrownDie3_1" draggable="true"></div>
+			<div class="thrownDie thrownDie4_1" draggable="true"></div>
+			<div class="thrownDie thrownDie5_1" draggable="true"></div>
+			<div class="thrownDie thrownDie6_1" draggable="true"></div>
+			<div class="thrownDie thrownDie7_1" draggable="true"></div>
+			<div class="thrownDie thrownDie8_1" draggable="true"></div>
+			<div class="thrownDie thrownDie9_1" draggable="true"></div>
+		</div>
 	</footer>
 	<script src="js/uaa.js"></script>
 	 <script>
@@ -65,7 +89,7 @@ Notas:
 
 Internacionalización: https://www.webcodegeeks.com/html5/html5-internationalization-example/
 Web Storage: https://www.w3schools.com/html/html5_webstorage.asp
-Drag & Drop: https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop2
+Drag & Drop:  https://stackabuse.com/drag-and-drop-in-vanilla-javascript/
 Save as txt: https://www.websparrow.org/web/how-to-create-and-save-text-file-in-javascript
 CSS only carousel: https://css-tricks.com/css-only-carousel/
 CSS only carousel: https://codepen.io/trungk18/pen/EydyoL

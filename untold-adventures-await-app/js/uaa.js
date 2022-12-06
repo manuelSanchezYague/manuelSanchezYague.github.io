@@ -4,11 +4,21 @@ this.availableLanguages = new Map();
 this.langTemplates = {};
 this.langTemplates.es = {
 "app_title":"UNTOLD: La aventura te espera",
-"switchLangLink": "Cambiar idioma"
+"switchLangLink": "Cambiar idioma",
+"scene1__title": "UN DILEMA PELIGROSO",
+"scene2__title": "LA TRAMA SE COMPLICA",
+"scene3__title": "UN COMBATE HEROICO",
+"scene4__title": "LA VERDAD REVELADA",
+"scene5__title": "EL DUELO FINAL",
 };
 this.langTemplates.en = {
 "app_title":"UNTOLD: Adventures Await",
-"switchLangLink": "Change language"
+"switchLangLink": "Change language",
+"scene1__title": "A DANGEROUS DILEMMA",
+"scene2__title": "THE PLOT THICKENS",
+"scene3__title": "AN HEROIC UNDERTAKING",
+"scene4__title": "THE TRUTH REVEALED",
+"scene5__title": "THE FINAL SHOWDOWN",
 };
 this.switchLanguage = function(lang){
 	if(lang != null){
@@ -26,25 +36,47 @@ this.processLangDocument = function(){
     });
 };
 
-this.allowDrop = function(ev) {
-  ev.preventDefault();
-}
+this.dragItem = null;
 
-this.drag = function(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
+this.dragStart = function() {
+	dragItem = this;
+};
 
-this.drop = function(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-}
+this.dragEnd = function() {
+  	dragItem = null;
+};
 
-this.setListeners = function() {
+this.dragOver = function(e) {
+	e.preventDefault();
+};
+
+this.dragDrop = function() {
+    this.append(dragItem);
+};
+
+this.setDragAndDropListeners = function() {
+	const thrownDice = document.querySelectorAll('.thrownDie');
+	thrownDice.forEach(thrownDie => {
+		thrownDie.addEventListener('dragstart', untold.dragStart);
+		thrownDie.addEventListener('dragend', untold.dragEnd);
+	});
+	const scenes = document.querySelectorAll('.scene');
+	scenes.forEach(scene => {
+		scene.addEventListener('dragover', untold.dragOver);
+		scene.addEventListener('drop', untold.dragDrop);
+	});
+};
+
+this.setLanguageChangeListeners = function(){
 	var elLangEsLink = document.querySelector("#langEsLink");
 	elLangEsLink.onclick = function() {untold.switchLanguage("es");};
 	var elLangEnLink = document.querySelector("#langEnLink");
 	elLangEnLink.onclick = function() {untold.switchLanguage("en");};
+};
+
+this.setListeners = function() {
+	this.setLanguageChangeListeners();
+	this.setDragAndDropListeners();
 };
 
 this.main = function(){
