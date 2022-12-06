@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UNTOLD: Adventures Await App</title>
+	<link href="css/reset.css" type="text/css" rel="stylesheet">
+	<link href="css/uaa_menu.css" type="text/css" rel="stylesheet">
+	<link href="css/uaa.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<header class="header">
+		<h1 data-langkey="app_title" class="logo">UNTOLD: Adventures Await</h1>
+		<ul class="langs">
+			<li class="langs_li">
+				<a href="#" id="langEsLink" class="langs_a" >Español</a>
+			</li>
+			<li>
+				<a href="#" id="langEnLink" class="langs_a" >English</a>
+			</li>
+		</ul>
+		<a href="" class="logo" data-langkey="app_title">UNTOLD: Adventures Await</a>
+		<input class="menu-btn" type="checkbox" id="menu-btn" />
+		<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+		<ul class="menu">
+			<div class="menu-left">
+				<li><a href="" id="menu_original" class="bg_original">Original</a></li>
+				<li><a href="" id="menu_actions" class="bg_actions">Actions</a></li>
+				<li><a href="" id="menu_voyages" class="bg_voyages">Voyages</a></li>
+				<li><a href="" id="menu_fantasia" class="bg_fantasia">Fantasia</a></li>
+				<li><a href="" id="menu_mystery" class="bg_mystery">Mystery</a></li>
+				<li><a href="" id="menu_primal" class="bg_primal">Primal</a></li>
+				<li><a href="" id="menu_emergency" class="bg_emergency">Emergency</a></li>
+				<li><a href="" id="menu_heroes" class="bg_heroes">Heroes</a></li>
+				<li><a href="" id="menu_astro" class="bg_astro">Astro</a></li>
+				<li><a href="" id="menu_bespoke" class="bg_bespoke" data-langkey="bespoke" >A medida</a></li>
+			</div>
+			<div class="menu-right">
+				<li><a href="" id="langEsLink" class="bg_looney-tunes">Español</a></li>
+				<li><a href="" id="langEnLink" class="bg_moomin">English</a></li>
+			</div>
+		</ul>
+		
+	</header>
+	<main class="main">
+		<div id="div1" ondrop="untold.drop(event)" ondragover="untold.allowDrop(event)">
+			<img src="https://www.w3schools.com/html/img_w3slogo.gif" draggable="true" ondragstart="untold.drag(event)" id="drag1" width="88" height="31">
+		</div>
+
+		<div id="div2" ondrop="untold.drop(event)" ondragover="untold.allowDrop(event)"></div>
+	</main>
+	<footer class="footer">
+		<p>FOOTER</p>
+	</footer>
+	<script src="js/uaa.js"></script>
+	 <script>
+		let untold = new Untold();
+		untold.main();
+	</script>
+</body>
+</html>
+<!-- 
+Notas:
+
+Internacionalización: https://www.webcodegeeks.com/html5/html5-internationalization-example/
+Web Storage: https://www.w3schools.com/html/html5_webstorage.asp
+Drag & Drop: https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop2
+Save as txt: https://www.websparrow.org/web/how-to-create-and-save-text-file-in-javascript
+CSS only carousel: https://css-tricks.com/css-only-carousel/
+CSS only carousel: https://codepen.io/trungk18/pen/EydyoL
+3D dice: https://codepen.io/SteveJRobertson/pen/zxEwrK
+Crear ventana modal solo con CSS3 sin JavaScript : https://devcode.la/tutoriales/crear-ventana-modal-solo-con-css3/
+Orientation Lock: https://css-tricks.com/snippets/css/orientation-lock/
+-->
