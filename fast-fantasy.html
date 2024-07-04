@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<title>Fast Fantasy v1.1</title>
+		<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" />
+		<style>
+			.main {padding: 10px 0;}
+			
+			.full {width:100%}
+			
+			.half {float:left; width:50%}
+			
+			.third {width:33%}
+			
+			.two-thirds {width:66%}
+			
+			.label {display: inline;}
+			
+			blockquote {background-color: transparent; border-left: none;}
+			blockquote strong {color:#ffffff;}
+			blockquote em {color:#ffffff;}
+			blockquote a {color:#ffffff; text-decoration: underline}
+			details[open] > summary:first-of-type {color:#ffffff;}
+			
+			.section__tab-panel {display: none;}
+			
+			.section__tab-panel:target {display: block;}
+			
+			.tooltip {
+				position: relative;
+				display: inline-block;
+				border-bottom: 1px dotted #ffffff;
+			}
+
+			.tooltip .tooltiptext {
+				visibility: hidden;
+				width: 320px;
+				background-color: #4a4a4a;
+				color: #fff;
+				text-align: center;
+				border-radius: 6px;
+				padding: 5px 0;
+				position: absolute;
+				z-index: 1;
+				bottom: 150%;
+				left: 50%;
+				margin-left: -60px;
+			}
+
+			.tooltip .tooltiptext::after {
+				content: "";
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				margin-left: -5px;
+				border-width: 5px;
+				border-style: solid;
+				border-color: #ffffff transparent transparent transparent;
+			}
+
+			.tooltip:hover .tooltiptext {
+				visibility: visible;
+			}
+			
+			.footer {
+				background-color: #222222;
+				border-top: 5px solid #ffffff;
+				bottom: 0;
+				left: 0;
+				padding: 10px 0;
+				position: fixed;
+				text-align: center;
+				width: 100%;
+			}
+			
+			.footer__image {margin:0;}
+		</style>
+	</head>
+	<body>
+		<main class="main">
+			<section id="rules" class="section__tab-panel">
+				<h1>Fast Fantasy</h1>
+				<p><em>version 1.1, by David Bass</em></p>
+				<details>
+					<summary>
+						<strong>What is this?</strong>
+					</summary>
+					<blockquote>
+						<p>This is a lightweight, streamlined tabletop fantasy roleplaying game. This game is most directly inspired by:</p>
+						<ul>
+							<li><em>Apocalypse World</em> (Vincent Baker and Meguey Baker)</li>
+							<li><em>Dungeon World</em> (Sage LaTorra and Adam Koebel)</li>
+							<li><em>World of Dungeons</em> (John Harper)</li>
+							<li><em>Defying Danger</em> (Jeremy Strandberg) <a href="https://spoutinglore.blogspot.com">spoutinglore.blogspot.com</a></li>
+						</ul>
+						<p>The goal of this TTRPG is to provide an easy-to-use framework for new players to get a game session up and running quickly and to improvise an adventure.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Printing and Materials</strong>
+					</summary>
+					<blockquote>
+						<p>Print these documents on 8.5” x 11” (or A4) paper, <strong>landscape</strong> and <strong>single-sided</strong>. You’ll find that it contains:</p>
+						<ul>
+							<li>Four character sheets (<em>one for each player character type</em>)</li>
+							<li>A page with advice on being a player</li>
+							<li>A page for the GM and another with advice about running the game</li>
+							<li>A page with some example <em>People, Places, and Possibilities</em> you might find on your adventures</li>
+							<li>A page with some example <em>NPCs</em> and the <em>Loot</em> they may have</li>
+							<li>A page with magical <em>Artifacts</em> to use</li>
+							<li>A page of <em>Character Archetypes</em> and another with <em>Advanced Archetypes</em></li>
+							<li>Three <em>Adventure Starters</em> to try out</li>
+						</ul>
+						<p>You don’t have to use anything after the GM materials (they’re examples), but they help get things going quickly and smoothly. <strong>Skip the archetypes</strong> if you’re only playing once, or for the first time.</p>
+						<p>You’ll want some pencils and erasers, some extra scrap paper, and at least 3 standard, six-sided dice (🎲🎲🎲). Ideally, you want 3 dice per person.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>For 2-7 friends over 3-5 hours</strong>
+					</summary>
+					<blockquote>
+						<p>Get together with at least one friend, up to 6 friends (plus you) max. The game works best with 5 people total. Plan on playing for at least a couple hours, most likely 3-5.</p>
+						<p>Decide who will be the game master, or <strong>GM</strong>. Everyone else is a <strong>player</strong>. Each player controls and portrays one fictional player character (or <strong>PC</strong>) — a <em>Warrior</em>, a <em>Scoundrel</em>, a <em>Mystic</em>, or a <em>Wildsoul</em>. The GM controls and portrays the imaginary world around them, having the world act upon the PCs and reacting to what they do.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>The Game is a Conversation</strong>
+					</summary>
+					<blockquote>
+						<p>You play this game by talking to each other. You’ll say something, they respond. You’ll ask/answer questions, interrupt, or talk over each other. You take turns, but there’s no strict, set turn order; just make sure everyone gets their chance in <strong>the spotlight</strong>, like in a theater play.</p>
+						<p>The goal of this conversation is to create <strong>the fiction</strong>, a shared imaginary space in which the PCs exist and act.</p>
+						<p>The players are responsible for <strong>their characters</strong>: what they do and say, how they feel, their backgrounds and experiences prior to play.</p>
+						<p>The GM is responsible for <strong>everything else</strong>: the world, the non-player characters (NPCs), the monsters, etc. They describe how the world responds to the PCs’ actions, and they curate what’s true about the world. The GM can and should ask the players for input and ideas, but the world beyond the PCs is ultimately the GM’s domain (an idea known as <a href="https://troypress.com/drawing-the-line-shared-narration-in-ttrpgs">The Line</a>).</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>A Note on Safety at the Table</strong>
+					</summary>
+					<blockquote>
+						<p>Roleplaying with your friends can be lots of fun, but it’s important to keep in mind everyone’s boundaries and preferences. Since it can be tough or awkward to try and stop in the middle of the action, it’s a good idea to discuss beforehand what sort of content everyone is on board with and what content needs to be excluded, veiled, or handled carefully <em>before the game begins</em>. Safety always takes priority over the dice, the rules, and the story. For more information and some great tools for handling content safety during play, check out <a href="https://goldenlassogames.com/pages/safety-tools">this</a> or <a href="https://drive.google.com/drive/folders/114jRmhzBpdqkAlhmveis0nmW73qkAZCj">that link</a>.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Getting Started</strong>
+					</summary>
+					<blockquote>
+						<p>For your first time playing, pick an <strong>adventure starter</strong> that everyone is excited about. The adventure starter will:</p>
+						<ul>
+							<li>Establish a premise</li>
+							<li>Guide you through creating and introducing the PCs</li>
+							<li>Prompt you to establish motives, goals, complications, details, etc.</li>
+							<li>Help hook the PCs into the fiction</li>
+						</ul>
+						<p>Adventure starters might also include (for GMs) a map, dangers the PCs might face, and discoveries they might make.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>The Flow of Play</strong>
+					</summary>
+					<blockquote>
+						<p>The GM <strong>frames a scene</strong> – they say (or ask) where the PCs are and what that place is like. They say (or ask) who else is there, what time it is, and so forth.</p>
+						<p>The GM <strong>establishes the situation</strong>, saying (or asking) what’s going on and providing more details to the players.</p>
+						<p>The GM says something to <strong>provoke action</strong> and/or <strong>increase tension</strong>. Then they ask “<em>What do you do?</em>”</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>The Flow of Play, Continued</strong>
+					</summary>
+					<blockquote>
+						<p>The players will either <strong>ask for more info</strong> or <strong>say what they do</strong> (as their characters, talking in 1st or 3rd person is fine).</p>
+						<ul>
+							<li>The GM answers questions and clarifies the situation</li>
+							<li>If the player triggers one of their moves (<em>Take the Risk</em>, <em>Wade Into Battle</em>, <em>Manipulate</em>, <em>Get Answers</em>, <em>Lead Onward</em>, or another move), they work with the GM to resolve it.</li>
+							<li>Otherwise, the GM says what happens based on the fiction.</li>
+						</ul>
+						<p><strong>The process then repeats</strong>: the GM establishes the situation, provokes action or increases tension, and asks “<em>What do you do?</em>” If the scene ends, the GM frames the next scene. If they’re not sure how to frame the next scene, they ask the players questions until they are sure.</p>
+						<p>The flow of play is conversational. <strong>There are no formal turns, even during fights</strong>. Players can and will interrupt each other and interject (but please be respectful and give everyone else a chance in the spotlight). What’s possible, plausible, or likely is something to be decided and negotiated by each group.</p>
+						<p><strong>The GM doesn’t roll to act for NPCs, monsters, or the world.</strong> (The GM <em>may</em> roll to see how much harm an NPC or monster inflicts, or they may have the player roll for the harm amount instead; either way is fine.) Instead, the GM describes how the world and its denizens act upon the PCs and then gives the PCs a chance to react. If they ignore the threat, act foolhardy, or roll poorly, then the NPC may get what they want, the enemy’s attack may hit, or some other consequence may befall the PC, depending on the <strong>GM Move</strong> the game master decides to make.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Thanks to…</strong>
+					</summary>
+					<blockquote>
+						<p><em>Marcus</em>, <em>Inmatarian</em>, and especially <em>Jeremy Strandberg</em> on the <a href="https://discord.com/invite/dungeon-world-236959672538628096">Dungeon World Discord</a> for kicking this idea off!</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Credits</strong>
+					</summary>
+					<blockquote>
+						<ul>
+							<li><em>Fast Fantasy RPG (v1.1) by David Bass, 2023. Text/layout by Jeremy Strandberg and David Bass, 2023. <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>. <a href="https://spoutinglore.blogspot.com">spoutinglore.blogspot.com</a>.</em></li>
+							<li>Agenda, Principles, and When In Doubt adapted from <a href="https://drive.google.com/file/d/1oLQ6QUT9LgOZuzoB_YqUaCjfPGYEOlud/view">Homebrew World</a> by Jeremy Strandberg <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. and <a href="https://drive.google.com/file/d/1pv6kVVJhbJi1vr8hVeWh1NqrDQJKgY1B/view">Unlimited Dungeons</a> by Keith Tompos and Timekeeper <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</li>
+							<li><a href="https://game-icons.net/1x1/lorc/swords-emblem.html">Emblem Icon</a> by Lorc <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://lorcblog.blogspot.com/">lorcblog.blogspot.com</a></li>
+							<li><a href="https://game-icons.net/1x1/delapouite/dagger-rose.html">Dagger Rose Icon</a> by Delapouite <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://delapouite.com">https://delapouite.com</a></li>
+							<li><a href="https://game-icons.net/1x1/delapouite/spell-book.html">Spellbook Icon</a> by Delapouite <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://delapouite.com">https://delapouite.com</a></li>
+							<li><a href="https://game-icons.net/1x1/lorc/flat-paw-print.html">Paw Print Icon</a> by Lorc <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://lorcblog.blogspot.com/">lorcblog.blogspot.com</a></li>
+							<li><a href="https://game-icons.net/1x1/delapouite/rolling-dices.html">Dice Icon</a> by Delapouite <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://delapouite.com">https://delapouite.com</a></li>
+							<li><a href="https://game-icons.net/1x1/delapouite/scroll-quill.html">Scroll Quill Icon</a> by Delapouite <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://delapouite.com">https://delapouite.com</a></li>
+							<li><a href="https://game-icons.net/1x1/lorc/lyre.html">Lyre Icon</a> by Lorc <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://lorcblog.blogspot.com/">lorcblog.blogspot.com</a></li>
+							<li><a href="https://game-icons.net/1x1/lorc/werewolf.html">Werewolf Icon</a> by Lorc <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://lorcblog.blogspot.com/">lorcblog.blogspot.com</a></li>
+							<li><a href="https://game-icons.net/1x1/lorc/fizzing-flask.html">Fizzing Flask Icon</a> by Lorc <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://lorcblog.blogspot.com/">lorcblog.blogspot.com</a></li>
+							<li><a href="https://game-icons.net/1x1/lorc/cursed-star.html">Cursed Star Icon</a> by Lorc <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://lorcblog.blogspot.com/">lorcblog.blogspot.com</a></li>
+							<li><a href="https://game-icons.net/1x1/lorc/imp-laugh.html">Imp Laugh</a> by Lorc <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://lorcblog.blogspot.com/">lorcblog.blogspot.com</a></li>
+							<li><a href="https://game-icons.net/1x1/lorc/bleeding-heart.html">Bleeding Heart Icon</a> by Lorc <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://lorcblog.blogspot.com/">lorcblog.blogspot.com</a></li>
+							<li><a href="https://game-icons.net/1x1/lorc/gem-pendant.html">Gem Pendant Icon</a> by Lorc <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="https://lorcblog.blogspot.com/">lorcblog.blogspot.com</a></li>
+						</ul>
+					</blockquote>
+				</details>
+				<h2>A guide to Playing a Character</h2>
+				<details>
+					<summary>
+						<strong>Your Agenda</strong>
+					</summary>
+					<blockquote>
+						<ul>
+							<li>Be a fan of the other players, the GM, and the world</li>
+							<li>Portray a compelling character</li>
+							<li>Engage actively with the fictional world</li>
+							<li>Play to have fun together, not to win</li>
+						</ul>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Principles</strong>
+					</summary>
+					<blockquote>
+						<ul>
+							<li>Share the spotlight with other players</li>
+							<li>Be bold, take risks, and embrace what comes after</li>
+							<li>Pay attention, ask questions, and offer suggestions</li>
+							<li>Help build the world, but defer to the GM if needed</li>
+							<li>Embrace difficulty, setbacks, and failure</li>
+							<li>Show us what’s important to your character</li>
+							<li>Describe things through your character’s eyes</li>
+							<li>Make connections with other characters</li>
+							<li>Build off of what the GM and other players say</li>
+							<li>Think in - character, but be considerate of others</li>
+							<li>Begin and end with the fiction</li>
+						</ul>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>When In Doubt</strong>
+					</summary>
+					<blockquote>
+						<ul>
+							<li>Visualize the scene, consider the situation</li>
+							<li>Ask the GM for clarification</li>
+							<li>Think about what you want & your character’s goals</li>
+							<li>Consider your character’s strengths and flaws</li>
+							<li>Ask around for ideas, but you choose what to do</li>
+							<li>Don’t shy away from the obvious choice, the brash choice, the interesting choice, or the meaningful choice. <em>Remember, you get XP if you roll a 6-!</em></li>
+						</ul>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Make Your Move</strong>
+					</summary>
+					<blockquote>
+						<ul>
+							<li>When you want to do something, don’t jump straight to rolling the dice. Converse with the GM about which move you’re making, and for <em>Take the Risk</em>, work with them to establish the gains and costs.</li>
+							<li>If what your character does in the fiction seems to trigger a move, then it does. If you want to make a move, you’ve got to actually do the thing in the fiction. Work it out with the GM, but remember you can always change your mind and back out of it <em>(before you roll, that is)</em>.</li>
+							<li>Describe the <strong>how</strong> of the actions your character takes, not just the <strong>what</strong>. You don’t need to go into great detail, just enough that everyone can picture it in their minds. Tie things back into the established fiction.</li>
+							<li>Don’t worry too much about trying to make things fit your chosen specialties when you <em>Take the Risk</em>.</li>
+						</ul>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Creating Your Character</strong>
+					</summary>
+					<blockquote>
+						<p>First off, your character needs to be conducive to both the group you’re playing with and the established fictional world. The GM should give you some kind of prompt to go off of before everyone makes their characters, so make sure to create a character that is actually going to go along with everyone on your shared adventure. The players will probably have more fun if they diversify their character types, but don’t worry too much if you and another player choose the same type.</p>
+						<ol>
+							<li>Pick a <strong>character type</strong>, choosing from <em>Warrior</em>, <em>Scoundrel</em>, <em>Mystic</em>, or <em>Wildsoul</em>.</li>
+							<li>Pick a <strong>name</strong> and <strong>look</strong> (<em>you can reference the People, Places, and Possibilities page for inspiration on names</em>).</li>
+							<li>Decide for your character <strong>what’s important to them</strong> and <strong>their personal goals</strong>. Choose things that you can demonstrate while roleplaying during the adventure.</li>
+							<li>Each player asks <strong>Which one of you...</strong> to at least one other player. These help establish past connections between characters and reasons you’re in the group.</li>
+							<li>Each player picks <strong>options for <em>Take the Risk</em></strong>. These are areas of expertise that your character excels at . You can ask the GM and other players for input if you want. Then everyone reveals what they picked.</li>
+							<li>Each player picks <strong>options for Mettle / Cunning / Power / Wisdom</strong>. These are things your character can do with certainty, or supernatural abilities that they can perform. Ask for input if you want , and reveal.</li>
+							<li>Each player picks <strong>Inventory</strong> and <strong>Little Things</strong>. You can check the <strong>Adventuring kit</strong> boxes and decide what you need later. Make sure you have Supplies to share!</li>
+						</ol>
+						<p>Maybe you want to play a character a bit more unusual, like a half-dragon or a psychic hive-mind of spiders. As long as the GM is okay with it, go for it! Keep in mind though that you’re playing in a group, so you’re not <strong>the</strong> main character, you’re <strong>one of the</strong> main characters. If you want to be able to do something an ordinary person wouldn’t be able to do, that’s a perfect opportunity to use the write-in options for your <em>Take the Risk</em> skills or things you can spend <em>Mettle</em>, <em>Cunning</em>, <em>Power</em>, or <em>Wisdom</em> to do. <strong>Work with the GM</strong> to figure out the specifics, and remember that limitations can be fun!</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Taking the Risk</strong>
+					</summary>
+					<blockquote>
+						<p><em>Take the Risk</em> is the most common move your character will make. Discuss with the GM what you’re trying to accomplish and what things might go awry, even if you succeed. These could be a complication, a downside, an additional cost , or maybe you aren’t able to get quite all of what you want , at least in one attempt . If you aren’t happy with the stakes that you and the GM set (<em>before you roll the dice</em>), you can always decide to have your character take a different action instead.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Mettle, Cunning, Power, and Wisdom</strong>
+					</summary>
+					<blockquote>
+						<p>Though these points have different names for each character type, they all function the same. When you spend a point, you just <em>do the thing</em>, so long as it is reasonable. If it’s asking a question, the GM will answer honestly. The exception is for magic, which requires a roll.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Getting Hurt and Recovering</strong>
+					</summary>
+					<blockquote>
+						<p>When your character would take harm, you decide how to deal with it. Reduce it by your armor, maybe spend a point, or even trigger consequences in the fiction. Mark harm boxes top to bottom, but sometimes the GM may have you mark a specific harm box instead.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Supplies and Having What You Need</strong>
+					</summary>
+					<blockquote>
+						<p>Supplies are some of the most important equipment an adventurer can carry. You can <em>just so happen to have</em> almost any reasonably-sized, mundane item in your pack by using Supplies. Supplies are most often used for:</p>
+						<ul>
+							<li><em>Having what you need</em> by expending 1 Supplies if the item can be comfortably held in 1 hand, or 2 Supplies if the item would need 2 hands to hold or use properly.</li>
+							<li>Regaining 1 <strong><em>Mettle</em></strong> / <strong><em>Cunning</em></strong> / <strong><em>Power</em></strong> / <strong><em>Wisdom</em></strong> when you stop to <em>catch your breath</em> and use 1 Supplies, or regaining all your points when you <em>get a few hours of rest</em> and use Supplies equal to the number of people resting plus 1. This allows each resting PC to recover.</li>
+							<li>Clearing the <strong>Injured</strong> harm box when you <em>take the time to treat the injury</em> and expend 1 Supplies, or clearing the <strong>Debilitated</strong> harm box when you <em>get a few hours of rest</em> and expend 1 Supplies.</li>
+						</ul>
+						<p>Don’t bother marking off a use of Supplies if the item is fairly small or inexpensive. Refer to the sidebar on the page of <em>Artifacts : Trinkets, Talismans, and Treasures</em> for more examples of things you can have as Supplies.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Hola</strong>
+					</summary>
+					<blockquote>
+						<p>Adios</p>
+					</blockquote>
+				</details>
+			</section>
+			<section id="warrior" class="section__tab-panel">
+				<h2>Warrior</h2>
+				<div>
+					<div class="half">
+						<fieldset>      
+							<legend>XP</legend>
+							<input type="checkbox" name="xp" value="1">
+							<input type="checkbox" name="xp" value="2">
+							<input type="checkbox" name="xp" value="3">
+							<input type="checkbox" name="xp" value="4">
+							<input type="checkbox" name="xp" value="5">
+						</fieldset>
+					</div>
+					<div class="half">
+						<fieldset>      
+							<legend>Mettle</legend>
+							<input type="checkbox" name="mettle" value="1">
+							<input type="checkbox" name="mettle" value="2">
+							<input type="checkbox" name="mettle" value="3">
+							<input type="checkbox" name="mettle" value="4">
+							<input type="checkbox" name="mettle" value="5">
+							<input type="checkbox" name="mettle" value="6">
+							<input type="checkbox" name="mettle" value="7">
+							<input type="checkbox" name="mettle" value="8">
+							<input type="checkbox" name="mettle" value="9">
+							<input type="checkbox" name="mettle" value="10">
+						</fieldset>
+					</div>
+				</div>
+				<details>
+					<summary>
+						<strong>Personal Information</strong>
+					</summary>
+					<blockquote>
+						<table>
+							<colgroup>
+								<col width="50%">
+								<col width="50%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td align="left"><label for="warrior__battle">Tell us, what great battle were you involved in?</label></td>
+									<td align="left"><input id="warrior__battle" type="text" class="full"></td>
+								</tr>
+								<tr>
+									<td align="left"><label for="warrior__name">Your name is...</label></td>
+									<td align="left"><input id="warrior__name" type="text" class="full"></td>
+								</tr>
+								<tr>
+									<td align="left">
+										<label for="warrior__look" class="label">Your look</label>
+										<div class="tooltip">(?)
+											<span class="tooltiptext">Character inspiration suggestions. Examples: feminine, masculine, ambiguous, youthful, mature, elder, ancient, human, elf, dwarf, tidy, posh, feral, grizzled, grim...</span>
+										</div>
+									</td>
+									<td align="left">
+										<input id="warrior__look" type="text" class="full">
+									</td>
+								</tr>
+								<tr>
+									<td align="left">
+										<label for="warrior__important">What is important to you?</label>
+										<p><em>Pick 1 or write yours.</em></p>
+									</td>
+									<td align="left">
+										<select id="warrior__important" class="full">
+												<option>Valor: show bravery in the face of danger</option>
+												<option>Honor: keep a promise made, no matter what</option>
+												<option>Pride: demand respect , show your superiority</option>
+												<option>Sacrifice: suffer hardship in place of another</option>
+												<option>Peace: settle a conflict without bloodshed</option>
+										</select>
+										<input id="warrior__look-custom" type="text" class="full" placeholder="Other">
+									</td>
+								</tr>
+								<tr>
+									<td align="left">
+										<label for="warrior__goal" class="label">Your personal goal is to...</label>
+										<div class="tooltip">(?)
+											<span class="tooltiptext">Once during each scene, if you clearly demonstrate or struggle with what’s important to you, mark XP and regain 1 Mettle. When everyone agrees you’ve reached a milestone towards some goal, mark 5 XP and regain all of your Mettle.</span>
+										</div>
+										<p><em>Pick 1 or write yours.</em></p>
+									</td>
+									<td align="left">
+										<select id="warrior__goal" class="full">
+												<option>... get vengeance for</option>
+												<option>... redeem myself for</option>
+												<option>... prove myself to</option>
+												<option>... fulfill my oath by</option>
+												<option>... defeat my rival,</option>
+										</select>
+										<input id="warrior__goal-custom" type="text" class="full" placeholder="Fill the sentence">
+									</td>
+								</tr>
+								<tr>
+									<td align="left">
+										<label for="warrior__name">Which one of you...</label>
+										<p><em>Ask your fellow PCs one or more of these</em></p>
+									</td>
+									<td align="left">
+										<table>
+											<tbody>
+												<tr>
+													<td align="left">
+														<label for="warrior__whichOne1">... fought beside me in battle?</label>
+														<input id="warrior__whichOne1" type="text" class="full">
+													</td>
+												</tr>
+												<tr>
+													<td align="left">
+														<label for="warrior__whichOne2">... have I sworn to protect?</label>
+														<input id="warrior__whichOne2" type="text" class="full">
+													</td>
+												</tr>
+												<tr>
+													<td align="left">
+														<label for="warrior__whichOne3">... left me with a notable scar?</label>
+														<input id="warrior__whichOne3" type="text" class="full">
+													</td>
+												</tr>
+												<tr>
+													<td align="left">
+														<label for="warrior__whichOne4">... is a good and true friend?</label>
+														<input id="warrior__whichOne4" type="text" class="full">
+													</td>
+												</tr>
+												<tr>
+													<td align="left">
+														<label for="warrior__whichOne5">... has vowed to follow me?</label>
+														<input id="warrior__whichOne5" type="text" class="full">
+													</td>
+												</tr>
+												<tr>
+													<td align="left">
+														<label for="warrior__whichOne6">... had their secret revealed to me?</label>
+														<input id="warrior__whichOne6" type="text" class="full">
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>🎲 Wade Into Battle</strong>
+					</summary>
+					<blockquote>
+						<p>When you <em>go on the offensive in combat</em>, roll <strong>3 dice</strong> and add up the <strong>2 highest dice</strong>.</p>
+						<ul>
+							<li><strong>On a 10+</strong>, pick 2 from below.</li>
+							<li><strong>On a 7-9</strong>, pick 1.</li>
+							<li><strong>On a 6-</strong>, mark XP, and your enemy picks 1 against you.</li>
+						</ul>
+						<p><strong>Trade attacks</strong> with your foe(s) and...</p>
+						<ul>
+							<li>... strike hard and fast (<em>inflict +1 harm</em>)</li>
+							<li>... focus on defense (<em>avoid the worst of it and roll 1 die: negate that much harm</em>)</li>
+							<li>... impress, dismay, or frighten them (<em>how?</em>)</li>
+							<li>... secure an advantage or position (<em>how?</em>)</li>
+							<li>... take something from them (<em>what?</em>)</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>🎲 Take the Risk</strong>
+					</summary>
+					<blockquote>
+						<p>When you <em>act despite danger</em> or <em>do something risky</em>, establish what you stand to gain and what it might cost.</p>
+						<p><em>You and the Game Master decide together!</em></p>
+						<p>Roll <strong>2 dice</strong> and add them up, or roll <strong>3 dice</strong> and add up the <strong>2 highest dice</strong> if the risk you’re taking is... <em>pick 3 to start</em></p>
+						<ul>
+							<li><label for="warrior__takeTheRisk1"><input type="checkbox" id="warrior__takeTheRisk1">... by smashing or wrecking something</label></li>
+							<li><label for="warrior__takeTheRisk2"><input type="checkbox" id="warrior__takeTheRisk2">... ignoring your grievous wounds</label></li>
+							<li><label for="warrior__takeTheRisk3"><input type="checkbox" id="warrior__takeTheRisk3">... to save another (<em>how?</em>)</label></li>
+							<li><label for="warrior__takeTheRisk4"><input type="checkbox" id="warrior__takeTheRisk4">... to disrupt your foes’ formation</label></li>
+							<li><label for="warrior__takeTheRisk5"><input type="checkbox" id="warrior__takeTheRisk5">... to get your hands on someone</label></li>
+							<li><label for="warrior__takeTheRisk6"><input type="checkbox" id="warrior__takeTheRisk6">... versus an onslaught of lesser foes</label></li>
+							<li><label for="warrior__takeTheRisk7"><input type="checkbox" id="warrior__takeTheRisk7">... with intimidation or credible threats</label></li>
+							<li><label for="warrior__takeTheRisk8"><input type="checkbox" id="warrior__takeTheRisk8">... with unorthodox use of equipment</label></li>
+							<li><label for="warrior__takeTheRisk9"><input type="checkbox" id="warrior__takeTheRisk9">... with unyielding physical fortitude</label></li>
+							<li><label for="warrior__takeTheRisk10"><input type="checkbox" id="warrior__takeTheRisk10">... with tactical prowess</label></li>
+							<li><label for="warrior__takeTheRisk11"><input type="checkbox" id="warrior__takeTheRisk11">... with fearless resolve</label></li>
+							<li><input type="checkbox" id="warrior__takeTheRisk12"><input id="warrior__takeTheRisk12bis" type="text" class="two-thirds"></li>
+							<li><input type="checkbox" id="warrior__takeTheRisk13"><input id="warrior__takeTheRisk13bis" type="text" class="two-thirds"></li>
+							<li><input type="checkbox" id="warrior__takeTheRisk14"><input id="warrior__takeTheRisk14bis" type="text" class="two-thirds"></li>
+						</ul>
+						<p><strong>On a 10+</strong>, you get both.</p>
+						<p><strong>On a 7-9</strong>, pick 1:</p>
+						<ul>
+							<li>You get what you wanted.</li>
+							<li>You either avoid the cost or you accept the cost and mark XP.</li>
+						</ul>
+						<p><strong>On a 6-</strong>, mark XP, and prepare for the worst.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Mettle</strong>
+					</summary>
+					<blockquote>
+						<p>Your max Mettle is 4 <em>to start</em></p>
+						<p>Spend Mettle 1-for-1 to... <em>pick 3 more to start</em></p>
+						<ul>
+							<li><label for="warrior__mettle1"><input type="checkbox" id="warrior__mettle1">... reduce harm taken by 1 (<em>how?</em>)</label></li>
+							<li><label for="warrior__mettle2"><input type="checkbox" id="warrior__mettle2">... add +1, once per roll (<em>how?</em>)</label></li>
+							<li><label for="warrior__mettle3"><input type="checkbox" id="warrior__mettle3">... ask: “Who’s the biggest threat?”</label></li>
+							<li><label for="warrior__mettle4"><input type="checkbox" id="warrior__mettle4">... ask: “Who’s the most vulnerable?”</label></li>
+							<li><label for="warrior__mettle5"><input type="checkbox" id="warrior__mettle5">... follow up an ally’s attack with your own</label></li>
+							<li><label for="warrior__mettle6"><input type="checkbox" id="warrior__mettle6">... take an attack meant for another</label></li>
+							<li><label for="warrior__mettle7"><input type="checkbox" id="warrior__mettle7">... demand everyone’s attention, for now</label></li>
+							<li><label for="warrior__mettle8"><input type="checkbox" id="warrior__mettle8">... pick 1 more on a <strong><em>Wade Into Battle</em></strong></label></li>
+							<li><label for="warrior__mettle9"><input type="checkbox" id="warrior__mettle9">... perform a feat of great strength</label></li>
+							<li><label for="warrior__mettle10"><input type="checkbox" id="warrior__mettle10">... hold fast, hold strong, or hold steady"</label></li>
+							<li><input type="checkbox" id="warrior__mettle11"><input id="warrior__mettle11bis" type="text" class="two-thirds"></li>
+							<li><input type="checkbox" id="warrior__mettle12"><input id="warrior__mettle12bis" type="text" class="two-thirds"></li>
+							<li><input type="checkbox" id="warrior__mettle13"><input id="warrior__mettle13bis" type="text" class="two-thirds"></li>
+						</ul>
+						<p>Regain 1 Mettle when you <em>catch your breath</em> and use 1 Supplies. Regain all your Mettle when you <em>get a few hours of rest</em> and use 1 Supplies +1 use for each character resting.</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>🎲 Inflict Harm</strong>
+					</summary>
+					<blockquote>
+						<p>Roll <strong>3 dice</strong>. If you inflict harm with...</p>
+						<ul>
+							<li>... a sturdy weapon, use the <strong>highest die</strong></li>
+							<li>... your body or an improvised weapon, use the <strong>median die</strong></li>
+						<ul>
+						<p>and if you have a tactical advantage, add <strong>+1</strong></p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Suffer Harm</strong>
+					</summary>
+					<blockquote>
+						<p>Ask the GM how much. Reduce it by...</p>
+						<ul>
+							<li>... your total Armor (<em>see Inventory</em>)</li>
+							<li>... denting your shield (<em> for -1 harm</em>)</li>
+							<li>... spending Mettle (<em>1 for -1 harm</em>)</li>
+							<li>... losing your footing or grip (<em>-1 harm</em>)</li>
+							<li>... getting stunned (<em>-1 harm</em>)</li>
+							<li>... something breaking (<em>-1 harm</em>)</li>
+						</ul>
+						<p>Whatever’s left, mark that many boxes :</p>
+						<ul>
+							<li><label for="warrior__suffer1"><input type="checkbox" id="warrior__suffer1"><input type="checkbox" id="warrior__suffer1bis">Ouch (<em>clears with a few minutes of rest</em>)</label></li>
+							<li><label for="warrior__suffer2"><input type="checkbox" id="warrior__suffer2"><input type="checkbox" id="warrior__suffer2bis">Injured (<em>takes time and 1 Supplies to treat</em>)</label></li>
+							<li><label for="warrior__suffer3"><input type="checkbox" id="warrior__suffer3">Debilitated (<em>can’t roll 3 dice and add 2 highest</em>)</label></li>
+							<li><label for="warrior__suffer4"><input type="checkbox" id="warrior__suffer4">Maimed (<em>must roll 3 dice and add 2 lowest</em>)</label></li>
+							<li><label for="warrior__suffer5"><input type="checkbox" id="warrior__suffer5">At Death's Door (<em>any more and you’re dead</em>)</label></li>
+						</ul>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Inventory</strong>
+					</summary>
+					<blockquote>
+						<p>Good bye</p>
+					</blockquote>
+				</details>
+				<details>
+					<summary>
+						<strong>Little things</strong>
+					</summary>
+					<blockquote>
+						<p>Good bye</p>
+					</blockquote>
+				</details>
+			</section>
+			<section id="scoundrel" class="section__tab-panel">
+				<h2>Scoundrel</h2>
+			</section>
+			<section id="mystic" class="section__tab-panel">
+				<h2>Mystic</h2>
+			</section>
+			<section id="wildsoul" class="section__tab-panel">
+				<h2>Wildsoul</h2>
+			</section>
+			<section id="gm" class="section__tab-panel">
+				<h2>Game Master</h2>
+			</section>
+			<section id="generators" class="section__tab-panel">
+				<h2>Generators</h2>
+			</section>
+		</main>
+		<footer class="footer">
+			<nav>
+				<a href="#rules">Rules</a> | 
+				<a href="#warrior" title="Warrior"><img alt="Warrior" class="footer__image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIrUExURQAAAAICAgEBAQMDA0FBQX9/fzs7O2JiYnl5eUdHR+Xl5f///+Li4jw8PIeHh/n5+b6+vo2NjXx8fAQEBMTExPHx8SsrK1JSUuzs7MLCwkpKSurq6sXFxU5OTpeXl+/v77CwsCkpKd7e3tDQ0ICAgBkZGXV1dfj4+J2dnSQkJHt7e6+vr6KiotHR0djY2AgICIuLi/7+/v39/YiIiD4+PtnZ2e7u7l9fX6CgoMHBweTk5D09Pfb29nFxcVpaWhEREW9vb8DAwFlZWbKyslFRUW5ubq6urioqKsnJyc/Pz5ycnPf393JycsPDw+np6fLy8vPz86ysrC8vL2RkZM3Nzfv7+6Ghofz8/Ofn50JCQpmZme3t7Xp6esfHx1hYWObm5pCQkLy8vFBQUOjo6E9PT6SkpFNTU+Dg4E1NTd/f39zc3NTU1Hd3d/r6+rm5uWhoaPX19WxsbBgYGKenp35+fiwsLGVlZZGRkbS0tNPT04GBgRYWFmFhYYmJiaWlpcjIyNfX19bW1rGxsZqamklJSeHh4S0tLYyMjFtbW4ODg6ampl1dXTQ0NLOzszIyMpWVldXV1evr67e3txsbG4SEhD8/P4qKirW1tQ0NDQUFBaqqqp6enpSUlMzMzDExMW1tbaioqJaWlsbGxjAwMOPj4w4ODktLS5OTk2pqasrKyhcXF9ra2vT09AcHBwwMDDk5Od3d3Z+fnzY2Nnh4eKOjo7i4uFdXVx4eHvDw8ClVT+QAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOSSURBVEhLhZaJX0xRFMfP9Cg6ZUZjKMW0EVFMNCXJVpJIKNJEWkhFpbQIla2QLbvse/Z9+fOce995M29m7uj7+cy8e5bfffeeu8yAwMKfyQnjpwZTpoZPqrFAxDSfZnokRkVzOzQzrGjjJsBMRIzxdqDGDrMQHbPZgjmxiHG+l6rQYG48YgJbZM6b78REwxA9MrIT8WWBpGRMSV3g7ZbSFqbhImFrsDgu3aeBJUuFhgIZmLnMr64aLHdlrQDNDiuz0Z3j7SwXcYnschXmrZYjMJOL+WsACvKoFNlr2bfOStZ6aiSie0OQAmAjuguL3Iixm3KMYHHMZhKVwBYs3WoaLUND2YZl27F8x0726BPfVeHCPGslDVr3mSFXFGJZBDV9kxR5uyvFhBQKSkvcg1hZZUv1aeywtzrF6UL01LDHBHUSh0ivIfbxgpBzP60fYmktph0wnAZ2KM5ArKuREt9Wqm+Qdm1jGWYdDNQcakJMhsNplFDqaS5ib3VLpINm0gpHjiK2sdOgvQOtx6AzpaTreCO7dLp7em3zAfoQT7CH0aA/y6bP+uSp0wNtgxlDmZlnKuLOnpt2XibMdl8YDhiYBUYu0veltmwnjcRMflXF5f0Ap0eD6kxvsMMVB+cFcFUsfdDqS67RflFBWzMUJ/WiBjHAcRX6WgZxncMqbnBOADEcVkGbRkFaAYdVdHGSP2OLOayin5P8aeWoknkdnOUHXz4hSOYsM650DqoIg5ucZsYzzGE16XQEA/HekQpo391SrP9tDiuwwJ27cI/zfFTd53gwdBpKnA9GxcH0YxyuPvReIH6Qog7xETzmTANH9BNHZWqIrT9OCcnwNOCIJcIzxPJ2hcYCz2WxRuCFzDQY637poUd8Y9ChtEO/uLIRX71+s102mLfipiCadgbMxw4T5TKC2AvnuCV4B+voPhLQBWO+LjSoH9MD2JoEkMBtxIZoeGpsO1pRn8YC1+jmkzQ9If37D2x9nIBPcJtfg32cLvl8gr1j9aTQ4MtXaeXH0IjDoFoaxDdOF6Szr3xC1lKD761kOX9QS7BDj2KVtHR+6i5rP1efMn/t+fBbV9AEbHo8v1BGJfQvgHA999aRnj23WC80FTIB6afHoFk6xtkSiNp418ECf/SCdLED4A6tyd/HM/0Lb0aD6PEW2q/v2AZYEzs4spqeoRRycjA60DKkW8T3cG78B9ndm07ZNo15EqQK4B9HdJwTOJWNygAAAABJRU5ErkJggg=="/></a> | 
+				<a href="#scoundrel" title="Scoundrel"><img alt="Scoundrel" class="footer__image" src="data:image/png;base64,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"/></a> | 
+				<a href="#mystic" title="Mystic"><img alt="Mystic" class="footer__image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKLUExURQAAAAYGBgICAgMDAwEBAZqampOTk2VlZVVVVRsbG319ff39/d3d3cHBwdra2uTk5EtLS6Kionl5eRwcHOvr6////6WlpSYmJmBgYJycnPv7+62trRkZGfn5+V1dXTMzM8LCwvr6+qGhoRUVFY6OjnFxccbGxtHR0Z2dnTg4OCcnJ8/Pz8nJyZ6enrOzs/Hx8bm5uYmJiQQEBDAwMEVFRUZGRpWVlUFBQT8/PzU1Nb29vcrKyqioqDw8PAsLCwoKCujo6PLy8uLi4t7e3rCwsA8PDyoqKrW1tVRUVMzMzOrq6uzs7Ds7O2xsbG1tbenp6RISEru7u2RkZDo6OqOjo7e3t9fX14uLi/Dw8J+fn3d3d4yMjBgYGDIyMhcXFy0tLVpaWmlpaVJSUqSkpNPT0+3t7fj4+Pb29kJCQj09PdjY2Pf392hoaMXFxfPz87y8vCMjIxYWFtbW1nZ2du/v79/f39XV1dvb2/z8/NnZ2QkJCSUlJW5ubvT09P7+/nR0dFhYWFlZWSEhIY2NjXt7e66urr+/v7S0tJiYmO7u7qysrL6+vtDQ0MDAwMfHxzc3N3x8fGJiYmdnZ+fn5+Xl5ePj47i4uHBwcFFRUbKysqenp7q6uq+vr9zc3EdHR6mpqeDg4EBAQJeXl5ubm01NTX9/f1BQUFdXV2FhYVtbW3h4eBoaGoODg2NjY3V1dX5+foWFhaamps3Nzc7OzsvLy4qKipCQkObm5mpqao+Pj4KCgh8fHzY2NnJycvX19WZmZoGBgSwsLCsrK05OTqurq6qqqra2tpaWloaGhlNTUw4ODnNzc1xcXBQUFMjIyISEhJGRkdTU1NLS0kRERMPDw8TExAcHBwgICF9fXwzz7aYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQKSURBVEhLrZWLW9NVGMffYszaBsPkVZyO2ILhBQMsSQbWFkTIzIm6pa4LxcaQq4HYyjYrkquAxtVUUMzsahdSul+17EZZWP05ncu7sQ2W63n6PNvvvO857/f8znveszP437mJfW9m3wThRaMQn2gSleyx6BbpzOdWasNRqTVJydoU8sLh8y++TdoRLElFxKVicdEsS1uuW7HA0lYyiT6dnEhuz0A0GO8gL4gCMtlLMIvcCNiLTZi9ajW5IdaszVl3Z24eeZEoIN/EGiZdL7dVctfd7LGhIPrtxD0bKZOswlBKopXTLAAboHrlmWX7HzBjAVlxooAiNBRvYta9suOGKOA+C9tW6/0lSVwWZF695mAZlfJKIGrSqIvxQFmMc8lgAw9KRVHE6TWXxzrMbKc3S0XFsrnisEXZKvLyyZvHloe2qortiOawcsK2SjbHdnKikXE7NLhTGESaw4kPxyinJAFSdu0mm8OTqNwj7VgkQL6LTIkCHnmUzNg8Ri3BFhyWWziiYI9XPfFkyLkBfJ70arenRufVOkQhEwprawu5EXOCvYl1NbIsiPUNOxqT7U1eb5O9rrlg+xIREKnbV/YUtFC4oLUKcX9by4Gntbv06Htm5bNlBymUWFRhe261n6I5gUPP63QvyMEX29GXXm7xRN5Aq9C75SWKFnCJuvRwc0eHubO6y49K6EZ2A4XRiCXQQ9ECJjGQKeiFbDxCwRIL9rG+MKIlfEa73ATJpn63Cvi9GCJa4h84ioZjFM7g9zu8rKNRgZD4PYNDw8NDgza2MUcHeEJzJLpHoIuCJSL9URqGsSbsgRJsJpejQTckUbCEvyVw/JXOE30dI50njd2YDb14isIZ416cgNMULJG5BNRqtXDVmApKtJ4hAftNTZ5N2RBeSJIox8ZerT2HmtfOu9S+198w4JskAHhrG8DbFEsIyeQ7F95VZeo951rfq8cusOP7JGCXfv0HwbsoiFxYOBkwhR+SAA7aWHHdNEIISb8xMdN18WL7pbPV2XgaJnA6eDN95MOPwUOxhJB8Ap8OfLZG3BOf4xdn9mBNlRAALEd9+Zc+Hqj2dg8ODdmtzLlQFUBrrlev9zbtt2imigL41ddWbCdJIw6CEbtbHMqttaLjm4bFztFv3Y15hy9fuXy8N8epzdUF8Ds4hQ4xDqBlaY22cuu86vulJ1fsvvoDwI9iKMT4T+suQSXWSe9nHdu8X9Ink9qsAZEHW+D0lX0bO5zDllSbfbrtwIzD+GtaGcBv6N8rJFnJzoZjEzPXWq79fmTt1NTmopl+U46p/I9Z0/Xrsxl9vebmyhOO0p3t6TDeUywkfwpd3PzFH1dn++JmVp7/EUogLnKE5G9Xfty4Grji3/4EFmA9/ANzqSP6uSpHTQAAAABJRU5ErkJggg=="/></a> | 
+				<a href="#wildsoul" title="Wildsoul"><img alt="Wildsoul" class="footer__image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIZUExURQAAAAEBAQUFBQQEBHd3d2RkZAICArOzs42NjdnZ2d3d3UNDQ/X19ebm5hAQEFRUVPf39////5SUlJeXl5CQkIyMjNzc3MTExMzMzKamplZWVtXV1eTk5Jubm/39/WZmZsHBwdra2klJSdLS0hQUFFVVVc3NzdTU1HJycgMDAzIyMl9fXwYGBkRERCEhIb+/v0hISEZGRi8vL3Nzc2xsbFBQUOLi4mBgYHh4eMPDw7Gxse3t7d/f33t7e4eHh+vr6/7+/lNTU7u7u7e3t7S0tPv7+29vb/b29mlpaWdnZ9vb2z8/P/Dw8AkJCVdXV9DQ0MbGxomJiYiIiPj4+FtbW+Pj45ycnCsrK6Ghobm5uVxcXPn5+e/v7z4+PllZWXFxcb29vaCgoGhoaODg4IaGhrW1tXZ2drCwsJ6enoSEhA8PD+fn58DAwKurq+Hh4eXl5bq6ujY2Nu7u7vPz84WFhcjIyNjY2Li4uEVFRaenp/Ly8jw8PKioqMLCwtfX1zQ0NH5+fk1NTQwMDHp6eqSkpIqKigoKCnx8fMvLy9HR0VFRUfr6+pGRkW1tbVJSUpmZmW5ubvz8/HV1denp6RkZGUtLSy4uLujo6PHx8by8vM7OzqOjoxUVFc/Pz+rq6gsLC6qqqpWVlaKioq+vr6ysrNPT062trV5eXhMTE76+vjU1NQ4ODp+fnzExMbKysiQkJFhYWJOTkxYWFkql3t4AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM5SURBVEhLzZX5O5RRFMcPiRQ1J5WSJiKMFq1CSkhTooW0Ka20kPa0LyJatJc27ftef2Fnm/HOWj/2eR7u9yz3fe895953ICoxNv6FWIAhJpl/mBUDcUMh3qcThvl0VBKHmwAYkZQ80mQ0RrlwtG85KYhjVEVlLOI4k5CKON5kNCYgutJMT0RMNxmNSYjuyaYzEDNNRmNKujsr2/TUnNw8k6Hwfj0sPJA/Dayy0/3/PDAjtEMzC2aJk5KzZ+t0D8yZO88aO79wAQ8BFGGxqZKFSaWLKD8eFpctcWeWyysrsFKjDpZi1TIRlUh4l9MrV7hYVrNzZQ0m10rYQRZiBo+rJA9Xk1wjCteSrEOsX8dhJ5mIDTyu1zxvOWxYqJIXvJEqT9sKhBotTd+keVgHmxtV8cqK3LhlK4edNGVN3Mbjds3DHbCzStUudu9ubgmusv+K7NE83AvlXlXUf0l23iLBdy1oo8I+2N+qqs0eL512QN4D7QcP5cPhI5J3lNpZIQqPAcQdP9FxMmQOFHP4RDackrwC8pSfFhfAGN5VwxnNG2Sum+N4FuAcDecv8EIuluGSxEtwskZCzZbpJ0HcmNwJcLmr+wqvYgjk93AVuzTUGtz+XvVXrVBTqmEluaoh7zU1/eSoH7vF0hpZIwo1cj34LLepH2+wQS2Y1kdnSluRrhHvTbEGuaV+Likt6Hb79TuNu+5qXas1cu8+Gw4eHBW/axQbD/vFeKTPfSyG/z75iIFm8T8hHQ9PRSOmSixP6l/VJ4aTZwPkf97Ee36RzDlE42SpWgfrl5rmgEKvCl7Ooh174LXkM7n0fnpGysB4rWQg2gS+8n1JNoFIoIDV2oYQaGLLFksXOsgZKZng0IY3dhl9jGshr52DYHhC2tsyyxzkzrvuWNlRCOSLW62flxAauMHheK/nPxzuSWHXdsPCYXF9sKwA7ChF4I1lOfl4z4LhCT5hAn0vo1BiWQHQz1dkwhxKJtfCjLu/tN9ZwE+WE0A8fKZfU+N8zxfoLHpnFmJvbdhTQzfwrH7s+1PM1Z1YT6a79WukI0Peb2u/F1SO/aGnh/9+7kv5lfc74iHTJMaX4LPDLep/A+APcwSSWaJG+8UAAAAASUVORK5CYII="/></a> | 
+				<a href="#gm" title="Game Master"><img alt="Game Master" class="footer__image" src="data:image/png;base64,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"/></a> | 
+				<a href="#generators">Generators</a>
+			</nav>
+		</footer>
+		<script>
+			
+		</script>
+	</body>
+</html>
