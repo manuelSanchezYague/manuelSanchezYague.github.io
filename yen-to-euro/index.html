@@ -29,12 +29,13 @@
 	</head>
 	<body>
 		<h1>Yenes a Euros</h1>
+		<div id="demo"></div>
 		<form class="frConverter">
 			<table border="0" cellpadding="3" cellspacing="0">
 				<tr>
 					<td>De yenes</td>
 					<td>
-						<input type="hidden" name="base_currency" value="jpy">
+						<input type="hidden" name="base_currency" value="JPY">
 					</td>
 					<td>
 						<input type="text" name="base_value" size="10" value="100">
@@ -43,7 +44,7 @@
 				<tr>
 					<td>A euros</td>
 					<td>
-						<input type="hidden" name="target_currency" value="eur">
+						<input type="hidden" name="target_currency" value="EUR">
 					</td>
 					<td>
 						<input type="text" name="target_value" size="10" value="">
@@ -51,28 +52,37 @@
 				</tr>
 			</table>
 		</form>
-		<table id="demo"></table>
 		<script src="https://www.floatrates.com/scripts/converter.js" type="text/javascript" ></script>
 		<script>
 			function getYensToEuros(yens, fixedPos){
-				var yenRateAgainstDollar = frCrExRs.jpy.rate;
-				var euroRateAgainstDollar = frCrExRs.eur.rate;
+				var yenRateAgainstDollar = frCrExRs["JPY"].rate;
+				var euroRateAgainstDollar = frCrExRs["EUR"].rate;
 				var yensToDollars = yens / yenRateAgainstDollar;
 				var dollarsToEuros = yensToDollars * euroRateAgainstDollar;
 				return dollarsToEuros.toFixed(fixedPos);
 			}
+			function getEurosToYens(euros, fixedPos){
+				var yenRateAgainstDollar = frCrExRs["JPY"].rate;
+				var euroRateAgainstDollar = frCrExRs["EUR"].rate;
+				var eurosToDollars = euros / euroRateAgainstDollar;
+				var dollarsToEuros = eurosToDollars * yenRateAgainstDollar;
+				return dollarsToEuros.toFixed(fixedPos);
+			}
 
 			function printTableDataTr() {
-				var table="<tr><th>Yenes</th><th>Euros</th></tr>";
+				var table = "<table><tr><th>1 Euro</th><th>Yenes</th></tr>";
+				table += "<tr><td>1€</td><td>" + getEurosToYens(1, 2) + " ¥</td></tr></table><br>";
+				table += "<table><tr><th>Yenes</th><th>Euros</th></tr>";
 				var euros;
-				for (i = 10000; i > 2000; i = i - 1000) {
+				for (var i = 100; i <= 2000; i = i + 100) {
 					euros = getYensToEuros(i, 2).replace(/\./g, ',');
 					table += "<tr><td>" + i + " ¥</td><td>" + euros + " €</td></tr>";
 				}
-				for (i = 2000; i >= 50; i = i - 50) {
+				for (var i = 3000; i <= 10000; i = i + 1000) {
 					euros = getYensToEuros(i, 2).replace(/\./g, ',');
 					table += "<tr><td>" + i + " ¥</td><td>" + euros + " €</td></tr>";
 				}
+				table += "</table><br>";
 				document.getElementById("demo").innerHTML = table;
 			}
 
