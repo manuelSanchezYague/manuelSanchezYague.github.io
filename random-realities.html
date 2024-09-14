@@ -799,6 +799,14 @@ h1 {
 	font-weight: bolder;
 	text-decoration: underline;
 }
+
+.closepopup {
+	cursor: pointer;
+	font-size: 2em;
+	font-weight: bolder;
+	float: right;
+}
+
 </style>
 	</head>
 	<body>
@@ -807,9 +815,12 @@ h1 {
 			<p class="author">By Cezar Capacle</p>
 			<hr>
 			<div class="popup" id="popup">
-				<div id="popup-content" class="popup-content">
-					<h2>This is a Popup</h2>
-					<p>This is the popup content.</p>
+				<div class="popup-content">
+					<span id="closepopup" class="closepopup">X</span>
+					<div id="popup-content">
+						<h2>This is a Popup</h2>
+						<p>This is the popup content.</p>
+					</div>
 				</div>
 			</div>
 			<section id="general-section" class="section__tab-panel">
@@ -1528,6 +1539,8 @@ App.prototype.initPopUp = function () {
 			popup.style.display = "none";
 		}
 	}
+	
+	document.getElementById("closepopup").addEventListener("click", (event) => popup.style.display = "none", false);
 }
 
 App.prototype.main = function () {
