@@ -712,18 +712,9 @@
 	}
 </style>
 <style>
-.header {
-  background-color: #222222;
-  top: 0;
-  left: 0;
-  padding: 0 0 10px 0;
-  position: fixed;
-  text-align: center;
-  width: 100%;
-}
 
 .main {
-	padding: 90px 0;
+	padding: 0 0 130px 0;
 }
 
 .footer {
@@ -738,7 +729,7 @@
 
 .c-button {
   -webkit-appearance: none;
-  background-color: #fff;
+  background-color: #c9c9c9;
   border: none;
   border-radius: 8px;
   color: #031C38;
@@ -770,22 +761,59 @@
   margin: -100px 0 0; /* negative fixed header height */
 }
 
+h1 {
+	text-align: center;
+}
+
 .author {
   font-size: 16px;
   margin-bottom: 0;
+  text-align: center;
 }
 
+.popup {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+	background-color: #333333;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888888;
+	width: 80%;
+}
+
+.popup-content strong{
+	font-size: 125%;
+}
+
+#acknowledgements-section a{
+	font-weight: bolder;
+	text-decoration: underline;
+}
 </style>
 	</head>
 	<body>
-		<header class="header">
+		<main class="main">
 			<h1>Random Realities</h1>
 			<p class="author">By Cezar Capacle</p>
 			<hr>
-		</header>
-		<main class="main">
+			<div class="popup" id="popup">
+				<div id="popup-content" class="popup-content">
+					<h2>This is a Popup</h2>
+					<p>This is the popup content.</p>
+				</div>
+			</div>
 			<section id="general-section" class="section__tab-panel">
-				<h2>General</h2>
+				<h2>General&nbsp;<a class="info" data-section="general" href="">&#9432;</a></h2>
 				<table style="width:100%;">
 					<colgroup>
 						<col width="33%">
@@ -824,7 +852,7 @@
 			</section>
 			<hr>
 			<section id="world-section" class="section__tab-panel">
-				<h2>World</h2>
+				<h2>World&nbsp;<a class="info" data-section="world" href="">&#9432;</a></h2>
 				<table style="width:100%;">
 					<colgroup>
 						<col width="33%">
@@ -857,7 +885,7 @@
 			</section>
 			<hr>
 			<section id="exploration-section" class="section__tab-panel">
-				<h2>Exploration</h2>
+				<h2>Exploration&nbsp;<a class="info" data-section="exploration" href="">&#9432;</a></h2>
 				<table style="width:100%;">
 					<colgroup>
 						<col width="33%">
@@ -897,7 +925,7 @@
 			</section>
 			<hr>
 			<section id="creation-section" class="section__tab-panel">
-				<h2>Creation</h2>
+				<h2>Creation&nbsp;<a class="info" data-section="creation" href="">&#9432;</a></h2>
 				<table style="width:100%;">
 					<colgroup>
 						<col width="33%">
@@ -934,7 +962,7 @@
 			</section>
 			<hr>
 			<section id="scene-section" class="section__tab-panel">
-				<h2>Scene</h2>
+				<h2>Scene&nbsp;<a class="info" data-section="scene" href="">&#9432;</a></h2>
 				<table style="width:100%;">
 					<colgroup>
 						<col width="33%">
@@ -997,7 +1025,7 @@
 			</section>
 			<hr>
 			<section id="quest-section" class="section__tab-panel">
-				<h2>Quest</h2>
+				<h2>Quest&nbsp;<a class="info" data-section="quest" href="">&#9432;</a></h2>
 				<table style="width:100%;">
 					<colgroup>
 						<col width="33%">
@@ -1065,7 +1093,7 @@
 			</section>
 			<hr>
 			<section id="location-section" class="section__tab-panel">
-				<h2>Location</h2>
+				<h2>Location&nbsp;<a class="info" data-section="location" href="">&#9432;</a></h2>
 				<table style="width:100%;">
 					<colgroup>
 						<col width="33%">
@@ -1139,7 +1167,7 @@
 			</section>
 			<hr>
 			<section id="people-section" class="section__tab-panel">
-				<h2>People</h2>
+				<h2>People&nbsp;<a class="info" data-section="people" href="">&#9432;</a></h2>
 				<table style="width:100%;">
 					<colgroup>
 						<col width="33%">
@@ -1210,7 +1238,7 @@
 			</section>
 			<hr>
 			<section id="creature-section" class="section__tab-panel">
-				<h2>Creature</h2>
+				<h2>Creature&nbsp;<a class="info" data-section="creature" href="">&#9432;</a></h2>
 				<table style="width:100%;">
 					<colgroup>
 						<col width="33%">
@@ -1264,33 +1292,38 @@
 		<footer class="footer">
 			<hr>
 			<div class="dice-roller">
-				<span class="dice-font" data-die="4">4_ON_D4</span>&nbsp;
-				<span class="dice-font" data-die="6">6_ON_D6</span>&nbsp;
-				<span class="dice-font" data-die="8">8_ON_D8</span>&nbsp;
-				<span class="dice-font" data-die="10">9_ON_D10</span>&nbsp;
-				<span class="dice-font" data-die="10">9_ON_D10</span>&nbsp;
-				<span class="dice-font" data-die="12">12_ON_D12</span>&nbsp;
-				<span class="dice-font" data-die="20">20_ON_D20</span>
+				<span class="dice-font dice" data-die="4">4_ON_D4</span>&nbsp;
+				<span class="dice-font dice" data-die="6">6_ON_D6</span>&nbsp;
+				<span class="dice-font dice" data-die="8">8_ON_D8</span>&nbsp;
+				<span class="dice-font dice" data-die="10">9_ON_D10</span>&nbsp;
+				<span class="dice-font dice" data-die="10">9_ON_D10</span>&nbsp;
+				<span class="dice-font dice" data-die="12">12_ON_D12</span>&nbsp;
+				<span class="dice-font dice" data-die="20">20_ON_D20</span>&nbsp;
+				<span class="dice-font poker" data-die="54">ACE_HEARTS</span>
 			</div>
 			<nav>
-				<a class="c-button" id="general-link" href="#general-section">General</a> | 
-				<a class="c-button" id="world-link" href="#world-section">World</a> | 
-				<a class="c-button" id="exploration-link" href="#exploration-section">Exploration</a> | 
-				<a class="c-button" id="creation-link" href="#creation-section">Creation</a> | 
-				<a class="c-button" id="scene-link" href="#scene-section">Scene</a>
-				<a class="c-button" id="quest-link" href="#quest-section">Quest</a> | 
-				<a class="c-button" id="location-link" href="#location-section">Location</a> | 
-				<a class="c-button" id="people-link" href="#people-section">People</a> | 
-				<a class="c-button" id="creature-link" href="#creature-section">Creature</a>
+				<a class="c-button" id="general-link" data-sectionid="general-section" href="">General</a> | 
+				<a class="c-button" id="world-link" data-sectionid="world-section" href="">World</a> | 
+				<a class="c-button" id="exploration-link" data-sectionid="exploration-section" href="">Exploration</a> | 
+				<a class="c-button" id="creation-link" data-sectionid="creation-section" href="">Creation</a> | 
+				<a class="c-button" id="scene-link" data-sectionid="scene-section" href="">Scene</a>
+				<a class="c-button" id="quest-link" data-sectionid="quest-section" href="">Quest</a> | 
+				<a class="c-button" id="location-link" data-sectionid="location-section" href="">Location</a> | 
+				<a class="c-button" id="people-link" data-sectionid="people-section" href="">People</a> | 
+				<a class="c-button" id="creature-link" data-sectionid="creature-section" href="">Creature</a>
 			</nav>
 		</footer>
 		<script>
 		
 const ORACLE = {
+	poker: {
+		original: ["ACE_HEARTS","TWO_HEARTS","THREE_HEARTS","FOUR_HEARTS","FIVE_HEARTS","SIX_HEARTS","SEVEN_HEARTS","EIGHT_HEARTS","NINE_HEARTS","TEN_HEARTS","JACK_HEARTS","QUEEN_HEARTS","KING_HEARTS","ACE_DIAMONDS","TWO_DIAMONDS","THREE_DIAMONDS","FOUR_DIAMONDS","FIVE_DIAMONDS","SIX_DIAMONDS","SEVEN_DIAMONDS","EIGHT_DIAMONDS","NINE_DIAMONDS","TEN_DIAMONDS","JACK_DIAMONDS","QUEEN_DIAMONDS","KING_DIAMONDS","ACE_CLUBS","TWO_CLUBS","THREE_CLUBS","FOUR_CLUBS","FIVE_CLUBS","SIX_CLUBS","SEVEN_CLUBS","EIGHT_CLUBS","NINE_CLUBS","TEN_CLUBS","JACK_CLUBS","QUEEN_CLUBS","KING_CLUBS","ACE_SPADES","TWO_SPADES","THREE_SPADES","FOUR_SPADES","FIVE_SPADES","SIX_SPADES","SEVEN_SPADES","EIGHT_SPADES","NINE_SPADES","TEN_SPADES","JACK_SPADES","QUEEN_SPADES","KING_SPADES","RED_JOKER","BLACK_JOKER"]
+	},
 	fate:{
 		chance: ["Very unlikely", "Very unlikely", "Very unlikely", "Very unlikely", "Very unlikely", "Unlikely", "Unlikely", "Unlikely", "Unlikely", "Unlikely", "Unlikely", "Unlikely", "Unlikely", "50/50", "50/50", "50/50", "50/50", "50/50", "50/50", "50/50", "50/50", "50/50", "50/50", "Likely", "Likely", "Likely", "Likely", "Likely", "Likely", "Likely", "Likely", "Very likely", "Very likely", "Very likely", "Very likely", "Very likely"]
 	},
 	general: {
+		info: "<h2>General</h2><p>Your foundation for quick decision-making and for open and closed questions.</p><p><strong>SIMPLE</strong> answers straight Yes/No questions, with Strong and Weak variations. If you think a result should be more likely, roll twice and choose the outcome that aligns more with what you expected.</p><p><strong>COMPLEX</strong> offers a verb, an adjective and a noun to answer open-ended questions and inspire your descriptions of places, situations, people, actions—anything, really.</p><p>You can use <strong>ABSTRACT</strong> together with <strong>COMPLEX</strong> or by itself to further detail your situation with more metaphorical entries.</p><p><strong>INTENSITY</strong> offers an answer about quality, quantity and magnitude of something, and it works great in combination with other oracle results..</p>",
 		simple: ["Strong No","Strong No","Strong No","Strong No","Strong No","No","No","No","No","No","No","No","No","Weak No","Weak No","Weak No","Weak No","Weak No","Weak Yes","Weak Yes","Weak Yes","Weak Yes","Weak Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Strong Yes","Strong Yes","Strong Yes","Strong Yes","Strong Yes"],
 		complex1: ["Abandon","Align","Avenge","Awaken","Balance","Blend","Breach","Break","Channel","Clash","Conjure","Connect","Control","Create","Decipher","Defeat","Discover","Dwell","Eliminate","Enrich","Evade","Focus","Guard","Harness","Hold","Initiate","Manipulate","Navigate","Protect","Restore","Risk","Scheme","Seek","Soothe","Surrender","Traverse"],
 		complex2: ["Artificial","Beautiful","Broken","Busy","Cold","Damaged","Dark","Defiled","Delicate","Empty","Enormous","Exotic","Exquisite","Fearful","Forgotten","Fragile","Free","Furious","Glorious","Grotesque","Humble","Illusory","Intense","Lethal","Lonely","Mundane","Natural","New","Old","Powerful","Radiant","Rustic","Severe","Solemn","Strong","Wise"],
@@ -1300,14 +1333,20 @@ const ORACLE = {
 		intensity: ["Very low, the minimum","Very low, the minimum","Very low, the minimum","Very low, the minimum","Very low, the minimum","Low, less than expected","Low, less than expected","Low, less than expected","Low, less than expected","Low, less than expected","Low, less than expected","Low, less than expected","Low, less than expected","Average, the expected","Average, the expected","Average, the expected","Average, the expected","Average, the expected","Average, the expected","Average, the expected","Average, the expected","Average, the expected","Average, the expected","High, more than expected","High, more than expected","High, more than expected","High, more than expected","High, more than expected","High, more than expected","High, more than expected","High, more than expected","Very high, the maximum","Very high, the maximum","Very high, the maximum","Very high, the maximum","Very high, the maximum"]
 	},
 	world: {
+		info: "<h2>World</h2><p>Craft unique settings, lands, and realms.</p><p>Roll 3-4 times on the first word of <strong>ASPECTS</strong> to blend abstract concepts into a setting idea. Use the second word to define the prevalence or development of your setting's elements, like religion, technology, magic, monsters, and more.</p><p><strong>INHABITANTS</strong> suggests setting themes through character types. Combine icons with any of these entries to deepen your world's history, aspects, peculiarities, factions, and even potential conflicts.</p>",
 		name1: ["Aer","Arken","Bel","Bryn","Cael","Drak","Dyr","Eld","Elyr","Evin","Fen","Fyr","Ghor","Hal","Hyr","Kal","Lumin","Lyr","Myr","Noc","Oryn","Pher","Pyre","Quor","Rael","Rune","Sor","Syl","Thra","Tyv","Uvan","Vorn","Wyst","Xyr","Ysol","Zan"],
 		name2: ["bane","crest","cross","dale","dor","eon","far","fell","ford","gard","garde","glen","grove","heim","hold","jorn","lund","mark","mire","moor","nir","oria","peak","pier","quill","rath","ridge","shore","spear","spire","stone","theon","tide","vale","wyn","yarn"],
 		aspects1: ["Beasts","Blood","Bone","City","Crime","Crystal","Cyber","Death","Depths","Desert","Faith","Fire","Fists","Frontier","Gear","Gods","Ice","Magic","Monsters","Moon","Myth","Occult","Peaks","Power","Punk","Ruins","Science","Sea","Shadow","Skies","Space","Sword","Void","War","Wild","Wood"],
 		aspects2: ["Advanced","Concealed","Controlled","Dangerous","Declining","Disputed","Dominant","Emerging","Essential","Evident","Evolving","Extinct","Forbidden","Fragmented","Grand","Influential","Integral","Isolated","Legendary","Limited","Marginal","Modest","Non-existent","Outdated","Profane","Rare","Receding","Recent","Resurging","Sanctified","Suppressed","Traces","Unknown","Unregulated","Unstable","Widespread"],
 		inhabitants1: ["Ancient","Arcane","Celestial","Corrupted","Cursed","Decaying","Desolate","Dreaming","Eldritch","Enchanted","Ethereal","Fabled","Fiery","Forgotten","Forsaken","Haunted","Hidden","Invincible","Lost","Mysterious","Mystic","Mythical","Nomadic","Primeval","Rebel","Renegade","Ruined","Sacred","Savage","Shadowy","Spectral","Timeless","Uncharted","Untamed","Wandering","War-torn"],
-		inhabitants2: ["Aliens","Angels","Assassins","Automatons","Bandits","Demons","Dinosaurs","Dragons","Elementals","Fairies","Gargoyles","Ghosts","Giants","Gladiators","Hunters","Investigators","Knights","Lycanthropes","Mechas","Merfolk","Mobsters","Monks","Mutants","Pilots","Pirates","Psychics","Sages","Scientists","Soldiers","Spies","Survivors","Thieves","Vampires","Witches","Wizards","Zombies"]
+		inhabitants2: ["Aliens","Angels","Assassins","Automatons","Bandits","Demons","Dinosaurs","Dragons","Elementals","Fairies","Gargoyles","Ghosts","Giants","Gladiators","Hunters","Investigators","Knights","Lycanthropes","Mechas","Merfolk","Mobsters","Monks","Mutants","Pilots","Pirates","Psychics","Sages","Scientists","Soldiers","Spies","Survivors","Thieves","Vampires","Witches","Wizards","Zombies"],
+		icons1: [],
+		icons2: [],
+		icons3: [],
+		icons4: []
 	},
 	exploration: {
+		info: "<h2>Exploration</h2><p>Portray your journey through uncharted lands.</p><p>Use <strong>ORNAMENT</strong> to describe elements of the surroundings for interaction or contemplation.</p><p>Use <strong>EVENT</strong> for encounters, hazards and features that require your action.</p><p>Use <strong>FINDINGS</strong> for results of hunting, scavenging or looting. The icons offer you sky conditions, temperature or wind, a direction, and a time of the day.</p>",
 		terrain1: ["Ageless","Ashen","Barren","Black","Blessed","Blighted","Broken","Cursed","Dead","Deadly","Deep","Desolate","Dim","Dismal","Dry","Eerie","Fallen","Far","Forgotten","Forsaken","Frozen","Grim","Holy","Impassable","Jagged","Lush","Misty","Petrified","Scorching","Shadowy","Shattered","Shifting","Sinking","Sparse","Still","Wicked"],
 		terrain2: ["Bay","Bog","Cliffs","Crags","Desert","Dunes","Fells","Fen","Fjords","Forest","Glacier","Groves","Heath","Heights","Hills","Hollows","Jungle","Lake","Lowland","Marsh","Meadows","Moor","Mounds","Mountains","Plains","Prairie","Scarps","Sea","Steppe","Swamp","Thicket","Tundra","Valley","Volcano","Wasteland","Woods"],
 		ornament1: ["Aromatic","Blooming","Brittle","Buried","Burning","Colorful","Colossal","Floating","Frosted","Haunted","Iridescent","Isolated","Lifeless","Living","Lost","Loud","Luminous","Mighty","Murky","Overgrown","Pale","Parched","Phantasmal","Pulsating","Rugged","Sharp","Stoney","Sturdy","Thorny","Thundering","Towering","Tranquil","Twisted","Veiled","Vibrant","Weathered"],
@@ -1315,16 +1354,26 @@ const ORACLE = {
 		event1: ["Abnormal","Aggressive","Augmented","Benevolent","Bleak","Bloody","Clouded","Collapsing","Corrupted","Creepy","Deceitful","Desolate","Doomed","Enraged","Ethereal","Exposed","Imposing","Infested","Invisible","Lost","Malevolent","Marked","Mechanical","Primitive","Raging","Roaming","Sacred","Serene","Silent","Solitary","Terrifying","Threatening","Vengeful","Violent","Weak","Wild"],
 		event2: ["Aberration","Animal","Bandits","Cavern","Chasm","Construct","Creature","Disease","Earthquake","Elemental","Explorer","Fey","Flood","Fog","Fortress","Giant","Graveyard","Guardian","Horror","Hunter","Mine","Monster","Pack","Poison","Predator","Quicksand","Ruins","Spirit","Stampede","Storm","Temple","Tower","Undead","Village","Wanderer","Wildfire"],
 		findings1: ["Abundant","Advanced","Arcane","Archaic","Benevolent","Broken","Constructed","Cryptic","Damaged","Dangerous","Dead","Decaying","Depleted","Empty","Ephemeral","Fragile","Illusory","Lush","Magical","Malevolent","Misleading","Natural","Obscured","Preserved","Radiant","Rare","Rich","Sealed","Spoiled","Stolen","Strange","Toxic","Trapped","Undiscovered","Unnatural","Valuable"],
-		findings2: ["Ally","Artefact","Blessing","Bones","Cache","Carvings","Clue","Footprints","Fungi","Garden","Gems","Lair","Map","Message","Omen","Passage","Path","Person","Plants","Potion","Relic","Resources","Scraps","Seeds","Shelter","Sign","Spell","Supplies","Tools","Totem","Tracks","Trap","Vision","Warning","Weapons","Wreckage"]
+		findings2: ["Ally","Artefact","Blessing","Bones","Cache","Carvings","Clue","Footprints","Fungi","Garden","Gems","Lair","Map","Message","Omen","Passage","Path","Person","Plants","Potion","Relic","Resources","Scraps","Seeds","Shelter","Sign","Spell","Supplies","Tools","Totem","Tracks","Trap","Vision","Warning","Weapons","Wreckage"],
+		icons1: [],
+		icons2: [],
+		icons3: [],
+		icons4: []
 	},
 	creation: {
+		info: "<h2>Creation</h2><p>Detail objects that you interact with or that you craft, from weapons to gadgets, from tools to magic spells, or even machines and constructions.</p><p><strong>PURPOSE</strong> tells what the object is for.</p><p>Use <strong>MAGIC</strong> if you need to come up with a magical effect or artifact.</p><p><strong>CORRUPTION</strong> is useful for magical mishaps and curses. The icons can offer other ideas for the objects themselves, their materials, components, properties, limitations and drawbacks.</p>",
 		purpose: ["Amplification","Burn","Captivate","Ceremony","Command","Containment","Crafting","Crush","Defense","Detection","Energizing","Expose","Foresight","Freeze","Gathering","Guidance","Healing","Illumination","Judgement","Lure","Memorial","Navigation","Observation","Passage","Projecting","Reflection","Research","Rest","Ritual","Sealing","Shock","Storage","Study","Transportation","Warning","Worship"],
 		trait: ["Ancient runes inscribed","Bioluminescent organisms","Dark colors and texture","Delicate, lace-like edges","Elegant filigree details","Embedded precious stones","Enigmatic symbols etched","Ethereal transparency","Flickering effect","Floating elements","Fluid, organic shapes","Fractal-inspired motifs","Geometric precision","Gleaming metallic finish","Imposing structure","Frosted appearance","Interlocking assembly","Intricate floral patterns","Liquid, flowing lines","Luminous glow","Non-reflective texture","Minimalist design","Mirror-polished shine","Muted, earthy tones","Mystic, swirling patterns","Natural wood grain","Opulent gold leaf accents","Prismatic reflections","Rich, deep patina","Rough, stone-like surface","Rustic, handcrafted look","Sleek, aerodynamic profile","Soft, velvety covering","Stark, contrasting lines","Vibrant, shifting hues","Weathered appearance"],
 		magic1: ["Absorb","Amplify","Animate","Attract","Awaken","Bind","Channel","Conceal","Control","Create","Curse","Destroy","Diminish","Dispel","Disrupt","Divide","Echo","Encase","Energize","Enhance","Freeze","Ignite","Infuse","Manipulate","Phase","Purify","Reflect","Regenerate","Repel","Reveal","Reverse","Shape","Summon","Transfer","Transform","Warp"],
 		magic2: ["Acid","Ash","Aura","Beast","Blood","Bone","Chaos","Dream","Earth","Flames","Fog","Glass","Gravity","Ice","Light","Memory","Metal","Mind","Plant","Plasma","Poison","Portal","Shadows","Skin","Sound","Specter","Spirit","Stone","Thunder","Time","Vines","Void","Water","Wave","Wind","Wood"],
-		corruption: ["Aging acceleration","Animal aggression","Blood thirst","Chronic fatigue","Disintegration","Elemental imbalance","Enveloping shadows","Ethereal detachment","Fire touch","Frostbite","Gravity distortion","Ground trembling","Hallucinations","Insatiable hunger","Insects swarming","Invisibility","Light dimming","Luck drain","Magic depletion","Memory loss","Metal rusting","Mist thickening","Mutation","Necrosis","Petrification","Plant decay","Plant growth","Poisoning","Silence","Sound distortion","Stars fading","Stone skin","Tech malfunction","Time distortion","Uncontrollable rage","Weather anomalies"]
+		corruption: ["Aging acceleration","Animal aggression","Blood thirst","Chronic fatigue","Disintegration","Elemental imbalance","Enveloping shadows","Ethereal detachment","Fire touch","Frostbite","Gravity distortion","Ground trembling","Hallucinations","Insatiable hunger","Insects swarming","Invisibility","Light dimming","Luck drain","Magic depletion","Memory loss","Metal rusting","Mist thickening","Mutation","Necrosis","Petrification","Plant decay","Plant growth","Poisoning","Silence","Sound distortion","Stars fading","Stone skin","Tech malfunction","Time distortion","Uncontrollable rage","Weather anomalies"],
+		icons1: [],
+		icons2: [],
+		icons3: [],
+		icons4: []
 	},
 	scene: {
+		info: "<h2>Scene</h2><p>Focus on the immediate action, presenting challenges, descriptions, and potential outcomes.</p><p><strong>CHALLENGE</strong> presents you with a type of conflict and a difficulty level that you can translate to your system of preference.</p><p><strong>REACTION</strong> is a catch-all combination of verb and noun to discover how the world (people, creatures, environment, scenario) reacts and responds to your actions.</p><p><strong>SENSES</strong> features a smell and a sound. <strong>ACTIVITY</strong> describes what people are doing on the background of the scene. <strong>DETAIL</strong> offers you a prompt to describe the scene through a different perspective for added color and variety.</p><p><strong>DEVELOPMENT</strong> offers an idea of what happens next, at the start or as a fallout of the current scene, or whenever you feel stuck. <strong>COMPLICATION</strong> is helpful when you roll partial successes or critical failures, and <strong>ADVANTAGE</strong> inspires you to color major successes or partial failures.</p>",
 		challenge1: ["Easy","Easy","Easy","Easy","Easy","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Hard","Hard","Hard","Hard","Hard","Hard","Hard","Hard","Hard","Hard","Very hard","Very hard","Very hard","Very hard","Very hard","Very hard","Very hard","Extreme","Extreme","Extreme","Extreme"],
 		challenge2: ["Ambush","Barrier","Battle","Chase","Competition","Contest","Crafting","Debate","Diplomacy","Disaster","Duel","Endurance","Enigma","Fight","Hardship","Hindrance","Hunting","Infiltration","Interaction","Interrogation","Investigation","Menace","Mystery","Negotiation","Obstacle","Persuasion","Puzzle","Quarrel","Race","Repair","Research","Retrieval","Riddle","Task","Threat","Trap"],
 		reaction1: ["Abort","Advance","Aim","Block","Break","Challenge","Climb","Collide","Combat","Concentrate","Consolidate","Coordinate","Cover","Deceive","Deflect","Delve","Destroy","Dodge","Endure","Force","Grab","Help","Impact","Intensify","Invest","Knock down","Lose","Oppose","Penetrate","Persevere","Probe","Protect","Retreat","Separate","Stun","Surprise"],
@@ -1338,6 +1387,7 @@ const ORACLE = {
 		advantage: ["Enhance (ability, sense, mood, credibility, result, intuition)","Reveal (clue, path, truth, alibi, pattern, source)","Save (time, ally, resource, reputation, momentum, memory)","Obtain (evidence, ally, clearance, perspective, item, secret)","Exploit (weakness, loophole, distraction, emotion, pattern, info)","Prevent (harm, exposure, loss, conflict, deception, escalation)","Enhance (ability, sense, mood, credibility, result, intuition)","Reveal (clue, path, truth, alibi, pattern, source)","Save (time, ally, resource, reputation, momentum, memory)","Obtain (evidence, ally, clearance, perspective, item, secret)","Exploit (weakness, loophole, distraction, emotion, pattern, info)","Prevent (harm, exposure, loss, conflict, deception, escalation)","Enhance (ability, sense, mood, credibility, result, intuition)","Reveal (clue, path, truth, alibi, pattern, source)","Save (time, ally, resource, reputation, momentum, memory)","Obtain (evidence, ally, clearance, perspective, item, secret)","Exploit (weakness, loophole, distraction, emotion, pattern, info)","Prevent (harm, exposure, loss, conflict, deception, escalation)","Enhance (ability, sense, mood, credibility, result, intuition)","Reveal (clue, path, truth, alibi, pattern, source)","Save (time, ally, resource, reputation, momentum, memory)","Obtain (evidence, ally, clearance, perspective, item, secret)","Exploit (weakness, loophole, distraction, emotion, pattern, info)","Prevent (harm, exposure, loss, conflict, deception, escalation)","Enhance (ability, sense, mood, credibility, result, intuition)","Reveal (clue, path, truth, alibi, pattern, source)","Save (time, ally, resource, reputation, momentum, memory)","Obtain (evidence, ally, clearance, perspective, item, secret)","Exploit (weakness, loophole, distraction, emotion, pattern, info)","Prevent (harm, exposure, loss, conflict, deception, escalation)","Enhance (ability, sense, mood, credibility, result, intuition)","Reveal (clue, path, truth, alibi, pattern, source)","Save (time, ally, resource, reputation, momentum, memory)","Obtain (evidence, ally, clearance, perspective, item, secret)","Exploit (weakness, loophole, distraction, emotion, pattern, info)","Prevent (harm, exposure, loss, conflict, deception, escalation)"]
 	},
 	quest: {
+		info: "<h2>Quest</h2><p>Weave adventure hooks and maintain interest and excitement throughout the story.</p><p>Create your quest with <strong>MISSION</strong> and <strong>OPPOSITION</strong>, and what can complicate or help your adventure with <strong>HINDRANCE</strong> and <strong>AID</strong>.</p><p>Use <strong>ESCALATION</strong> when you need to raise the stakes of your mission.</p><p><strong>PROGRESS</strong> is great if you use a mechanic to track progress, but also narratively as a guide of story beats and plot points.</p><p>Similarly, <strong>TENSION</strong> can help control chaos factor, clocks or other pressure mechanics, but also qualifies the state of the stakes at any point in your story.</p>",
 		mission1: ["Attack","Avoid","Battle","Capture","Compete","Conquer","Contact","Corrupt","Create","Decipher","Defend","Deliver","Destroy","Discover","Eliminate","Escape","Expel","Explore","Face","Find","Invade","Investigate","Kill","Negotiate","Overcome","Protect","Pursue","Recover","Rescue","Resist","Reveal","Save","Spy on","Steal","Strengthen","Survive"],
 		mission2: ["Ally","Artifact","Creature","Dignitary","Enemy","Environment","Event","Experiment","Group","Heritage","Idea","Information","Innocent","Knowledge","Leader","Legend","Message","Object","Organization","Path","Phenomenon","Place","Power","Principle","Prophecy","Relationship","Resource","Secret","Symbol","System","Technology","Territory","Tradition","Treasure","Vision","Weapon"],
 		opposition1: ["Alien","Ancient","Arcane","Belligerent","Bloodthirsty","Chaotic","Colossal","Corrupted","Deceptive","Devouring","Dissident","Envious","Fallen","Fanatical","Ferocious","Hostile","Imposing","Insidious","Merciless","Misguided","Poisonous","Possessed","Predatory","Rampaging","Ruthless","Savage","Shadowy","Sinister","Supernatural","Twisted","Tyrannical","Undecipherable","Unseen","Unstable","Vengeful","Voracious"],
@@ -1351,6 +1401,7 @@ const ORACLE = {
 		tension: ["Aggravate","Amplify","Brew","Build","Calm","Cascade","Decrease","Deepen","Diminish","Dissipate","Ebb","Echo","Envelop","Escalate","Hover","Increase","Infect","Intermittent","Lighten","Linger","Loosen","Mellow","Peak","Permeate","Plateau","Recede","Ripple","Simmer","Slow","Spike","Spiral","Stabilize","Subside","Surge","Tighten","Wane"]
 	},
 	location: {
+		info: "<h2>Location</h2><p>Come up with settlements, ruins, or other defined, constructed places.</p><p><strong>PAST</strong> and <strong>PRESENT</strong> suggest what the place was famous for now and then (you can flip the results as well). The first word of <strong>DESCRIPTOR</strong> is more atmospheric, and the second one is more physical. <strong>TROUBLE</strong> can work as an adventure hook or as a discovery. The first word of <strong>BUILDING</strong> is its purpose, and the second one is its condition or appearance. INFLUENCE determines the place's ruler or prominent faction.</p><p><strong>MOOD</strong> describes their attitude in general or towards you specifically. <strong>RUMOR</strong> may be something about the place itself or something the locals share with you. Use <strong>SEEKS</strong> & <strong>OFFERS</strong> to discover the needs and resources of this place.</p>",
 		past: ["Arena","Artifacts","Battlefield","Burial site","Capital","Cataclysm","Colony","Coronation","Discovery","Drought","Enlightenment","Exodus","Founding","Gold rush","Great fire","Industry","Inquisition","Lost city","Magic","Migration","Mine","Monastery","Palace","Pilgrimage","Piracy","Plague","Prison","Rebellion","Renaissance","Revolution","Sacred grove","Sanctuary","Siege","Summit","Treaty","Witch trials"],
 		present: ["Academy","Arcane secrets","Art","Black market","Courthouse","Crafting","Crime","Crossroads","Cuisine","Embassy","Entertainment","Farm","Festival","Garrison","Gemstones","Guildhall","Harbor","Hospitality","Library","Market","Martial arts","Medicine","Military","Nature","Observatory","Occult","Quarry","Refuge","Sanctuary","Spices","Spirituality","Subsistence","Trading post","Vineyard","Wisdom","Workshop"],
 		descriptor1: ["Abandoned","Abundant","Ancient","Broken","Bustling","Contested","Corrupted","Cursed","Decaying","Desolate","Diverse","Enchanted","Exposed","Forgotten","Forsaken","Grim","Haunted","Hidden","Infested","Invaded","Isolated","Mystical","Occupied","Peaceful","Prosperous","Protected","Radiant","Ruined","Sacred","Secluded","Serene","Shrouded","Stagnant","Thriving","Uncharted","Wild"],
@@ -1365,6 +1416,7 @@ const ORACLE = {
 		offers: ["Adventure","Archives","Art","Beauty","Contracts","Craftsmanship","Cuisine","Culture","Defenses","Directions","Education","Enchantments","Enlightenment","Festivities","Formulas","Goods","Harmony","Herbs","History","Hospitality","Immunity","Inns","Libraries","Lore","Luxury","Marvels","Navigation","Passages","Refuge","Resources","Sanctuaries","Secrets","Solace","Stories","Traditions","Treasures"]
 	},
 	people: {
+		info: "<h2>People</h2><p>Use it for character creation and when facing NPCs.</p><p><strong>DISPOSITION</strong> offers their first reaction towards you, and the activity they are currently performing.</p><p><strong>ROLE</strong> gives you an occupation together with a qualifier.</p><p><strong>DRIVE</strong> indicates their goal (what they want) and their motivation (why they want it).</p><p><strong>SEEKS</strong> & <strong>OFFERS</strong> are more about their immediate needs and how they might be able to help you (you can flip the two results if needed).</p>",
 		name1: ["Aer","Bael","Bran","Cai","Cal","Dae","El","Eri","Fal","Fin","Gal","Har","Is","Jor","Ker","Kyl","Lor","Lys","Mar","Mor","Nae","Nor","Oll","Ori","Phe","Quin","Rai","Syl","Tal","Uri","Val","Vyr","Wyn","Xan","Zan","Zor"],
 		name2: ["ador","aes","bor","bri","cur","dar","dul","est","fer","gan","gil","hes","jon","kel","kyr","lir","lon","mir","mon","nis","orn","pel","quir","ren","ril","ser","tir","tor","urn","vel","ven","wil","xis","yl","yon","zar"],
 		name3: ["ael","ain","al","am","ant","ar","as","ast","el","elle","en","end","eon","es","et","ian","ias","iel","il","in","ir","is","isto","ith","ix","ol","on","or","os","ot","oth","uel","um","ur","us","yn"],
@@ -1381,6 +1433,7 @@ const ORACLE = {
 		offers: ["Advice","Aid","Artifacts","Connections","Cover","Creativity","Cure","Deception","Distraction","Entry","Expertise","Gear","Guidance","Haven","Influence","Insight","Instructions","Intuition","Knowledge","Labor","Mentorship","Motivation","Passage","Resources","Sanctuary","Service","Skill","Solace","Stories","Strength","Support","Surveillance","Tools","Transport","Weapons","Wisdom"]
 	},
 	creature: {
+		info: "<h2>Creature</h2><p>Delve into the realm of monsters and beasts.</p><p><strong>FORM</strong> offers a size or build and a basic animal or supernatural constitution (you can combine multiple rolls for chimeras).</p><p><strong>ACTION</strong> gives you an idea on how the creature would act in conflict, as well as their preferred method or approach.</p>",
 		name1: ["Brak","Crux","Dran","Drax","Ghast","Ghor","Glac","Grak","Grim","Krax","Krell","Kron","Lash","Mal","Mord","Neph","Nox","Rax","Shard","Skor","Skul","Slith","Sorn","Strix","Sal","Thal","Thar","Throm","Tyr","Vex","Vor","Vorak","Vorm","Vraith","Zen","Zoth"],
 		name2: ["ader","akul","alis","amos","aris","astar","ater","aug","avor","azun","ector","egor","ellon","emon","entor","eon","ern","inth","iris","itar","ixion","odox","ogen","olith","onir","oroth","osis","oth","othek","thos","ulex","ulon","urn","uron","ythr","yx"],
 		form1: ["Minuscule","Tiny","Petite","Small","Stocky","Sturdy","Bony","Delicate","Plump","Sinuous","Lithe","Medium","Athletic","Slender","Rugged","Lean","Bulky","Compact","Graceful","Lanky","Rotund","Robust","Large","Muscular","Hefty","Tall","Broad","Ponderous","Burly","Towering","Hulking","Huge","Enormous","Massive","Gargantuan","Colossal"],
@@ -1393,14 +1446,29 @@ const ORACLE = {
 };
 
 function App () {
-	
+	this.pokerDeck = [];
+}
+
+App.prototype.shuffleArray = array => {
+	let shuffledArray = [...array];
+	for (let i = shuffledArray.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		const temp = shuffledArray[i];
+		shuffledArray[i] = shuffledArray[j];
+		shuffledArray[j] = temp;
+	}
+	return shuffledArray
 }
 
 App.prototype.getRandomNumber = function (min, max) {
 	return Math.floor(Math.random() * max) + min;
 }
-	
-App.prototype.click = function () {
+
+App.prototype.click = function (event, sectionId) {
+	if (event) {
+		event.preventDefault();
+	}
+	//TEXTS
 	let randomValues = document.getElementsByClassName("random-value");
 	Array.from(randomValues).forEach((element) => {
 		let property1 = element.dataset.property1;
@@ -1409,23 +1477,64 @@ App.prototype.click = function () {
 		let emdash = element.dataset.emdash ? " — " : "";
 		element.textContent = emdash + ORACLE[property1][property2][random];
 	});
-	let dice = document.getElementsByClassName("dice-font");
+	//DICE
+	let dice = document.getElementsByClassName("dice");
 	Array.from(dice).forEach((element) => {
 		let die = element.dataset.die;
 		let random = app.getRandomNumber(1, die);
 		element.textContent = random + "_ON_D" + die;
 	});
+	//POKER
+	if (app.pokerDeck.length == 0) {
+		app.pokerDeck = app.shuffleArray(ORACLE["poker"]["original"]);
+	}
+	var pokerCard = app.pokerDeck.pop();
+	let poker = document.getElementsByClassName("poker");
+	Array.from(poker).forEach((element) => {
+		element.textContent = pokerCard;
+	});
+	if (sectionId) {
+		document.getElementById(sectionId).scrollIntoView();
+	}
 }
 
 App.prototype.initButtonEvents = function () {
 	let buttons = document.getElementsByClassName("c-button");
 	Array.from(buttons).forEach((element) => {
-		element.addEventListener("click", this.click, false);
+		element.addEventListener("click", (event) => this.click(event,element.dataset.sectionid), false);
 	});
+}
+
+App.prototype.infoClick = function (event, sectionId) {
+	event.preventDefault();
+	document.getElementById("popup-content").innerHTML = ORACLE[sectionId]["info"];
+	document.getElementById("popup").style.display = "block";
+}
+
+App.prototype.initPopUpLinkEvents = function () {
+	let links = document.getElementsByClassName("info");
+	Array.from(links).forEach((element) => {
+		element.addEventListener("click", (event) => this.infoClick(event,element.dataset.section), false);
+	});
+}
+
+App.prototype.initPopUp = function () {
+	// Get the popup
+	var popup = document.getElementById("popup");
+
+	// When the user clicks anywhere outside of the popup, close it
+	window.onclick = function(event) {
+		if (event.target == popup) {
+			popup.style.display = "none";
+		}
+	}
 }
 
 App.prototype.main = function () {
 	this.initButtonEvents();
+	this.initPopUp();
+	this.initPopUpLinkEvents();
+	this.click();
 }
 
 let app = new App();
