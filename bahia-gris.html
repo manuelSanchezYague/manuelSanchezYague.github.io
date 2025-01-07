@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<title>Bahía Gris</title>
+<style>
+.is-hidden {
+  display: none;
+}
+
+.footer {
+  background-color: #031C38;
+  border-top: 3px #024595 solid;
+  bottom: 0;
+  left: 0;
+  padding: 10px 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+.c-button {
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  color: #031C38;
+  cursor:pointer;
+  display: inline-block;
+  font-size: 16px;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+</style>
+<style>	
+
+</style>
+	</head>
+	<body>
+		<main class="main">
+			<section id="pj-section" class="section__tab-panel">
+				<h2>Hoja de personaje</h2>
+			</section>
+			<section id="port-section" class="section__tab-panel">
+				<h2>Fase de puerto</h2>
+			</section>
+			<section id="fishing-section" class="section__tab-panel">
+				<h2>Fase de pesca</h2>
+				<div id="fishing-timer">
+					<div class="fishing-timer__inputs">
+						<label class="fishing-timer__label">
+							Segundo inicial en que se pesca algo (incluido)
+							<input
+								type="number"
+								id="fishing-timer-starting-second"
+								class="fishing-timer__input"
+								min="0"
+								max="30"
+								value="30"
+							/>
+						</label>
+						<label class="fishing-timer__label">
+							Segundo final en que se pesca algo (incluido)
+							<input
+								type="number"
+								id="fishing-timer-finishing-second"
+								class="fishing-timer__input"
+								min="1"
+								max="30"
+								value="30"
+							/>
+						</label>
+					</div>
+					<label for="meter-display" id="fishing-timer-seconds-display">0</label>
+					<meter id="meter-display" min="0" max="100" low="100" high="100" optimum="80" value="0">0</meter>
+					<div class="fishing-timer__buttons">
+						<button class="c-button" id="fishing-timer-start-button">Start</button>
+						<button class="c-button" id="fishing-timer-stop-button">Stop</button>
+					</div>
+					<div class="message" id="message"></div>
+				</div>
+			</section>
+			<section id="map-section" class="section__tab-panel">
+				<h2>Mapa</h2>
+			</section>
+			<section id="achievements-section" class="section__tab-panel">
+				<h2>Logros</h2>
+			</section>
+		</main>
+		<footer class="footer">
+			<nav>
+				<a class="c-button" id="pc-link">PJ</a> | 
+				<a class="c-button" id="port-link">Puerto</a> | 
+				<a class="c-button" id="fishing-link">Pesca</a> | 
+				<a class="c-button" id="map-link">Mapa</a> | 
+				<a class="c-button" id="achievements-link">Logros</a>
+			</nav>
+		</footer>
+		<script>
+function BGApp () {
+	this.startingSecondInput = bgApp.get("fishing-timer-starting-second");
+	this.startingSecond;
+	this.finishingSecondInput = bgApp.get("fishing-timer-finishing-second");
+	this.finishingSecond;
+	this.secondsDisplay = bgApp.get("fishing-timer-seconds-display");
+	this.btnStart = bgApp.get("fishing-timer-start-button");
+	this.btnStop = bgApp.get("fishing-timer-stop-button");
+	this.meterDisplay = bgApp.get("meter-display");
+
+	this.interval;
+	this.message = bgApp.get("message");
+	this.initialSeconds = 0;
+	this.currentTime = 0;
+	this.isUsingBeat = false;
+}
+
+BGApp.prototype.get = function(id) {
+	return document.getElementById(id);
+}
+
+BGApp.prototype.toggle = function(element) {
+	element.classList.toggle('is-hidden');
+}
+
+BGApp.prototype.cucu = function() {
+	
+}
+
+BGApp.prototype.startTimer = function() {
+	this.currentTime = 0;
+	this.interval = setInterval(() => {
+		if (this.currentTime < this.finishingSecond) {
+			handleProgressBar(this.currentTime++);
+			this.secondsDisplay.innerHTML = this.currentTime;
+		} else if (this.currentTime > this.finishingSecond) {
+			clearInterval(this.interval);
+			if (this.isUsingBeat) {
+				this.secondsDisplay.innerHTML = "Se escapó";
+			} else {
+				this.secondsDisplay.innerHTML = "Se escapó con tu cebo";
+			}
+			this.resetProgressBar();
+		}
+	}, 1000);
+}
+
+BGApp.prototype.handleProgressBar = function(currentTime) {
+	let meterDisplayWidth = (currentTime * 100) / this.finishingSecond;
+	if (meterDisplayWidth < this.startingSecond) {
+		this.meterDisplay.classList.add("middle");
+	} else if (this.finishingSecond >= meterDisplayWidth && meterDisplayWidth >= this.startingSecond) {
+		this.meterDisplay.classList.remove("middle", "low");
+	} else {
+		this.meterDisplay.classList.remove("middle");
+		this.meterDisplay.classList.add("low");
+	}
+	this.meterDisplay.style.width = `${meterDisplayWidth}%`;
+}
+
+BGApp.prototype.resetProgressBar = function() {
+	this.meterDisplay.classList.remove("middle", "low");
+	this.meterDisplay.value = 0;
+}
+
+BGApp.prototype.initTimer = function() {
+	// start timer
+	this.btnStart.addEventListener("click", () => {
+		this.startingSecond = parseInt(startingSecondInput.value);
+		this.finishingSecond = parseInt(finishingSecondInput.value);
+		if (this.finishingSecond - this.startingSecond <= 0) {
+			message.innerHTML = "<div class='red-text'>Intervalo de pesca incorrecto</div>";
+			setTimeout(function () {
+				message.innerHTML = "";
+			}, 2000);
+
+			return false;
+		}
+
+		this.startTimer();
+	});
+	
+	// stop event handler
+	this.btnStop.addEventListener("click", () => {
+		clearInterval(interval);
+	});
+}
+
+BGApp.prototype.hideAllSections = function() {
+	var allSections = document.querySelectorAll("section[class='section__tab-panel']");
+	for(var i = 0; i < allSections.length; i++) {
+		this.toggle(allSections[i]);
+	}
+}
+
+BGApp.prototype.initMenuEvents = function() {
+	
+	function click(event, sectionElement) {
+		bgApp.hideAllSections();
+		event.preventDefault();
+		bgApp.toggle(sectionElement);
+	}
+	
+	function initMenuLinkClickEvent(linkId, sectionId) {
+		var link = bgApp.get(linkId);
+		var section = bgApp.get(sectionId);
+		link.addEventListener("click", function(event){click(event,section);}, false);
+	}
+	
+	initMenuLinkClickEvent("pc-link", "pj-section");
+	initMenuLinkClickEvent("port-link", "port-section");
+	initMenuLinkClickEvent("fishing-link", "fishing-section");
+	initMenuLinkClickEvent("map-link", "map-section");
+	initMenuLinkClickEvent("achievements-link", "achievements-section");
+	
+	bgApp.get("fishing-link").click();
+}
+
+BGApp.prototype.initEvents = function() {
+	this.initMenuEvents();
+}
+
+BGApp.prototype.main = function() {
+	this.initEvents();
+	this.initTimer();
+}
+
+var bgApp = new BGApp();
+bgApp.main();
+		</script>
+	</body>
+</html>
