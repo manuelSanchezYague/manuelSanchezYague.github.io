@@ -1804,6 +1804,7 @@ h1 {
 				<a class="c-button" id="location-link" data-sectionid="location-section" href="">Location</a>
 				<a class="c-button" id="people-link" data-sectionid="people-section" href="">People</a>
 				<a class="c-button" id="creature-link" data-sectionid="creature-section" href="">Creature</a>
+				<a class="c-button dice-font" id="dice-roller-link" href="">3</a>
 			</nav>
 		</footer>
 		<script>
@@ -1945,28 +1946,10 @@ App.prototype.getRandomNumber = function (min, max) {
 	return Math.floor(Math.random() * max) + min;
 }
 
-App.prototype.click = function (event, sectionId) {
+App.prototype.clickDice = function (event) {
 	if (event) {
 		event.preventDefault();
 	}
-	//TEXTS
-	let randomValues = document.getElementsByClassName("random-value");
-	Array.from(randomValues).forEach((element) => {
-		let property1 = element.dataset.property1;
-		let property2 = element.dataset.property2;
-		let random = app.getRandomNumber(0, 36);
-		let emdash = element.dataset.emdash ? " — " : "";
-		element.textContent = emdash + ORACLE[property1][property2][random];
-	});
-	//ICONS
-	let icons = document.getElementsByClassName("bg-icon");
-	Array.from(icons).forEach((element) => {
-		let section = element.dataset.section;
-		let random = app.getRandomNumber(1, 36);
-		let id = String(random).padStart(2, '0');
-		element.classList = ["bg-icon"];
-		element.classList.add("bg-" + section + "_" + id);
-	});
 	//DICE
 	let dice = document.getElementsByClassName("dice");
 	Array.from(dice).forEach((element) => {
@@ -1983,16 +1966,51 @@ App.prototype.click = function (event, sectionId) {
 	Array.from(poker).forEach((element) => {
 		element.textContent = pokerCard;
 	});
+}
+
+App.prototype.click = function (event, sectionId) {
+	if (event) {
+		event.preventDefault();
+	}
+	//TEXTS
+	let randomValues;
+	if (sectionId) {
+		randomValues = document.getElementById(sectionId).getElementsByClassName("random-value");
+	} else {
+		randomValues = document.getElementsByClassName("random-value");
+	}
+	Array.from(randomValues).forEach((element) => {
+		let property1 = element.dataset.property1;
+		let property2 = element.dataset.property2;
+		let random = app.getRandomNumber(0, 36);
+		let emdash = element.dataset.emdash ? " — " : "";
+		element.textContent = emdash + ORACLE[property1][property2][random];
+	});
+	//ICONS
+	let icons
+	if (sectionId) {
+		icons = document.getElementById(sectionId).getElementsByClassName("bg-icon");
+	} else {
+		icons = document.getElementsByClassName("bg-icon");
+	}
+	Array.from(icons).forEach((element) => {
+		let section = element.dataset.section;
+		let random = app.getRandomNumber(1, 36);
+		let id = String(random).padStart(2, '0');
+		element.classList = ["bg-icon"];
+		element.classList.add("bg-" + section + "_" + id);
+	});
 	if (sectionId) {
 		document.getElementById(sectionId).scrollIntoView();
 	}
 }
 
 App.prototype.initButtonEvents = function () {
-	let buttons = document.getElementsByClassName("c-button");
+	let buttons = document.querySelectorAll(".c-button:not(.dice-font)");
 	Array.from(buttons).forEach((element) => {
 		element.addEventListener("click", (event) => this.click(event,element.dataset.sectionid), false);
 	});
+	document.getElementById("dice-roller-link").addEventListener("click", (event) => this.clickDice(event), false);
 	document.getElementById("acknowledgements-link").addEventListener("click", (event) => {
 		if (event) {
 			event.preventDefault();
@@ -2033,6 +2051,7 @@ App.prototype.main = function () {
 	this.initPopUp();
 	this.initPopUpLinkEvents();
 	this.click();
+	this.clickDice();
 }
 
 let app = new App();
