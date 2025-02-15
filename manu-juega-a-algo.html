@@ -7,6 +7,14 @@
   <title>Manu juega a algo</title>
   <meta name="theme-color" content="#fafafa">
   <style>
+  iframe {
+	display:block;
+	height:100vh;
+	margin:0;
+	padding:0;
+	width: 100%;
+  }
+  
   .left {
 	float: left;
 	width: 25%
@@ -21,20 +29,21 @@
 
 <body>
 	<div class="left">
-		<iframe
-			src="https://manuelsanchezyague.github.io/random-realities/random-realities-esp"
-			width="100%">
-		</iframe>
-		<iframe
-			src="https://manuelsanchezyague.github.io/rory-story-cubes-app/rsc-all-in-one"
-			width="100%">
-		</iframe>
+		<details id="random-realities">
+			<summary>
+				<strong>Random Realities</strong>
+			</summary>
+			<iframe src="https://manuelsanchezyague.github.io/random-realities/random-realities-esp"></iframe>
+		</details>
+		<details id="rory-story-cubes">
+			<summary>
+				<strong>Rory's Story Cubes</strong>
+			</summary>
+			<iframe src="https://manuelsanchezyague.github.io/rory-story-cubes-app/rsc-all-in-one"></iframe>
+		</details>
 	</div>
 	<div class="right">
-		<iframe
-			src="https://hexroll.app/"
-			width="100%">
-		</iframe>
+		<iframe src="https://hexroll.app/"></iframe>
 	</div>
 </body>
 
