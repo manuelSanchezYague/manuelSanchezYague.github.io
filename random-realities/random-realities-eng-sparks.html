@@ -2174,7 +2174,6 @@ App.prototype.addSpark = function (event, that) {
 	};
 	let key = Date.now();
 	that.sparks.set(key, spark);
-	//localStorage.sparks = JSON.stringify(Array.from(this.sparks.entries()));
 	localStorage.setItem("sparks", JSON.stringify(Array.from(this.sparks.entries())));
 	let html = that.transformSparkToHtml(key, spark);
 	let sparkList = document.getElementById("sparkList");
@@ -2217,7 +2216,6 @@ App.prototype.updateSpark = function (event, that, key, progress) {
 		special: data.get("special") || ""
 	};
 	that.sparks.set(key, newSpark);
-	//localStorage.sparks = JSON.stringify(Array.from(this.sparks.entries()));
 	localStorage.setItem("sparks", JSON.stringify(Array.from(this.sparks.entries())));
 	let oldHtml = document.getElementById(key);
 	let newHtml = that.transformSparkToHtml(key, newSpark);
@@ -2238,7 +2236,6 @@ App.prototype.showDeletepopup = function (event, key) {
 App.prototype.deleteSpark = function (event, that, key) {
 	event.preventDefault();
 	that.sparks.delete(key);
-	//localStorage.sparks = JSON.stringify(Array.from(this.sparks.entries()));
 	localStorage.setItem("sparks", JSON.stringify(Array.from(this.sparks.entries())));
 	let html = document.getElementById(key);
 	html.remove();
@@ -2271,7 +2268,6 @@ App.prototype.addRayToSpark = function (event, key) {
 		let sparkIcon = document.getElementById(key).getElementsByClassName("spark-progress-" + spark.progress)[0];
 		spark.progress = spark.progress == 7 ? 0 : spark.progress +1;
 		sparkIcon.className = 'spark-icon spark-progress-' + spark.progress;
-		//localStorage.sparks = JSON.stringify(Array.from(this.sparks.entries()));
 		localStorage.setItem("sparks", JSON.stringify(Array.from(this.sparks.entries())));
 	}
 }
