@@ -2316,24 +2316,22 @@ App.prototype.transformSparkToHtml = function (key, value) {
 }
 
 App.prototype.initSparks = function () {
-	let sparkList = document.getElementById("sparkList");
-	let storeSparks = localStorage.getItem("sparks");
-	let mapString = storeSparks && (typeof storeSparks === 'string' || storeSparks instanceof String) ? storeSparks : "[]";
-	let array;
-	let e;
 	try {
-        array = JSON.parse(mapString);
+		let sparkList = document.getElementById("sparkList");
+		let storeSparks = localStorage.getItem("sparks");
+		let mapString = storeSparks && (typeof storeSparks === 'string' || storeSparks instanceof String) ? storeSparks : "[]";
+		let array = JSON.parse(mapString);
+		this.sparks = new Map(array);
+		
+		for (const [key, value] of this.sparks.entries()) {
+			let html = this.transformSparkToHtml(key, value);
+			sparkList.prepend(html);
+		}
     } catch (e) {
 		array = [];
-		document.getElementById("popupContent").innerHTML = "<h2>ERROR initSparks</h2><p>storeSparks: " + storeSparks + "</p><p>mapString: " + mapString + "</p><p>Error: " + e + "</p>";
+		document.getElementById("popupContent").innerHTML = "<h2>ERROR initSparks</h2><p>Error: " + e + "</p>";
 		document.getElementById("popup").style.display = "block";
     }
-	this.sparks = new Map(array);
-	
-	for (const [key, value] of this.sparks.entries()) {
-		let html = this.transformSparkToHtml(key, value);
-		sparkList.prepend(html);
-	}
 }
 
 App.prototype.main = function () {
