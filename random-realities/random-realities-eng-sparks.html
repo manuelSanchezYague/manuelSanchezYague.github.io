@@ -2321,7 +2321,16 @@ App.prototype.initSparks = function () {
 	let mapString = storeSparks && (typeof storeSparks === 'string' || storeSparks instanceof String) ? storeSparks : "[]";
 	document.getElementById("popupContent").innerHTML = "<p>" + storeSparks + "</p><p>" + mapString + "</p>";
 	document.getElementById("popup").style.display = "block";
-	this.sparks = new Map(JSON.parse(mapString));
+	let array;
+	try {
+        array = JSON.parse(mapString);
+    } catch (e) {
+		array = [];
+    } finally {
+		document.getElementById("popupContent").innerHTML = "<p>" + storeSparks + "</p><p>" + mapString + "</p><p>" + e + "</p>";
+		document.getElementById("popup").style.display = "block";
+	}
+	this.sparks = new Map(array);
 	
 	Object.keys(this.sparks).forEach(key => {
 		let html = this.transformSparkToHtml(key, this.sparks[key]);
