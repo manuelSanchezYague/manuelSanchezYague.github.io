@@ -2328,8 +2328,7 @@ App.prototype.initSparks = function () {
 			sparkList.prepend(html);
 		}
     } catch (e) {
-		array = [];
-		document.getElementById("popupContent").innerHTML = "<h2>ERROR initSparks</h2><p>Error: " + e + "</p>";
+		document.getElementById("popupContent").innerHTML = "<h2>ERROR initSparks</h2><p>Error:</p><p>Name: " + e.name + "</p><p>Message: " + e.message + "</p><p>Line: " + e.lineNumber + "</p><p>Column: " + e.columnNumber + "</p>";
 		document.getElementById("popup").style.display = "block";
     }
 }
