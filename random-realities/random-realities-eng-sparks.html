@@ -2325,16 +2325,18 @@ App.prototype.initSparks = function () {
         array = JSON.parse(mapString);
     } catch (e) {
 		array = [];
-    } finally {
-		document.getElementById("popupContent").innerHTML = "<p>" + storeSparks + "</p><p>" + mapString + "</p><p>" + e + "</p>";
+		document.getElementById("popupContent").innerHTML = "<h2>ERROR initSparks</h2><p>storeSparks: " + storeSparks + "</p><p>mapString: " + mapString + "</p><p>Error: " + e + "</p>";
 		document.getElementById("popup").style.display = "block";
-	}
+    }
 	this.sparks = new Map(array);
 	
-	Object.keys(this.sparks).forEach(key => {
-		let html = this.transformSparkToHtml(key, this.sparks[key]);
+	let keys = Object.keys(this.sparks);
+	for (let i=0; i< keys.length; i++) {
+		let key = keys[i];
+		let value = this.sparks[key];
+		let html = this.transformSparkToHtml(key, value);
 		sparkList.prepend(html);
-	});
+	}
 }
 
 App.prototype.main = function () {
