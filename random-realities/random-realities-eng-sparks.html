@@ -2319,7 +2319,7 @@ App.prototype.initSparks = function () {
 	let sparkList = document.getElementById("sparkList");
 	let storeSparks = localStorage.getItem("sparks");
 	let mapString = storeSparks && (typeof storeSparks === 'string' || storeSparks instanceof String) ? storeSparks : "[]";
-	document.getElementById("popupContent").innerHTML = "<p>" + storeSparks "</p><p>" + mapString + "</p>";
+	document.getElementById("popupContent").innerHTML = "<p>" + storeSparks + "</p><p>" + mapString + "</p>";
 	document.getElementById("popup").style.display = "block";
 	this.sparks = new Map(JSON.parse(mapString));
 	
