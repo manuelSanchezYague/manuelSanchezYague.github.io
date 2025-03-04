@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Script-Type" content="text/javascript">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
 		<title>Random Realities - Revelations for the roving raconteur</title>
 		<meta name="description" content="A universal oracle for all of your solo RPG needs, comprising 60+ oracle results">
 		
@@ -2315,12 +2315,7 @@ App.prototype.initSparks = function () {
 	let sparkList = document.getElementById("sparkList");
 	let mapString = localStorage.sparks || "[]";
 	this.sparks = new Map(JSON.parse(mapString));
-	/*
-	this.sparks.entries().forEach((entry) => {
-		let html = this.transformSparkToHtml(entry[0], entry[1]);
-		sparkList.prepend(html);
-	});
-	*/
+	
 	Object.keys(this.sparks).forEach(key => {
 		let html = this.transformSparkToHtml(key, this.sparks[key]);
 		sparkList.prepend(html);
