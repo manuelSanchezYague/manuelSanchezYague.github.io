@@ -2254,7 +2254,7 @@ App.prototype.showDeleteAllSparksPopUp = function (event) {
 
 App.prototype.deleteAllSparks = function (event, that) {
 	event.preventDefault();
-	that.sparks.clear();
+	that.sparks ? that.sparks.clear() : that.sparks = new Map([]);
 	store.remove('sparks');
 	let sparkList = document.getElementById("sparkList");
 	sparkList.innerHTML = "";
@@ -2318,7 +2318,7 @@ App.prototype.transformSparkToHtml = function (key, value) {
 App.prototype.initSparks = function () {
 	let sparkList = document.getElementById("sparkList");
 	let storeSparks = store.get('sparks');
-	let mapString = storeSparks ? storeSparks : "[]";
+	let mapString = storeSparks && (typeof storeSparks === 'string' || storeSparks instanceof String) ? storeSparks : "[]";
 	this.sparks = new Map(JSON.parse(mapString));
 	
 	Object.keys(this.sparks).forEach(key => {
