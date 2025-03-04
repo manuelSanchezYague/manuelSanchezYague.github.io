@@ -2320,6 +2320,7 @@ App.prototype.initSparks = function () {
 	let storeSparks = localStorage.getItem("sparks");
 	let mapString = storeSparks && (typeof storeSparks === 'string' || storeSparks instanceof String) ? storeSparks : "[]";
 	let array;
+	let e;
 	try {
         array = JSON.parse(mapString);
     } catch (e) {
