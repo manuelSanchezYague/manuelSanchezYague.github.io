@@ -2180,6 +2180,7 @@ App.prototype.addSpark = function (event, that) {
 	let sparkList = document.getElementById("sparkList");
 	sparkList.prepend(html);
 	document.getElementById("closePopup").click();
+	document.getElementById("sparks-link").click();
 }
 
 App.prototype.editSpark = function (event, key) {
@@ -2223,6 +2224,7 @@ App.prototype.updateSpark = function (event, that, key, progress) {
 	let sparkList = document.getElementById("sparkList");
 	sparkList.replaceChild(newHtml, oldHtml);
 	document.getElementById("closePopup").click();
+	document.getElementById("sparks-link").click();
 }
 
 App.prototype.showDeletepopup = function (event, key) {
@@ -2241,6 +2243,7 @@ App.prototype.deleteSpark = function (event, that, key) {
 	let html = document.getElementById(key);
 	html.remove();
 	document.getElementById("closePopup").click();
+	document.getElementById("sparks-link").click();
 }
 
 App.prototype.showDeleteAllSparksPopUp = function (event) {
@@ -2258,6 +2261,7 @@ App.prototype.deleteAllSparks = function (event, that) {
 	let sparkList = document.getElementById("sparkList");
 	sparkList.innerHTML = "";
 	document.getElementById("closePopup").click();
+	document.getElementById("sparks-link").click();
 }
 
 App.prototype.addRayToSpark = function (event, key) {
