@@ -2155,11 +2155,11 @@ App.prototype.createSpark = function (event) {
 	event.preventDefault();
 	document.getElementById("popupContent").innerHTML = ORACLE["sparks"]["create"] + ORACLE["sparks"]["form"];
 	const form = document.getElementById("sparkForm");
-	form.addEventListener("submit", (event) => this.addSpark(event,this), false);
+	form.addEventListener("submit", (event) => this.addSpark(event), false);
 	document.getElementById("popup").style.display = "block";
 }
 
-App.prototype.addSpark = function (event, that) {
+App.prototype.addSpark = function (event) {
 	event.preventDefault();
 	const data = new FormData(event.target);
 	const dataObject = Object.fromEntries(data.entries());
@@ -2173,9 +2173,9 @@ App.prototype.addSpark = function (event, that) {
 		special: data.get("special") || ""
 	};
 	let key = Date.now();
-	that.sparks.set(key, spark);
+	this.sparks.set(key, spark);
 	localStorage.setItem("sparks", JSON.stringify(Array.from(this.sparks.entries())));
-	let html = that.transformSparkToHtml(key, spark);
+	let html = this.transformSparkToHtml(key, spark);
 	let sparkList = document.getElementById("sparkList");
 	sparkList.prepend(html);
 	document.getElementById("closePopup").click();
@@ -2195,14 +2195,14 @@ App.prototype.editSpark = function (event, key) {
 		document.getElementById("sparkSpecialInput").value = spark.special;
 		document.getElementById("sparkForm");
 		const form = document.getElementById("sparkForm");
-		form.addEventListener("submit", (event) => this.updateSpark(event,this, key, spark.progress), false);
+		form.addEventListener("submit", (event) => this.updateSpark(event, key, spark.progress), false);
 	} else {
 		document.getElementById("popupContent").innerHTML = ORACLE["sparks"]["edit"] + ORACLE["sparks"]["error"];
 	}
 	document.getElementById("popup").style.display = "block";
 }
 
-App.prototype.updateSpark = function (event, that, key, progress) {
+App.prototype.updateSpark = function (event, key, progress) {
 	event.preventDefault();
 	const data = new FormData(event.target);
 	const dataObject = Object.fromEntries(data.entries());
@@ -2215,10 +2215,10 @@ App.prototype.updateSpark = function (event, that, key, progress) {
 		overturn: data.get("overturn") || "",
 		special: data.get("special") || ""
 	};
-	that.sparks.set(key, newSpark);
+	this.sparks.set(key, newSpark);
 	localStorage.setItem("sparks", JSON.stringify(Array.from(this.sparks.entries())));
 	let oldHtml = document.getElementById(key);
-	let newHtml = that.transformSparkToHtml(key, newSpark);
+	let newHtml = this.transformSparkToHtml(key, newSpark);
 	let sparkList = document.getElementById("sparkList");
 	sparkList.replaceChild(newHtml, oldHtml);
 	document.getElementById("closePopup").click();
@@ -2229,13 +2229,13 @@ App.prototype.showDeletepopup = function (event, key) {
 	event.preventDefault();
 	document.getElementById("popupContent").innerHTML = ORACLE["sparks"]["delete"] + ORACLE["sparks"]["confirmDelete"];
 	const deleteLink = document.getElementById("confirm-delete-link");
-	deleteLink.addEventListener("click", (event) => this.deleteSpark(event,this,key), false);
+	deleteLink.addEventListener("click", (event) => this.deleteSpark(event,key), false);
 	document.getElementById("popup").style.display = "block";
 }
 
-App.prototype.deleteSpark = function (event, that, key) {
+App.prototype.deleteSpark = function (event, key) {
 	event.preventDefault();
-	that.sparks.delete(key);
+	this.sparks.delete(key);
 	localStorage.setItem("sparks", JSON.stringify(Array.from(this.sparks.entries())));
 	let html = document.getElementById(key);
 	html.remove();
@@ -2247,13 +2247,15 @@ App.prototype.showDeleteAllSparksPopUp = function (event) {
 	event.preventDefault();
 	document.getElementById("popupContent").innerHTML = ORACLE["sparks"]["deleteAll"] + ORACLE["sparks"]["confirmDeleteAll"];
 	const deleteLink = document.getElementById("confirm-delete-all-link");
-	deleteLink.addEventListener("click", (event) => this.deleteAllSparks(event,this), false);
+	deleteLink.addEventListener("click", (event) => this.deleteAllSparks(event), false);
 	document.getElementById("popup").style.display = "block";
 }
 
-App.prototype.deleteAllSparks = function (event, that) {
-	event.preventDefault();
-	that.sparks ? that.sparks.clear() : that.sparks = new Map([]);
+App.prototype.deleteAllSparks = function (event) {
+	if (event) {
+		event.preventDefault();
+	}
+	this.sparks ? this.sparks.clear() : this.sparks = new Map([]);
 	localStorage.removeItem("sparks");
 	let sparkList = document.getElementById("sparkList");
 	sparkList.innerHTML = "";
@@ -2316,21 +2318,16 @@ App.prototype.transformSparkToHtml = function (key, value) {
 }
 
 App.prototype.initSparks = function () {
-	try {
-		let sparkList = document.getElementById("sparkList");
-		let storeSparks = localStorage.getItem("sparks");
-		let mapString = storeSparks && (typeof storeSparks === 'string' || storeSparks instanceof String) ? storeSparks : "[]";
-		let array = JSON.parse(mapString);
-		this.sparks = new Map(array);
-		
-		for (const [key, value] of this.sparks.entries()) {
-			let html = this.transformSparkToHtml(key, value);
-			sparkList.prepend(html);
-		}
-    } catch (e) {
-		document.getElementById("popupContent").innerHTML = "<h2>ERROR initSparks</h2><p>Error:</p><p>Name: " + e.name + "</p><p>Message: " + e.message + "</p><p>Line: " + e.lineNumber + "</p><p>Column: " + e.columnNumber + "</p>";
-		document.getElementById("popup").style.display = "block";
-    }
+	let storedSparks = localStorage.getItem("sparks");
+	let mapString = storedSparks && (typeof storedSparks === 'string' || storedSparks instanceof String) ? storedSparks : "[]";
+	let array = JSON.parse(mapString);
+	this.sparks = new Map(array);
+	
+	let sparkList = document.getElementById("sparkList");
+	for (const [key, value] of this.sparks.entries()) {
+		let html = this.transformSparkToHtml(key, value);
+		sparkList.prepend(html);
+	}
 }
 
 App.prototype.main = function () {
