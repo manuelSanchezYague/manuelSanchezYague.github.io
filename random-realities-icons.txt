@@ -1,0 +1,451 @@
+Feather				https://game-icons.net/1x1/lorc/feather.html
+Broken Link			https://game-icons.net/1x1/skoll/breaking-chain.html
+Flame               https://game-icons.net/1x1/carl-olsen/flame.html
+Lizard              https://game-icons.net/1x1/lorc/gecko.html
+Serpent             https://game-icons.net/1x1/lorc/snake.html
+Arch                https://game-icons.net/1x1/delapouite/dungeon-gate.html
+Mask                https://game-icons.net/1x1/delapouite/luchador.html
+Fox                 https://game-icons.net/1x1/lorc/fox-head.html
+Seaweed             https://game-icons.net/1x1/delapouite/algae.html
+Stones              https://game-icons.net/1x1/delapouite/stone-stack.html
+Cornucopia          https://game-icons.net/1x1/delapouite/cornucopia.html
+Balance             https://game-icons.net/1x1/lorc/scales.html
+Candle              https://game-icons.net/1x1/lorc/candle-holder.html
+Pointed Ear         https://game-icons.net/1x1/delapouite/elf-ear.html
+Alien               https://game-icons.net/1x1/lorc/alien-stare.html
+Bamboo              https://game-icons.net/1x1/delapouite/bamboo.html
+Baobab              https://game-icons.net/1x1/delapouite/baobab.html
+Crate               https://game-icons.net/1x1/delapouite/wooden-crate.html
+Temple              https://game-icons.net/1x1/delapouite/egyptian-temple.html
+Cave                https://game-icons.net/1x1/delapouite/cave-entrance.html
+Letter              https://game-icons.net/1x1/lorc/envelope.html
+Knot                https://game-icons.net/1x1/delapouite/knot.html
+Pyramid             https://game-icons.net/1x1/delapouite/great-pyramid.html
+Dove                https://game-icons.net/1x1/delapouite/peace-dove.html
+Burning Tree        https://game-icons.net/1x1/lorc/burning-tree.html
+Fetus               https://game-icons.net/1x1/lorc/embryo.html
+Harpy               https://game-icons.net/1x1/delapouite/greek-sphinx.html
+Imp					https://game-icons.net/1x1/lorc/imp.html
+Werewolf            https://game-icons.net/1x1/lorc/werewolf.html
+Stump               https://game-icons.net/1x1/skoll/logging.html
+Scorpion            https://game-icons.net/1x1/lorc/scorpion.html
+Pentagram           https://game-icons.net/1x1/lorc/pentagram-rose.html
+Balloon             https://game-icons.net/1x1/delapouite/air-balloon.html
+Globe               https://game-icons.net/1x1/lorc/globe.html
+Monster             https://game-icons.net/1x1/skoll/troll.html
+Drought             https://game-icons.net/1x1/delapouite/desert.html
+					
+Crown               https://game-icons.net/1x1/lorc/crown.html
+Planet              https://game-icons.net/1x1/delapouite/jupiter.html
+Skull               https://game-icons.net/1x1/sbed/death-skull.html
+Bone                https://game-icons.net/1x1/skoll/joint.html
+Waves               https://game-icons.net/1x1/lorc/at-sea.html
+Wheel               https://game-icons.net/1x1/delapouite/ship-wheel.html
+Tombstone           https://game-icons.net/1x1/sbed/tombstone.html
+Burst               https://game-icons.net/1x1/lorc/explosion-rays.html
+Column              https://game-icons.net/1x1/delapouite/ionic-column.html
+Ant                 https://game-icons.net/1x1/delapouite/ant.html
+Connection          https://game-icons.net/1x1/lorc/processor.html
+Cactus              https://game-icons.net/1x1/delapouite/cactus.html
+Anvil               https://game-icons.net/1x1/lorc/anvil.html
+Snowglobe           https://game-icons.net/1x1/lorc/crystal-ball.html
+Musket              https://game-icons.net/1x1/skoll/musket.html
+Knight              https://game-icons.net/1x1/lorc/visored-helm.html
+Windmill            https://game-icons.net/1x1/delapouite/windmill.html
+Scepter             https://game-icons.net/1x1/lorc/crystal-wand.html
+Banner              https://game-icons.net/1x1/delapouite/knight-banner.html
+Trident             https://game-icons.net/1x1/lorc/trident.html
+Fence               https://game-icons.net/1x1/lorc/wooden-fence.html
+Constellation       https://game-icons.net/1x1/delapouite/ursa-major.html
+Gargoyle            https://game-icons.net/1x1/delapouite/gargoyle.html
+Broken Shield       https://game-icons.net/1x1/lorc/cracked-shield.html
+Coffin              https://game-icons.net/1x1/lorc/coffin.html
+Holding             https://game-icons.net/1x1/delapouite/sword-brandish.html
+Lotus               https://game-icons.net/1x1/lorc/lotus.html
+Snail               https://game-icons.net/1x1/lorc/snail.html
+Door                https://game-icons.net/1x1/lorc/wooden-door.html
+Night               https://game-icons.net/1x1/lorc/moon.html
+Galaxy              https://game-icons.net/1x1/lorc/star-swirl.html
+Deal                https://game-icons.net/1x1/delapouite/shaking-hands.html
+Wizard              https://game-icons.net/1x1/delapouite/wizard-face.html
+Submarine           https://game-icons.net/1x1/delapouite/submarine.html
+Award               https://game-icons.net/1x1/delapouite/ribbon-medal.html
+Tiara               https://game-icons.net/1x1/delapouite/tiara.html
+					
+Potion              https://game-icons.net/1x1/caro-asercion/round-potion.html
+Fist                https://game-icons.net/1x1/lorc/fist.html
+Sun                 https://game-icons.net/1x1/caro-asercion/heraldic-sun.html
+Shield              https://game-icons.net/1x1/delapouite/griffin-shield.html
+Eclipse             https://game-icons.net/1x1/lorc/eclipse.html
+Witch Hat           https://game-icons.net/1x1/lorc/pointy-hat.html
+Paw                 https://game-icons.net/1x1/lorc/flat-paw-print.html
+Saber               https://game-icons.net/1x1/lorc/crossed-sabres.html
+Cage                https://game-icons.net/1x1/delapouite/bird-cage.html
+Bridge              https://game-icons.net/1x1/delapouite/tall-bridge.html
+Tentacle            https://game-icons.net/1x1/lorc/suckered-tentacle.html
+Cloak               https://game-icons.net/1x1/lorc/robe.html
+Jester              https://game-icons.net/1x1/delapouite/jester-hat.html
+Raven               https://game-icons.net/1x1/lorc/raven.html
+Comet               https://game-icons.net/1x1/lorc/burning-meteor.html
+Worm                https://game-icons.net/1x1/delapouite/worms.html
+Key                 https://game-icons.net/1x1/lorc/key.html
+Whale               https://game-icons.net/1x1/delapouite/whale-tail.html
+Fang                https://game-icons.net/1x1/skoll/fangs.html
+Throne              https://game-icons.net/1x1/lorc/stone-throne.html
+Undead              https://game-icons.net/1x1/skoll/raise-zombie.html
+Creature            https://game-icons.net/1x1/delapouite/orc-head.html
+Bubbles             https://game-icons.net/1x1/lorc/bubbles.html
+Fossil              https://game-icons.net/1x1/delapouite/t-rex-skull.html
+Horseshoe           https://game-icons.net/1x1/delapouite/horseshoe.html
+Broken Sword        https://game-icons.net/1x1/lorc/shattered-sword.html
+Candelabra          https://game-icons.net/1x1/lorc/lit-candelabra.html
+Cut Hand            https://game-icons.net/1x1/lorc/cut-palm.html
+Canyon              	https://game-icons.net/1x1/delapouite/cliff-crossing.html
+Ghost               https://game-icons.net/1x1/lorc/ghost.html
+Palm Tree           https://game-icons.net/1x1/delapouite/palm-tree.html
+Ziggurat            https://game-icons.net/1x1/delapouite/mayan-pyramid.html
+Maze                https://game-icons.net/1x1/lorc/maze.html
+Lighthouse          https://game-icons.net/1x1/delapouite/lighthouse.html
+Scythe              https://game-icons.net/1x1/lorc/scythe.html
+Meteorite           https://game-icons.net/1x1/delapouite/asteroid.html
+					
+Owl                 https://game-icons.net/1x1/lorc/owl.html
+Diamond             https://game-icons.net/1x1/lorc/cut-diamond.html
+Mountain            https://game-icons.net/1x1/lorc/peaks.html
+Gear                https://game-icons.net/1x1/lorc/gears.html
+Cycle               https://game-icons.net/1x1/delapouite/sickle.html
+Dead Tree           https://game-icons.net/1x1/lorc/dead-wood.html
+Broken Arrow        https://game-icons.net/1x1/catsu/broken-arrow.html
+Staircase           https://game-icons.net/1x1/delapouite/3d-stairs.html
+Book                https://game-icons.net/1x1/lorc/book-cover.html
+Atom                https://game-icons.net/1x1/skoll/atom.html
+Lantern             https://game-icons.net/1x1/lorc/lantern-flame.html
+Anchor              https://game-icons.net/1x1/lorc/anchor.html
+Diving              https://game-icons.net/1x1/delapouite/diving-helmet.html
+Battle Axe          https://game-icons.net/1x1/lorc/battle-axe.html
+River               https://game-icons.net/1x1/delapouite/river.html
+Cannon              https://game-icons.net/1x1/delapouite/pirate-cannon.html
+Broken Skull        https://game-icons.net/1x1/lorc/broken-skull.html
+Wooden Shield       https://game-icons.net/1x1/willdabeast/round-shield.html
+Unicorn             https://game-icons.net/1x1/delapouite/unicorn.html
+Dragon              https://game-icons.net/1x1/delapouite/spiked-dragon-head.html
+Railroad            https://game-icons.net/1x1/delapouite/rail-road.html
+Chemistry           https://game-icons.net/1x1/lorc/erlenmeyer.html
+Obelisk             https://game-icons.net/1x1/delapouite/obelisk.html
+Spider Web          https://game-icons.net/1x1/lorc/spider-web.html
+Dragonfly           https://game-icons.net/1x1/lorc/dragonfly.html
+Leech               https://game-icons.net/1x1/lorc/leeching-worm.html
+Chimp               https://game-icons.net/1x1/delapouite/gorilla.html
+Dagger              https://game-icons.net/1x1/lorc/plain-dagger.html
+Well                https://game-icons.net/1x1/delapouite/well.html
+Broken Planet       https://game-icons.net/1x1/delapouite/exploding-planet.html
+Harp                https://game-icons.net/1x1/lorc/lyre.html
+Gemstone            https://game-icons.net/1x1/delapouite/rupee.html
+Sundial             https://game-icons.net/1x1/lorc/sundial.html
+Octopus             https://game-icons.net/1x1/lorc/octopus.html
+Inkwell             https://game-icons.net/1x1/lorc/quill-ink.html
+Mirror              https://game-icons.net/1x1/lorc/mirror-mirror.html
+					
+					
+					
+					
+					
+Foggy               https://game-icons.net/1x1/delapouite/fog.html
+Partly Cloudy       https://game-icons.net/1x1/delapouite/sun-cloud.html
+Partly Cloudy       https://game-icons.net/1x1/delapouite/sun-cloud.html
+Thunderstorm        https://game-icons.net/1x1/lorc/lightning-storm.html
+Drizzle             		https://game-icons.net/1x1/delapouite/plant-watering.html
+Thunderstorm        https://game-icons.net/1x1/lorc/lightning-storm.html
+Drizzle             		https://game-icons.net/1x1/delapouite/plant-watering.html
+Partly Cloudy       https://game-icons.net/1x1/delapouite/sun-cloud.html
+Clear               	https://game-icons.net/1x1/delapouite/thermometer-hot.html
+Drizzle             		https://game-icons.net/1x1/delapouite/plant-watering.html
+Clear               	https://game-icons.net/1x1/delapouite/thermometer-hot.html
+Foggy               https://game-icons.net/1x1/delapouite/fog.html
+Thunderstorm        https://game-icons.net/1x1/lorc/lightning-storm.html
+Drizzle             		https://game-icons.net/1x1/delapouite/plant-watering.html
+Partly Cloudy       https://game-icons.net/1x1/delapouite/sun-cloud.html
+Rain                https://game-icons.net/1x1/lorc/raining.html
+Partly Cloudy       https://game-icons.net/1x1/delapouite/sun-cloud.html
+Rain                https://game-icons.net/1x1/lorc/raining.html
+Clear               	https://game-icons.net/1x1/delapouite/thermometer-hot.html
+Clear               	https://game-icons.net/1x1/delapouite/thermometer-hot.html
+Cloudy              		https://game-icons.net/1x1/sbed/poison-cloud.html
+Clear               	https://game-icons.net/1x1/delapouite/thermometer-hot.html
+Partly Cloudy       https://game-icons.net/1x1/delapouite/sun-cloud.html
+Clear               	https://game-icons.net/1x1/delapouite/thermometer-hot.html
+Partly Cloudy       https://game-icons.net/1x1/delapouite/sun-cloud.html
+Clear               	https://game-icons.net/1x1/delapouite/thermometer-hot.html
+Partly Cloudy       https://game-icons.net/1x1/delapouite/sun-cloud.html
+Rain                https://game-icons.net/1x1/lorc/raining.html
+Rain                https://game-icons.net/1x1/lorc/raining.html
+Cloudy              		https://game-icons.net/1x1/sbed/poison-cloud.html
+Rain                https://game-icons.net/1x1/lorc/raining.html
+Cloudy              		https://game-icons.net/1x1/sbed/poison-cloud.html
+Foggy               https://game-icons.net/1x1/delapouite/fog.html
+Cloudy              		https://game-icons.net/1x1/sbed/poison-cloud.html
+Cloudy              		https://game-icons.net/1x1/sbed/poison-cloud.html
+Cloudy              		https://game-icons.net/1x1/sbed/poison-cloud.html
+					
+Mild                	https://game-icons.net/1x1/delapouite/thermometer-cold.html
+Snow                https://game-icons.net/1x1/lorc/snowing.html
+Breeze              https://game-icons.net/1x1/lorc/swan-breeze.html
+Wind                https://game-icons.net/1x1/lorc/heat-haze.html
+Mild                	https://game-icons.net/1x1/delapouite/thermometer-cold.html
+Mild                	https://game-icons.net/1x1/delapouite/thermometer-cold.html
+Warm                https://game-icons.net/1x1/delapouite/thermometer-hot.html
+Snow                https://game-icons.net/1x1/lorc/snowing.html
+Hot                 	https://game-icons.net/1x1/lorc/fire-silhouette.html
+Cold                https://game-icons.net/1x1/delapouite/thermometer-cold.html
+Hurricane           https://game-icons.net/1x1/lorc/tornado.html
+Snow                https://game-icons.net/1x1/lorc/snowing.html
+Warm                https://game-icons.net/1x1/delapouite/thermometer-hot.html
+Mild                	https://game-icons.net/1x1/delapouite/thermometer-cold.html
+Hurricane           https://game-icons.net/1x1/lorc/tornado.html
+Wind                https://game-icons.net/1x1/lorc/heat-haze.html
+Warm                	https://game-icons.net/1x1/delapouite/thermometer-cold.html
+Hot                 	https://game-icons.net/1x1/lorc/fire-silhouette.html
+Cold                https://game-icons.net/1x1/delapouite/thermometer-cold.html
+Breeze              https://game-icons.net/1x1/lorc/swan-breeze.html
+Snowstorm           https://game-icons.net/1x1/lorc/frostfire.html
+Warm                https://game-icons.net/1x1/delapouite/thermometer-hot.html
+Hot                 	https://game-icons.net/1x1/lorc/fire-silhouette.html
+Snow                https://game-icons.net/1x1/lorc/snowing.html
+Hurricane           https://game-icons.net/1x1/lorc/tornado.html
+Mild                	https://game-icons.net/1x1/delapouite/thermometer-cold.html
+Cold                https://game-icons.net/1x1/delapouite/thermometer-cold.html
+Warm                https://game-icons.net/1x1/delapouite/thermometer-hot.html
+Cold                https://game-icons.net/1x1/delapouite/thermometer-cold.html
+Snowstorm           https://game-icons.net/1x1/lorc/frostfire.html
+Wind                https://game-icons.net/1x1/lorc/heat-haze.html
+Breeze              https://game-icons.net/1x1/lorc/swan-breeze.html
+Snowstorm           https://game-icons.net/1x1/lorc/frostfire.html
+Wind                https://game-icons.net/1x1/lorc/heat-haze.html
+Cold                https://game-icons.net/1x1/delapouite/thermometer-cold.html
+Hot                 	https://game-icons.net/1x1/lorc/fire-silhouette.html
+					
+Northeast           https://game-icons.net/1x1/lorc/william-tell.html
+North               https://game-icons.net/1x1/lorc/compass.html
+Northeast           a
+South               a
+Northwest           a
+North               a
+West                a
+Southeast           a
+Southwest           a
+North               a
+West                a
+Northeast           a
+Southeast           a
+Southwest           a
+Southeast           a
+West                a
+Northeast           a
+West                a
+West                a
+North               a
+Northwest           a
+Northwest           a
+South               a
+South               a
+South               a
+East                a
+South               a
+Southwest           a
+East                a
+Southwest           a
+Northwest           a
+East                a
+Southeast           a
+East                a
+North               a
+East                a
+					
+Evening             	https://game-icons.net/1x1/delapouite/thermometer-hot.html y https://game-icons.net/1x1/delapouite/clockwise-rotation.html y https://game-icons.net/1x1/delapouite/night-sleep.html
+Late night          https://game-icons.net/1x1/delapouite/night-sleep.html
+Morning             a
+Evening             a
+Late night          https://game-icons.net/1x1/delapouite/night-sleep.html
+Afternoon           a
+Sunrise             https://game-icons.net/1x1/delapouite/sunrise.html
+Afternoon           a
+Late night          https://game-icons.net/1x1/delapouite/night-sleep.html
+Sunrise             https://game-icons.net/1x1/delapouite/sunrise.html
+Afternoon           a
+Sunrise             https://game-icons.net/1x1/delapouite/sunrise.html
+Morning             a
+Afternoon           a
+Sunset              https://game-icons.net/1x1/delapouite/sunset.html
+Morning             a
+Evening             a
+Sunrise             https://game-icons.net/1x1/delapouite/sunrise.html
+Late night          https://game-icons.net/1x1/delapouite/night-sleep.html
+Afternoon           a
+Evening             a
+Sunset              https://game-icons.net/1x1/delapouite/sunset.html
+Late night          https://game-icons.net/1x1/delapouite/night-sleep.html
+Afternoon           a
+Morning             a
+Evening             a
+Afternoon           a
+Morning             a
+Morning             a
+Afternoon           a
+Evening             a
+Sunset              https://game-icons.net/1x1/delapouite/sunset.html
+Morning             a
+Evening             a
+Morning             a
+Sunset              https://game-icons.net/1x1/delapouite/sunset.html
+					
+					
+					
+					
+					
+Boot                https://game-icons.net/1x1/lorc/tread.html
+Sword               https://game-icons.net/1x1/skoll/gladius.html
+Horn Helmet         https://game-icons.net/1x1/lorc/horned-helm.html
+Astrolabe           https://game-icons.net/1x1/caro-asercion/astrolabe.html
+Coin                https://game-icons.net/1x1/lorc/crown-coin.html
+Gazelle             https://game-icons.net/1x1/lorc/stag-head.html
+Poison Apple        https://game-icons.net/1x1/lorc/gift-trap.html
+Boomerang           https://game-icons.net/1x1/delapouite/boomerang.html
+Stars               https://game-icons.net/1x1/delapouite/sparkles.html
+Mushroom            https://game-icons.net/1x1/lorc/mushroom.html
+Broken Heart        https://game-icons.net/1x1/lorc/broken-heart.html
+Closed Eye          	https://game-icons.net/1x1/lorc/sleepy.html
+Spring              https://game-icons.net/1x1/delapouite/spring.html
+Clover              https://game-icons.net/1x1/lorc/clover.html
+Crystal             https://game-icons.net/1x1/lorc/crystal-growth.html
+Slime               https://game-icons.net/1x1/cathelineau/transparent-slime.html
+Stalactite          https://game-icons.net/1x1/delapouite/stalactites.html
+Lizard Paw          https://game-icons.net/1x1/delapouite/frog-foot.html
+Mouse               https://game-icons.net/1x1/delapouite/rat.html
+Panther             https://game-icons.net/1x1/delapouite/tiger-head.html
+Cubes               https://game-icons.net/1x1/lorc/cubes.html
+Helix               https://game-icons.net/1x1/lorc/dna2.html
+Magnifying Glass    https://game-icons.net/1x1/lorc/magnifying-glass.html
+Wand                	https://game-icons.net/1x1/delapouite/wood-stick.html
+Tsunami             	https://game-icons.net/1x1/lorc/big-wave.html & https://game-icons.net/1x1/delapouite/flood.html
+Floral              https://game-icons.net/1x1/delapouite/fern.html
+Veil                https://game-icons.net/1x1/lucasms/cloak.html
+Puzzle              https://game-icons.net/1x1/delapouite/puzzle.html
+Water-Resistant     	https://game-icons.net/1x1/delapouite/heart-shield.html & https://game-icons.net/1x1/lorc/drop.html
+Bee                 https://game-icons.net/1x1/lorc/bee.html
+Animal Skull        https://game-icons.net/1x1/lorc/desert-skull.html
+Strength            https://game-icons.net/1x1/delapouite/biceps.html
+Chariot             https://game-icons.net/1x1/cathelineau/chariot.html
+Wall                https://game-icons.net/1x1/delapouite/stone-wall.html
+Ectoplasm           https://game-icons.net/1x1/lorc/acid-blob.html
+Armor               https://game-icons.net/1x1/lorc/armor-vest.html
+					
+Beetle              https://game-icons.net/1x1/lorc/scarab-beetle.html
+Boat                https://game-icons.net/1x1/delapouite/sailboat.html
+Crossbow            https://game-icons.net/1x1/carl-olsen/crossbow.html
+Tower               https://game-icons.net/1x1/lorc/white-tower.html
+Bust                https://game-icons.net/1x1/caro-asercion/philosopher-bust.html
+Eye                 https://game-icons.net/1x1/lorc/semi-closed-eye.html
+Amphora             https://game-icons.net/1x1/delapouite/amphora.html
+Gold                https://game-icons.net/1x1/delapouite/gold-stack.html
+Chest               https://game-icons.net/1x1/lorc/locked-chest.html
+Coral               https://game-icons.net/1x1/delapouite/coral.html
+Die                 https://game-icons.net/1x1/delapouite/perspective-dice-six-faces-four.html
+Scroll              https://game-icons.net/1x1/lorc/tied-scroll.html
+Pincer              https://game-icons.net/1x1/lorc/crab-claw.html
+Turtle              https://game-icons.net/1x1/lorc/turtle.html
+Vial                https://game-icons.net/1x1/sbed/vial.html
+Telescope           https://game-icons.net/1x1/lorc/spyglass.html
+Spider              https://game-icons.net/1x1/carl-olsen/spider-alt.html
+Nose                https://game-icons.net/1x1/delapouite/nose-front.html
+Tornado             https://game-icons.net/1x1/lorc/tornado.html
+Bell                https://game-icons.net/1x1/lorc/carillon.html
+Crystal Ball        https://game-icons.net/1x1/delapouite/dragon-orb.html
+Compass             https://game-icons.net/1x1/delapouite/freemasonry.html
+Pendulum            	https://game-icons.net/1x1/delapouite/pendulum-swing.html
+Backpack            https://game-icons.net/1x1/delapouite/backpack.html
+Mace                https://game-icons.net/1x1/lorc/spiked-mace.html
+Private             https://game-icons.net/1x1/delapouite/locked-box.html
+Sea Urchin          https://game-icons.net/1x1/delapouite/sea-urchin.html
+Agriculture         https://game-icons.net/1x1/delapouite/fertilizer-bag.html
+Healing             	https://game-icons.net/1x1/darkzaitzev/apothecary.html & https://game-icons.net/1x1/delapouite/first-aid-kit.html
+Division            https://game-icons.net/1x1/delapouite/fried-eggs.html
+Esoteric            https://game-icons.net/1x1/lorc/black-hole-bolas.html
+Magic Eye           https://game-icons.net/1x1/lorc/octogonal-eye.html
+Beak                https://game-icons.net/1x1/delapouite/toucan.html
+Gaze                https://game-icons.net/1x1/delapouite/eye-target.html
+Chaos               https://game-icons.net/1x1/delapouite/misdirection.html
+Fountain            https://game-icons.net/1x1/delapouite/water-fountain.html
+					
+Chalice             https://game-icons.net/1x1/lorc/jeweled-chalice.html
+Time                https://game-icons.net/1x1/delapouite/watch.html
+Lute                https://game-icons.net/1x1/delapouite/banjo.html
+Hammer              https://game-icons.net/1x1/delapouite/thor-hammer.html
+Horse               https://game-icons.net/1x1/delapouite/horse-head.html
+Drop                https://game-icons.net/1x1/lorc/drop.html
+Target              https://game-icons.net/1x1/skoll/bullseye.html
+Bottle              https://game-icons.net/1x1/delapouite/water-flask.html
+Broken Egg          	https://game-icons.net/1x1/sbed/big-egg.html y https://game-icons.net/1x1/delapouite/broken-pottery.html
+Brick               https://game-icons.net/1x1/delapouite/brick-pile.html
+Hourglass           https://game-icons.net/1x1/lorc/hourglass.html
+Fingerprint         https://game-icons.net/1x1/delapouite/finger-print.html
+Pickaxe             https://game-icons.net/1x1/delapouite/war-pick.html
+Paintbrush          https://game-icons.net/1x1/delapouite/paint-brush.html
+Cauldron            https://game-icons.net/1x1/darkzaitzev/cauldron.html
+Steam               https://game-icons.net/1x1/delapouite/steam.html
+Steak               https://game-icons.net/1x1/delapouite/steak.html
+Portal              https://game-icons.net/1x1/lorc/magic-portal.html
+Bomb                https://game-icons.net/1x1/lorc/rolling-bomb.html
+Trap                https://game-icons.net/1x1/lorc/wolf-trap.html
+Gauntlet            https://game-icons.net/1x1/delapouite/gauntlet.html
+Keyhole             	https://game-icons.net/1x1/delapouite/key-lock.html
+Prosthetic          https://game-icons.net/1x1/delapouite/robot-leg.html
+Bonfire             https://game-icons.net/1x1/lorc/campfire.html
+Time Loop           https://game-icons.net/1x1/delapouite/duration.html
+Cyclone             https://game-icons.net/1x1/lorc/vortex.html
+Expansion           https://game-icons.net/1x1/sbed/expander.html
+Stomach             https://game-icons.net/1x1/delapouite/stomach.html
+Log                 https://game-icons.net/1x1/delapouite/log.html
+Triskele            https://game-icons.net/1x1/lorc/fluffy-trefoil.html
+Floating            	https://game-icons.net/1x1/quoting/card-play.html
+Vase                https://game-icons.net/1x1/delapouite/jug.html
+Thought             	https://game-icons.net/1x1/delapouite/chat-bubble.html
+Golem               https://game-icons.net/1x1/delapouite/rock-golem.html
+Spear               https://game-icons.net/1x1/lorc/spears.html
+Void                ◌
+					
+Lock                https://game-icons.net/1x1/lorc/padlock.html
+Ring                https://game-icons.net/1x1/skoll/big-diamond-ring.html
+Torch               https://game-icons.net/1x1/delapouite/torch.html
+Origami             https://game-icons.net/1x1/caro-asercion/paper-crane.html
+Wing                https://game-icons.net/1x1/lorc/feathered-wing.html
+Smoke               https://game-icons.net/1x1/darkzaitzev/smoke-bomb.html
+Lightning           https://game-icons.net/1x1/lorc/power-lightning.html
+Brain               https://game-icons.net/1x1/lorc/brain.html
+Flower              https://game-icons.net/1x1/delapouite/jasmine.html
+Horn                	https://game-icons.net/1x1/lorc/laurels.html
+Direction           https://game-icons.net/1x1/lorc/radial-balance.html
+Butterfly           https://game-icons.net/1x1/lorc/butterfly.html
+Triquetra           https://game-icons.net/1x1/delapouite/triquetra.html
+Volcano             https://game-icons.net/1x1/lorc/volcano.html
+Seedling            https://game-icons.net/1x1/lorc/ground-sprout.html
+Stake               https://game-icons.net/1x1/delapouite/stake-hammer.html
+Perfume             https://game-icons.net/1x1/lorc/square-bottle.html
+Burning Heart       https://game-icons.net/1x1/lorc/heartburn.html
+Virus               https://game-icons.net/1x1/lorc/virus.html
+Botany              https://game-icons.net/1x1/delapouite/greenhouse.html
+Music               https://game-icons.net/1x1/delapouite/musical-notes.html
+Sand                https://game-icons.net/1x1/lorc/powder.html
+Idea                https://game-icons.net/1x1/delapouite/smart.html
+Compass             https://game-icons.net/1x1/lorc/compass.html
+Ear                 https://game-icons.net/1x1/delapouite/human-ear.html
+Shell               https://game-icons.net/1x1/lorc/scallop.html
+Safebox             https://game-icons.net/1x1/delapouite/strongbox.html
+Exit                https://game-icons.net/1x1/delapouite/exit-door.html
+Seashell            https://game-icons.net/1x1/lorc/spiral-shell.html
+Map                 https://game-icons.net/1x1/lorc/treasure-map.html
+Amber               https://game-icons.net/1x1/delapouite/amber-mosquito.html
+Tarot               	https://game-icons.net/1x1/lorc/poker-hand.html & https://game-icons.net/1x1/caro-asercion/heraldic-sun.html
+Heat                https://game-icons.net/1x1/lorc/heat-haze.html
+Whip                https://game-icons.net/1x1/lorc/whip.html
+Pulse               https://game-icons.net/1x1/delapouite/heart-beats.html
+Bracelet            	https://game-icons.net/1x1/delapouite/handcuffed.html
