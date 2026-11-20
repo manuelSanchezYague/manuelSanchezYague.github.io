@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InGen Isla Nublar | Sistema Central de Especímenes</title>
+  <link rel="stylesheet" href="css/jurassic.css">
+</head>
+<body>
+
+  <div class="monitor-frame">
+    
+    <!-- CRT MONITOR BEZEL TOP -->
+    <div class="monitor-top-bezel">
+      <div class="monitor-brand">
+        <span class="brand-logo">INGEN</span>
+        <span>ADVANCED ANIMAL MANAGEMENT SYSTEM — ISLA NUBLAR TERMINAL 01-B</span>
+      </div>
+      <div class="monitor-led-cluster">
+        <div class="led-indicator">
+          <span class="led-dot green"></span>
+          <span>POWER 99.8%</span>
+        </div>
+        <div class="led-indicator">
+          <span class="led-dot amber"></span>
+          <span>FENCE: 10,000V</span>
+        </div>
+        <div class="led-indicator">
+          <span class="led-dot green"></span>
+          <span>UNIX KERNEL: ACTIVE</span>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="crt-screen">
+      
+      <!-- TERMINAL MAIN HEADER BANNER -->
+      <div class="terminal-header">
+        <div class="terminal-top-bar">
+          <div class="system-title-block">
+            <div class="jurassic-logo">
+              <span class="badge-ingen">INGEN</span>
+              <div class="title-text">SISTEMA DE CONTROL DE FAUNA — ISLA NUBLAR</div>
+            </div>
+          </div>
+          <div class="telemetry-summary">
+            <div class="telemetry-badge">
+              <span class="led-dot green"></span>
+              <span>ESPECÍMENES TOTALES: 56</span>
+            </div>
+            <div class="telemetry-badge">
+              <span class="led-dot green"></span>
+              <span>FEEDS CCTV ACTIVOS: 37</span>
+            </div>
+            <div class="telemetry-badge amber">
+              <span class="led-dot amber"></span>
+              <span>MODO SENSOR: 19</span>
+            </div>
+            <div class="telemetry-badge">
+              <span class="led-dot green"></span>
+              <span>ESTADO DE CONTENCIÓN: NOMINAL</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="terminal-sub-bar">
+          <div class="status-line">
+            <div class="status-item">TERMINAL: <span class="highlight-green">CONTROL ROOM 01-B</span></div>
+            <div class="status-item">AUTORIZACIÓN: <span class="highlight-green">NIVEL 5 (CHIEF ENGINEER)</span></div>
+            <div class="status-item">VALLA PERIMETRAL: <span class="highlight-amber">10.000V ACTIVA</span></div>
+            <div class="status-item">CLIMA ISLA: <span class="highlight-green">28°C / 86% HUMEDAD</span></div>
+          </div>
+          <div id="system-clock" style="color: var(--phosphor-green); font-weight: bold;">
+            LIVE CLOCK
+          </div>
+        </div>
+      </div>
+
+      <!-- SEARCH & FILTER TOOLBAR -->
+      <div class="search-filter-section">
+        <div class="search-input-wrap">
+          <span class="search-prompt">INGEN://&gt;</span>
+          <input type="text" id="dino-search" class="search-input" placeholder="Buscar por nombre, código ID, clasificación o sector... (Pulsa '/' para buscar)" autocomplete="off">
+        </div>
+        
+        <div class="filter-pills-row">
+          <span class="filter-label">FILTROS:</span>
+          <button class="filter-chip active" data-filter="all">TODOS (56)</button>
+          <button class="filter-chip" data-filter="has_video">CON VÍDEO (37)</button>
+          <button class="filter-chip" data-filter="TERÓPODO CARNÍVORO">CARNÍVOROS (24)</button>
+          <button class="filter-chip" data-filter="HERBÍVORO">HERBÍVOROS (14)</button>
+          <button class="filter-chip" data-filter="REPTIL MARINO / ACUÁTICO">MARINOS (4)</button>
+          <button class="filter-chip" data-filter="PTEROSAURIO / VOLADOR">VOLADORES (2)</button>
+          <button class="filter-chip" data-filter="EQUIPO / INSTALACIÓN">EQUIPAMIENTO / SETS (12)</button>
+          
+          <div class="view-mode-toggle">
+            <button id="view-grid" class="filter-chip active" title="Vista de tarjetas CRT">▦ TARJETAS</button>
+            <button id="view-table" class="filter-chip" title="Vista de tabla Unix">≡ TABLA UNIX</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- METRICS BANNER -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.8rem; color: var(--text-dim); padding: 0 0.5rem;">
+        <div>
+          MOSTRANDO <span id="visible-count" style="color: var(--phosphor-green); font-weight: bold;">56</span> DE 56 ESPECÍMENES EN LA BASE DE DATOS
+        </div>
+        <div>
+          SELECCIONE CUALQUIER ELEMENTO PARA ABRIR SU EXPEDIENTE COMPLETO
+        </div>
+      </div>
+
+      <!-- VIEW 1: SPECIMEN CRT CARDS GRID -->
+      <div id="grid-view-container" class="specimen-grid">
+        
+    <a href="pages/14525-tiranosaurio-rex.html" class="specimen-card" 
+       data-search="14525 - tiranosaurio rex ingen-14525 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-14525</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/14525%20-%20Tiranosaurio%20rex/14525_main_v13_tp_2.webp" alt="14525 - Tiranosaurio rex" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">14525 - Tiranosaurio rex</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El tiranosaurio rex era un dinosaurio predador bípedo que medía 13 metros. Con su poderosa cabeza y sus dientes de casi 20 centímetros era uno de los dinosaurios más impresionantes.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/14567-dilophosaurus.html" class="specimen-card" 
+       data-search="14567 - dilophosaurus ingen-14567 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-14567</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/14567%20-%20Dilophosaurus/14567_main_v15_tp_2.webp" alt="14567 - Dilophosaurus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">14567 - Dilophosaurus</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El dilophosaurus vivió hace 200-192 millones de años en las primeras etapas del jurásico. Medía hasta seis metros de largo y fue uno de los primeros grandes dinosaurios carnívoros de los que tenemos noticias.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/14575-dunkleosteus.html" class="specimen-card" 
+       data-search="14575 - dunkleosteus ingen-14575 reptil marino / acuático alfa sector marino - laguna central"
+       data-category="REPTIL MARINO / ACUÁTICO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-14575</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/14575%20-%20Dunkleosteus/14575_main_v16_tp_2.webp" alt="14575 - Dunkleosteus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">14575 - Dunkleosteus</div>
+        <div class="card-category">REPTIL MARINO / ACUÁTICO // Sector Marino - Laguna Central</div>
+        <div class="card-desc-snippet">El dunkleosteus era un pez acorazado y con sus ocho a diez metros de longitud, increíblemente grande para la era devónica. Junto con el titanichthys se considera uno de los primeros gigantes del mundo submarino.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/14581-braquiosaurio.html" class="specimen-card" 
+       data-search="14581 - braquiosaurio ingen-14581 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-14581</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/14581%20-%20Braquiosaurio/14581_main_v17_tp_2.webp" alt="14581 - Braquiosaurio" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">14581 - Braquiosaurio</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">Traducida, la palabra Braquiosaurio significa algo así como lagarto con brazos.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/14582-utahraptor.html" class="specimen-card" 
+       data-search="14582 - utahraptor ingen-14582 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-14582</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/14582%20-%20Utahraptor/14582_main_v17_tp_2.webp" alt="14582 - Utahraptor" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 2</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">14582 - Utahraptor</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El Utahraptor era un depredador rápido y ágil que cazaba dinosaurios herbívoros.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/14584-acrocantosaurio.html" class="specimen-card" 
+       data-search="14584 - acrocantosaurio ingen-14584 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-14584</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/14584%20-%20Acrocantosaurio/14584_main_v17_tp_2.webp" alt="14584 - Acrocantosaurio" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">14584 - Acrocantosaurio</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El Acrocanthosaurus era aproximadamente tan grande y pesaba prácticamente lo mismo que el Tyrannosaurus Rex y el Giganotosaurus.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/14585-velociraptor.html" class="specimen-card" 
+       data-search="14585 - velociráptor ingen-14585 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-14585</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/14585%20-%20Velocir%C3%A1ptor/14585_main_v18_tp_2.webp" alt="14585 - Velociráptor" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">14585 - Velociráptor</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">Este carnívoro de dos patas medía setenta centímetros y era muy pequeño para ser un dinosaurio.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/14586-carnotaurio.html" class="specimen-card" 
+       data-search="14586 - carnotaurio ingen-14586 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-14586</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/14586%20-%20Carnotaurio/14586_main_v18_tp_2.webp" alt="14586 - Carnotaurio" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">14586 - Carnotaurio</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El carnotaurus es el típico ejemplo de dinosaurio depredador carnívoro. Se desplazaba sobre sus fuertes patas traseras y tenía largos dientes afilados.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/14587-tiranosaurio-rex.html" class="specimen-card" 
+       data-search="14587 - tiranosaurio rex ingen-14587 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-14587</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/14587%20-%20Tiranosaurio%20Rex/14587_main_v18_tp_2.webp" alt="14587 - Tiranosaurio Rex" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">14587 - Tiranosaurio Rex</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El tyrannosaurus rex medía trece metros de largo y era un dinosaurio depredador bípedo. Su inmenso cráneo y sus dientes de casi 20 centímetros de largo lo convertían en un dinosaurio extraordinariamente impresionante.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15000-triceratops.html" class="specimen-card" 
+       data-search="15000 - triceratops ingen-15000 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15000</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15000%20-%20Triceratops/15000_main_v18_tp_2.webp" alt="15000 - Triceratops" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15000 - Triceratops</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">El triceratops fue uno de los últimos grandes dinosaurios.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15003-therizinosaurio.html" class="specimen-card" 
+       data-search="15003 - therizinosaurio ingen-15003 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15003</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15003%20-%20Therizinosaurio/15003_main_v18_tp_2.webp" alt="15003 - Therizinosaurio" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15003 - Therizinosaurio</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">De todos los animales que han poblado la Tierra, el therizinosaurus es probablemente el que tenía las garras más largas.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15007-cachorro-de-tiranosaurio-rex.html" class="specimen-card" 
+       data-search="15007 - cachorro de tiranosaurio rex ingen-15007 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15007</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15007%20-%20Cachorro%20de%20tiranosaurio%20rex/15007_main_v18_tp_2.webp" alt="15007 - Cachorro de tiranosaurio rex" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15007 - Cachorro de tiranosaurio rex</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">¿Jugar? ¡Para el joven T-Rex eso significa pelear con otros de su edad!</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15008-pteranodon.html" class="specimen-card" 
+       data-search="15008 - pteranodon ingen-15008 pterosaurio / volador beta sector aéreo - cúpula de pterosaurios"
+       data-category="PTEROSAURIO / VOLADOR"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15008</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15008%20-%20Pteranodon/15008_main_v18_tp_2.webp" alt="15008 - Pteranodon" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15008 - Pteranodon</div>
+        <div class="card-category">PTEROSAURIO / VOLADOR // Sector Aéreo - Cúpula de Pterosaurios</div>
+        <div class="card-desc-snippet">El Pteranodon era uno de los mayores dinosaurios voladores del Cretácico.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15009-espinosaurio.html" class="specimen-card" 
+       data-search="15009 - espinosaurio ingen-15009 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15009</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15009%20-%20Espinosaurio/15009_main_v19_tp_2.webp" alt="15009 - Espinosaurio" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15009 - Espinosaurio</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El espinosaurio era uno de los más peligrosos de los tiempos remotos</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15010-giganotosaurus.html" class="specimen-card" 
+       data-search="15010 - giganotosaurus ingen-15010 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15010</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15010%20-%20Giganotosaurus/15010_main_v19_tp_2.webp" alt="15010 - Giganotosaurus" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15010 - Giganotosaurus</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El giganotosaurus se parece mucho al tiranosaurio rex.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15014-dracorex.html" class="specimen-card" 
+       data-search="15014 - dracorex ingen-15014 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15014</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15014%20-%20Dracorex/15014_main_v19_tp_2.webp" alt="15014 - Dracorex" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15014 - Dracorex</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">El dracorex era un pequeño dinosaurio herbívoro que vivió en Norteamérica durante el Cretácico superior.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15016-plesiosaurio.html" class="specimen-card" 
+       data-search="15016 - plesiosaurio ingen-15016 reptil marino / acuático beta sector marino - laguna central"
+       data-category="REPTIL MARINO / ACUÁTICO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15016</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15016%20-%20Plesiosaurio/15016_main_v19_tp_2.webp" alt="15016 - Plesiosaurio" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 3</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15016 - Plesiosaurio</div>
+        <div class="card-category">REPTIL MARINO / ACUÁTICO // Sector Marino - Laguna Central</div>
+        <div class="card-desc-snippet">El plesiosaurio era un reptil primitivo que vivía en el mar y se alimentaba principalmente de peces.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15017-cachorro-de-giganotosaurus.html" class="specimen-card" 
+       data-search="15017 - cachorro de giganotosaurus ingen-15017 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15017</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15017%20-%20Cachorro%20de%20giganotosaurus/15017_main_v19_tp_2.webp" alt="15017 - Cachorro de giganotosaurus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15017 - Cachorro de giganotosaurus</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">Los cachorros de giganotosaurus vivían en manadas y se convertían enseguida en peligrosos cazadores.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15018-postosuchus.html" class="specimen-card" 
+       data-search="15018 - postosuchus ingen-15018 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15018</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15018%20-%20Postosuchus/15018_main_v20_tp.webp" alt="15018 - Postosuchus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15018 - Postosuchus</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El Postosuchus vivía en la era de los primeros dinosaurios y, como el Postosuchus de schleich® DINOSAURS, tenía un aspecto similar al de los cocodrilos.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15019-ceratosaurio.html" class="specimen-card" 
+       data-search="15019 - ceratosaurio ingen-15019 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15019</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15019%20-%20Ceratosaurio/15019_main_21_tp.webp" alt="15019 - Ceratosaurio" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15019 - Ceratosaurio</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El ceratosaurio de schleich® DINOSAURS tiene tres cuernos prominentes sobre el cráneo. En su mandíbula móvil, lucen dientes con forma de cuchillas.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15020-cryolophosaurus.html" class="specimen-card" 
+       data-search="15020 - cryolophosaurus ingen-15020 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15020</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15020%20-%20Cryolophosaurus/15020_main_v20_tp.webp" alt="15020 - Cryolophosaurus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15020 - Cryolophosaurus</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El Cryolophosaurus de schleich® DINOSAURS cuenta con una cresta ósea en el cráneo orientada hacia delante.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15021-agustinia.html" class="specimen-card" 
+       data-search="15021 - agustinia ingen-15021 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15021</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15021%20-%20Agustinia/15021_main_v20_tp.webp" alt="15021 - Agustinia" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15021 - Agustinia</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">El Agustinia contaba con una línea de espinas que le recorría todo el dorso, de igual modo que el Agustinia de schleich® DINOSAURS.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15022-baryonyx.html" class="specimen-card" 
+       data-search="15022 - baryonyx ingen-15022 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15022</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15022%20-%20Baryonyx/15022_main_v20_tp.webp" alt="15022 - Baryonyx" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15022 - Baryonyx</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">Cuando el Baryonyx de schleich® DINOSAURS abre sus mandíbulas móviles, brillan sus peligrosos dientes con forma de sierra.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15023-ankylosaurus.html" class="specimen-card" 
+       data-search="15023 - ankylosaurus ingen-15023 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15023</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15023%20-%20Ankylosaurus/15023_main_v20_tp.webp" alt="15023 - Ankylosaurus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15023 - Ankylosaurus</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">Al igual que el Ankylosaurus de schleich® DINOSAURS, el Ankylosaurus contaba con un mazo en la cola y estaba completamente acorazado con placas óseas.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15024-paquicefalosaurio.html" class="specimen-card" 
+       data-search="15024 - paquicefalosaurio ingen-15024 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15024</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15024%20-%20Paquicefalosaurio/15024_main_21_tp.webp" alt="15024 - Paquicefalosaurio" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15024 - Paquicefalosaurio</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">La característica especial del paquicefalosaurio de schleich® DINOSAURS es su cráneo con forma de cúpula y sus cuernos óseos.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15025-kaprosuchus.html" class="specimen-card" 
+       data-search="15025 - kaprosuchus ingen-15025 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15025</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15025%20-%20Kaprosuchus/15025_main_21_tp.webp" alt="15025 - Kaprosuchus" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15025 - Kaprosuchus</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">La mandíbula móvil del Kaprosuchus de schleich® DINOSAURS tiene largos y afilados dientes con los que mordía con fuerza.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15026-mosasaurio.html" class="specimen-card" 
+       data-search="15026 - mosasaurio ingen-15026 reptil marino / acuático alfa sector marino - laguna central"
+       data-category="REPTIL MARINO / ACUÁTICO"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15026</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15026%20-%20Mosasaurio/15026_main_21_tp.webp" alt="15026 - Mosasaurio" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15026 - Mosasaurio</div>
+        <div class="card-category">REPTIL MARINO / ACUÁTICO // Sector Marino - Laguna Central</div>
+        <div class="card-desc-snippet">El mosasaurio de schleich® DINOSAURS fue un reptil marino de gran tamaño que vivió en el Cretácico.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15027-brontosaurio.html" class="specimen-card" 
+       data-search="15027 - brontosaurio ingen-15027 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15027</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15027%20-%20Brontosaurio/15027_main_21_tp.webp" alt="15027 - Brontosaurio" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15027 - Brontosaurio</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">El brontosaurio de schleich® DINOSAURS es uno de los dinosaurios herbívoros más conocidos de finales del período Jurásico.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15028-quetzalcoatlus.html" class="specimen-card" 
+       data-search="15028 - quetzalcoatlus ingen-15028 pterosaurio / volador beta sector aéreo - cúpula de pterosaurios"
+       data-category="PTEROSAURIO / VOLADOR"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15028</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15028%20-%20Quetzalcoatlus/15028_main_v23_tp.webp" alt="15028 - Quetzalcoatlus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 3</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15028 - Quetzalcoatlus</div>
+        <div class="card-category">PTEROSAURIO / VOLADOR // Sector Aéreo - Cúpula de Pterosaurios</div>
+        <div class="card-desc-snippet">El Quetzalcoatlus es un dinosaurio volador de gran tamaño. Para ganar altura y poder balancear su majestuoso cuerpo en el aire, tiene que batir sus alas articuladas y saltar unas cuantas veces. ¿Por qué no le ayudas a despegar?</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15029-amargasaurus.html" class="specimen-card" 
+       data-search="15029 - amargasaurus ingen-15029 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15029</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15029%20-%20Amargasaurus/15029_main_v22_tp.webp" alt="15029 - Amargasaurus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 8</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15029 - Amargasaurus</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">El Amargasaurus de schleich® parece arder; aunque, en realidad, solo lo hacen arder los libros. Es un auténtico ratón de biblioteca en el cuerpo de un dinosaurio. Este gigante vivió hace 123-130 millones de años en la actual Sudamérica y tiene muchos libros en español. ¿Qué historias te gustaría leer con tu amigo dinosaurio?</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15030-parasaurolophus.html" class="specimen-card" 
+       data-search="15030 - parasaurolophus ingen-15030 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15030</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15030%20-%20Parasaurolophus/15030_main_v22_tp.webp" alt="15030 - Parasaurolophus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 6</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15030 - Parasaurolophus</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">La cresta ósea del Parasaurolophus de schleich® DINOSAURS puede hacer todo esto: regular la temperatura corporal, emitir sonidos y servir como gancho con el que colgarse de los bordes de la mesa. Por cierto, también le sirve al dinosaurio para tocar la batería. Toca con ella en lugar de usar baquetas. Inteligente, ¿verdad?</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15031-nothosaurus.html" class="specimen-card" 
+       data-search="15031 - nothosaurus ingen-15031 reptil marino / acuático beta sector marino - laguna central"
+       data-category="REPTIL MARINO / ACUÁTICO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15031</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15031%20-%20Nothosaurus/15031_main_v22_tp.webp" alt="15031 - Nothosaurus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 7</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15031 - Nothosaurus</div>
+        <div class="card-category">REPTIL MARINO / ACUÁTICO // Sector Marino - Laguna Central</div>
+        <div class="card-desc-snippet">En la caja de juguetes, al Nothosaurus de schleich® DINOSAURS también se le conoce como la foca prehistórica. Gracias a sus anchas patas, se sumerge elegantemente en el agua y se desliza de igual modo por las dunas.  Con su cuello, encuentra pequeños peces en los corales y las parejas en la caja de calcetines. No obstante, de sus presas solo se come los peces. Salvo que el calcetín ya no tenga pareja.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15032-majungasaurus.html" class="specimen-card" 
+       data-search="15032 - majungasaurus ingen-15032 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15032</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15032%20-%20Majungasaurus/15032_main_v22_tp.webp" alt="15032 - Majungasaurus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 6</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15032 - Majungasaurus</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El Majungasaurus de schleich® DINOSAURS es un gigante prehistórico y un fan gigantesco de los coches de carreras. Por desgracia, tiene unas patas demasiado cortas para sus 8 metros de longitud y siempre llega el último a la meta en la competición de dinosaurios. Sin embargo, es el primero en llegar al almuerzo y el más rápido haciendo cálculos. ¿Quieres que te ayude con los deberes de matemáticas?</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15033-styracosaurus.html" class="specimen-card" 
+       data-search="15033 - styracosaurus ingen-15033 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15033</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15033%20-%20Styracosaurus/15033_main_v22_tp.webp" alt="15033 - Styracosaurus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 7</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15033 - Styracosaurus</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">¡Punto! No hay ningún juego que le guste más al Styracosaurus de schleich® DINOSAURS que el de lanzar los aros. Con su gran cuerno en la nariz, este dinosaurio puede atrapar los aros sin esfuerzo y celebrar bailando cada punto. Su boca tampoco es lo que c</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15034-tarbosaurus.html" class="specimen-card" 
+       data-search="15034 - tarbosaurus ingen-15034 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15034</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15034%20-%20Tarbosaurus/15034_main_v23_tp.webp" alt="15034 - Tarbosaurus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 3</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15034 - Tarbosaurus</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">Con su enorme cabeza y sus afilados dientes, el Tarbosaurus tiene un aspecto terrorífico. ¡Mejor no tenerlo como enemigo! Hasta puede abrir y cerrar su mandíbula articulada. ¡Ten cuidado de que no te pille ningún dedo! Menos mal que este saurio gigante prefiere comerse a otros dinosaurios.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15035-monolophosaurus.html" class="specimen-card" 
+       data-search="15035 - monolophosaurus ingen-15035 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15035</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15035%20-%20Monolophosaurus/15035_main_v23_tp.webp" alt="15035 - Monolophosaurus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 3</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15035 - Monolophosaurus</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">Una vez que la mandíbula articulada se cierra, no hay escapatoria. Cuando el Monolophosaurus está al acecho, es mejor no molestarlo. ¡Pero sí se puede observar su fascinante forma de cazar a una distancia segura!</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15036-gastonia.html" class="specimen-card" 
+       data-search="15036 - gastonia ingen-15036 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15036</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15036%20-%20Gastonia/15036_main_v23_tp.webp" alt="15036 - Gastonia" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 2</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15036 - Gastonia</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">El Gastonia parece lleno de vida con su armadura de escamas óseas. Las grandes púas que tiene en la espalda son aterradoras: es mejor no meterse con él. Pero es muy manso y le gusta acompañar a sus amigos a todas partes. Además, solo come plantas, y eso lo hace realmente inofensivo.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15037-edmontosaurus.html" class="specimen-card" 
+       data-search="15037 - edmontosaurus ingen-15037 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15037</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15037%20-%20Edmontosaurus/15037_main_v23_tp.webp" alt="15037 - Edmontosaurus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 2</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15037 - Edmontosaurus</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">El Edmontosaurus es realmente bonito con su típica cresta de gallo en la cabeza. Pero no es fácil saciar su apetito. Porque pesa cuatro toneladas y se alimenta solo de plantas. A lo mejor puedes saciar el apetito de este dinosaurio un poco más rápido.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/15038-gallimimus.html" class="specimen-card" 
+       data-search="15038 - gallimimus ingen-15038 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-15038</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/15038%20-%20Gallimimus/15038_main_v23_tp.webp" alt="15038 - Gallimimus" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 2</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">15038 - Gallimimus</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">El Gallimimus es muy bonito con su ancho pico de cuerno y su largo cuello. ¿Te has fijado? Tiene plumas en las patas delanteras, pero no le sirven para volar. Sin embargo, puede correr muy rápido con sus fuertes patas traseras. ¿A dónde irá?</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/41461-set-de-dinosaurios-con-cueva.html" class="specimen-card" 
+       data-search="41461 - set de dinosaurios con cueva ingen-41461 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-41461</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/41461%20-%20Set%20de%20dinosaurios%20con%20cueva/41461_main_v18_tp_3.webp" alt="41461 - Set de dinosaurios con cueva" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 9</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">41461 - Set de dinosaurios con cueva</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">El Herrerasaurio, de alimentación carnívora, camina hambriento de un lado a otro de la cueva de los dinosaurios.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/41462-estacion-de-investigacion-de-dinosaurios-grande.html" class="specimen-card" 
+       data-search="41462 - estación de investigación de dinosaurios grande ingen-41462 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-41462</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/41462%20-%20Estaci%C3%B3n%20de%20investigaci%C3%B3n%20de%20dinosaurios%20grande/41462_main_v20_tp.webp" alt="41462 - Estación de investigación de dinosaurios grande" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 22</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">41462 - Estación de investigación de dinosaurios grande</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">EL EQUIPO DINO, conformado por los tres hermanos MAXX, LUIS y FLYNN, se pone manos a la obra para tratar de descubrir secretos sobre los dinosaurios. MAXX, el líder, tiene muchísimo que hacer en la estación de investigación de dinosaurios de schleich®. Ad</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/41464-todoterreno-con-asentamiento-de-dinosaurios.html" class="specimen-card" 
+       data-search="41464 - todoterreno con asentamiento de dinosaurios ingen-41464 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-41464</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/41464%20-%20Todoterreno%20con%20asentamiento%20de%20dinosaurios/41464_01_v20_tp_2.webp" alt="41464 - Todoterreno con asentamiento de dinosaurios" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 9</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">41464 - Todoterreno con asentamiento de dinosaurios</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">El todoterreno con asentamiento de dinosaurios de schleich® es el complemento ideal para la gran estación de investigación de dinosaurios (Ref.: 41462).</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/41465-ataque-de-tyrannosaurus-rex.html" class="specimen-card" 
+       data-search="41465 - ataque de tyrannosaurus rex ingen-41465 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-41465</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/41465%20-%20Ataque%20de%20Tyrannosaurus%20rex/41465_main_v20_tp.webp" alt="41465 - Ataque de Tyrannosaurus rex" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 7</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">41465 - Ataque de Tyrannosaurus rex</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">El set de juego «El ataque del tiranosaurio rex», de schleich® DINOSAURS, es el complemento ideal para la gran estación de investigación de dinosaurios (Ref.: 41462).</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/41466-huida-en-quad-de-un-velocirraptor.html" class="specimen-card" 
+       data-search="41466 - huida en quad de un velocirráptor ingen-41466 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-41466</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/41466%20-%20Huida%20en%20quad%20de%20un%20velocirr%C3%A1ptor/41466_01_v20_tp.webp" alt="41466 - Huida en quad de un velocirráptor" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 8</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">41466 - Huida en quad de un velocirráptor</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">El set de juego «Huida en quad de un velocirráptor», de schleich® DINOSAURS, es el complemento ideal para la gran estación de investigación de dinosaurios (Ref.: 41462).</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/41467-seguimiento-con-jet-pack.html" class="specimen-card" 
+       data-search="41467 - seguimiento con jet pack ingen-41467 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-41467</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/41467%20-%20Seguimiento%20con%20Jet%20Pack/41467_main_21_tp_1.webp" alt="41467 - Seguimiento con Jet Pack" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 8</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">41467 - Seguimiento con Jet Pack</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">Con la mochila propulsora de schleich® DINOSAURS, el paleontólogo Maxx puede desplazarse a toda velocidad por el aire.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/41468-ataque-desde-el-aire.html" class="specimen-card" 
+       data-search="41468 - ataque desde el aire ingen-41468 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-41468</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/41468%20-%20Ataque%20desde%20el%20aire/41468_main_21_tp_1.webp" alt="41468 - Ataque desde el aire" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 10</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">41468 - Ataque desde el aire</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">En el helicóptero de «Ataque desde el aire» de schleich® DINOSAURS, el paleontólogo Luis puede montar su nuevo invento: un cañón de aturdimiento con red.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/41469-juego-complementario-vallado.html" class="specimen-card" 
+       data-search="41469 - juego complementario «vallado» ingen-41469 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-41469</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/41469%20-%20Juego%20complementario%20%C2%ABVallado%C2%BB/41469_main_21_tp_1.webp" alt="41469 - Juego complementario «Vallado»" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 6</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">41469 - Juego complementario «Vallado»</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">El set de vallas de schleich® DINOSAURS puede utilizarse por separado o para complementar el cercado de la gran estación de investigación de dinosaurios (Ref.: 41462).</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/41470-juego-de-proyectiles.html" class="specimen-card" 
+       data-search="41470 - juego de proyectiles ingen-41470 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-41470</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/41470%20-%20Juego%20de%20proyectiles/41470_main_21_tp.webp" alt="41470 - Juego de proyectiles" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">41470 - Juego de proyectiles</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">El juego de proyectiles de schleich® DINOSAURS complementa el cañón de aturdimiento de la gran estación de investigación de dinosaurios (Ref.: 41462)</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/41471-rescate-en-paracaidas-de-dinosaurios.html" class="specimen-card" 
+       data-search="41471 - rescate en paracaídas de dinosaurios ingen-41471 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-41471</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/41471%20-%20Rescate%20en%20paraca%C3%ADdas%20de%20dinosaurios/41471_main_v23_tp.webp" alt="41471 - Rescate en paracaídas de dinosaurios" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 9</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">41471 - Rescate en paracaídas de dinosaurios</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">SOS: ¡esta es una misión para el Rescate en paracaídas de dinosaurios de schleich® DINOSAURS! El pequeño bebé Triceratops se ha subido a la estantería que está encima de la cama y ya no se atreve a bajar. Por suerte, el rescatador no tarda en llegar donde el pequeño dinosaurio y lo devuelve sano y salvo al suelo gracias al paracaídas. Ufff, esta vez ha salido todo bien.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/42564-gran-expedicion-al-volcan.html" class="specimen-card" 
+       data-search="42564 - gran expedición al volcán ingen-42564 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-42564</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/42564%20-%20Gran%20Expedici%C3%B3n%20al%20Volc%C3%A1n/42564_01_v21_tp_1.webp" alt="42564 - Gran Expedición al Volcán" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 15</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">42564 - Gran Expedición al Volcán</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">La atracción del universo de schleich® DINOSAURS: ¡La gran expedición al volcán ofrece funciones de juego sorprendentes y llenas de acción, como la lava luminosa, el humo molón y una función de erupción con efecto vibratorio o un peligroso sonido de dinosaurio con solo pulsar un botón! ¡Para una diversión sin fin en el universo de DINOSAURS!</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/42565-camion-de-rescate-de-dinosaurios.html" class="specimen-card" 
+       data-search="42565 - camión de rescate de dinosaurios ingen-42565 equipo / instalación equipo sector 0 - base central"
+       data-category="EQUIPO / INSTALACIÓN"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-42565</span>
+        <span class="card-hazard-badge equipo">EQUIPO</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/42565%20-%20Cami%C3%B3n%20de%20rescate%20de%20dinosaurios/42565_main_v23_tp.webp" alt="42565 - Camión de rescate de dinosaurios" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 21</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">42565 - Camión de rescate de dinosaurios</div>
+        <div class="card-category">EQUIPO / INSTALACIÓN // Sector 0 - Base Central</div>
+        <div class="card-desc-snippet">¡Uy, qué susto! Cuando un Styracosaurus se queda atrapado en una red, el conductor del Camión de rescate de dinosaurios de schleich® lo libera de las cuerdas en segundos. Por desgracia, el paciente se ha torcido la pierna y hay que llevarlo a la reserva de dinosaurios inmediatamente. Solo allí podrá recuperarse tranquilamente. ¿Puedes ayudar a la criatura prehistórica a curarse?</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/70154-raptor-de-sombra.html" class="specimen-card" 
+       data-search="70154 - raptor de sombra ingen-70154 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-70154</span>
+        <span class="card-hazard-badge beta">BETA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/70154%20-%20Raptor%20de%20sombra/70154_main_v23_tp.webp" alt="70154 - Raptor de sombra" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 2</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">70154 - Raptor de sombra</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El Raptor de sombra tiene fama de ser el monstruo prehistórico más temible de Eldrador. Y seguro que con razón, porque ¿quién querría ser triturado por su poderosa mandíbula? Mira fijamente a sus adversarios con sus amenazadores ojos rojos. Las afiladas púas de su espalda son muy peligrosas y su columna vertebral transparente brilla con un terrorífico color violeta. ¡Vámonos de aquí!</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/72068-tiranosaurio-rex-rojo.html" class="specimen-card" 
+       data-search="72068 - tiranosaurio rex, rojo ingen-72068 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-72068</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/72068%20-%20Tiranosaurio%20Rex%2C%20rojo/72068_main_v14_tp_1.webp" alt="72068 - Tiranosaurio Rex, rojo" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">72068 - Tiranosaurio Rex, rojo</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El tiranosaurio rex era un dinosaurio predador bípedo que medía 13 metros. Con su poderosa cabeza y sus dientes de casi 20 centímetros era uno de los dinosaurios más impresionantes.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/72155-tiranosaurio-rex-azul.html" class="specimen-card" 
+       data-search="72155 - tiranosaurio rex azul ingen-72155 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="true">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-72155</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/72155%20-%20Tiranosaurio%20Rex%20azul/72155_main_v20_tp.webp" alt="72155 - Tiranosaurio Rex azul" loading="lazy">
+        <span class="card-cctv-overlay live"><span class="led-dot green" style="width: 6px; height: 6px;"></span> CCTV 360°</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">72155 - Tiranosaurio Rex azul</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">El superventas de schleich® DINOSAURS pintado con gran minuciosidad.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/72175-t-rex-negro.html" class="specimen-card" 
+       data-search="72175 - t-rex negro ingen-72175 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+       data-category="TERÓPODO CARNÍVORO"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-72175</span>
+        <span class="card-hazard-badge alfa">ALFA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/72175%20-%20T-Rex%20Negro/72175_main_v23_tp.webp" alt="72175 - T-Rex Negro" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">72175 - T-Rex Negro</div>
+        <div class="card-category">TERÓPODO CARNÍVORO // Sector 04 - Recinto de Máxima Seguridad</div>
+        <div class="card-desc-snippet">¡Y zas! ¿No había algo ahí? ¿Una sombra negra?  ¿Grande y peligrosa? No se puede saber con seguridad. El Tiranosaurio rex Black Friday de schleich® DINOSAURS es el número uno en las carreras de velocidad contra animales de su especie. Y el más rápido en arrebatarte el último bocado de tu comida favorita. Y, como es negro, cuando mejor lo hace es por la noche.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+
+    <a href="pages/cria-de-therizinosaurio.html" class="specimen-card" 
+       data-search="cría de therizinosaurio ingen-1055 herbívoro gamma sector 01 - valle de herbívoros"
+       data-category="HERBÍVORO"
+       data-has-video="false">
+      <div class="card-tech-header">
+        <span class="card-id-code">INGEN-1055</span>
+        <span class="card-hazard-badge gamma">GAMMA</span>
+      </div>
+      <div class="card-thumb-wrap">
+        <img class="card-thumb-img" src="dinos/Cr%C3%ADa%20de%20Therizinosaurio/00102712258272____1__1200x1200.avif" alt="Cría de Therizinosaurio" loading="lazy">
+        <span class="card-cctv-overlay offline">SENSOR PASIVO</span>
+        <span class="card-img-count">📸 1</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Cría de Therizinosaurio</div>
+        <div class="card-category">HERBÍVORO // Sector 01 - Valle de Herbívoros</div>
+        <div class="card-desc-snippet">La cría de Therizinosaurio nace de nidos comunales en zonas boscosas protegidas de la isla. A pesar de que los ejemplares adultos alcanzan dimensiones colosales de hasta 10 metros con impresionantes garras curvas de casi un metro, las crías dependen de la vigilancia de la manada y se alimentan de brotes tiernos y hojas jóvenes en el sotobosque del recinto.</div>
+        <div class="card-action-bar">
+          <span>ACCEDER AL EXPEDIENTE</span>
+          <span>»</span>
+        </div>
+      </div>
+    </a>
+    
+      </div>
+
+      <!-- VIEW 2: UNIX DATABASE TABLE (HIDDEN BY DEFAULT) -->
+      <div id="table-view-container" class="table-view-wrap" style="display: none;">
+        <table class="unix-table">
+          <thead>
+            <tr>
+              <th>CÓDIGO</th>
+              <th>NOMBRE / EXPEDIENTE (CARPETA)</th>
+              <th>CLASIFICACIÓN</th>
+              <th>SECTOR / RECINTO</th>
+              <th>VÍDEO CCTV</th>
+              <th>ARCHIVOS ÓPTICOS</th>
+              <th>NIVEL DE PELIGRO</th>
+              <th>ACCIÓN</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+    <tr data-search="14525 - tiranosaurio rex ingen-14525 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-14525</td>
+      <td><a href="pages/14525-tiranosaurio-rex.html">14525 - Tiranosaurio rex</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/14525-tiranosaurio-rex.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="14567 - dilophosaurus ingen-14567 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-14567</td>
+      <td><a href="pages/14567-dilophosaurus.html">14567 - Dilophosaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/14567-dilophosaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="14575 - dunkleosteus ingen-14575 reptil marino / acuático alfa sector marino - laguna central"
+        data-category="REPTIL MARINO / ACUÁTICO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-14575</td>
+      <td><a href="pages/14575-dunkleosteus.html">14575 - Dunkleosteus</a></td>
+      <td><span style="color: var(--phosphor-amber);">REPTIL MARINO / ACUÁTICO</span></td>
+      <td>Sector Marino - Laguna Central</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/14575-dunkleosteus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="14581 - braquiosaurio ingen-14581 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-14581</td>
+      <td><a href="pages/14581-braquiosaurio.html">14581 - Braquiosaurio</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/14581-braquiosaurio.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="14582 - utahraptor ingen-14582 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-14582</td>
+      <td><a href="pages/14582-utahraptor.html">14582 - Utahraptor</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 2</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/14582-utahraptor.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="14584 - acrocantosaurio ingen-14584 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-14584</td>
+      <td><a href="pages/14584-acrocantosaurio.html">14584 - Acrocantosaurio</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/14584-acrocantosaurio.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="14585 - velociráptor ingen-14585 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-14585</td>
+      <td><a href="pages/14585-velociraptor.html">14585 - Velociráptor</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/14585-velociraptor.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="14586 - carnotaurio ingen-14586 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-14586</td>
+      <td><a href="pages/14586-carnotaurio.html">14586 - Carnotaurio</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/14586-carnotaurio.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="14587 - tiranosaurio rex ingen-14587 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-14587</td>
+      <td><a href="pages/14587-tiranosaurio-rex.html">14587 - Tiranosaurio Rex</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/14587-tiranosaurio-rex.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15000 - triceratops ingen-15000 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15000</td>
+      <td><a href="pages/15000-triceratops.html">15000 - Triceratops</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15000-triceratops.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15003 - therizinosaurio ingen-15003 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15003</td>
+      <td><a href="pages/15003-therizinosaurio.html">15003 - Therizinosaurio</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15003-therizinosaurio.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15007 - cachorro de tiranosaurio rex ingen-15007 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15007</td>
+      <td><a href="pages/15007-cachorro-de-tiranosaurio-rex.html">15007 - Cachorro de tiranosaurio rex</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/15007-cachorro-de-tiranosaurio-rex.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15008 - pteranodon ingen-15008 pterosaurio / volador beta sector aéreo - cúpula de pterosaurios"
+        data-category="PTEROSAURIO / VOLADOR"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15008</td>
+      <td><a href="pages/15008-pteranodon.html">15008 - Pteranodon</a></td>
+      <td><span style="color: var(--phosphor-amber);">PTEROSAURIO / VOLADOR</span></td>
+      <td>Sector Aéreo - Cúpula de Pterosaurios</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15008-pteranodon.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15009 - espinosaurio ingen-15009 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15009</td>
+      <td><a href="pages/15009-espinosaurio.html">15009 - Espinosaurio</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/15009-espinosaurio.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15010 - giganotosaurus ingen-15010 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15010</td>
+      <td><a href="pages/15010-giganotosaurus.html">15010 - Giganotosaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/15010-giganotosaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15014 - dracorex ingen-15014 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15014</td>
+      <td><a href="pages/15014-dracorex.html">15014 - Dracorex</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15014-dracorex.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15016 - plesiosaurio ingen-15016 reptil marino / acuático beta sector marino - laguna central"
+        data-category="REPTIL MARINO / ACUÁTICO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15016</td>
+      <td><a href="pages/15016-plesiosaurio.html">15016 - Plesiosaurio</a></td>
+      <td><span style="color: var(--phosphor-amber);">REPTIL MARINO / ACUÁTICO</span></td>
+      <td>Sector Marino - Laguna Central</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 3</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15016-plesiosaurio.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15017 - cachorro de giganotosaurus ingen-15017 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15017</td>
+      <td><a href="pages/15017-cachorro-de-giganotosaurus.html">15017 - Cachorro de giganotosaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/15017-cachorro-de-giganotosaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15018 - postosuchus ingen-15018 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15018</td>
+      <td><a href="pages/15018-postosuchus.html">15018 - Postosuchus</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15018-postosuchus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15019 - ceratosaurio ingen-15019 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15019</td>
+      <td><a href="pages/15019-ceratosaurio.html">15019 - Ceratosaurio</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15019-ceratosaurio.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15020 - cryolophosaurus ingen-15020 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15020</td>
+      <td><a href="pages/15020-cryolophosaurus.html">15020 - Cryolophosaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15020-cryolophosaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15021 - agustinia ingen-15021 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15021</td>
+      <td><a href="pages/15021-agustinia.html">15021 - Agustinia</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15021-agustinia.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15022 - baryonyx ingen-15022 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15022</td>
+      <td><a href="pages/15022-baryonyx.html">15022 - Baryonyx</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15022-baryonyx.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15023 - ankylosaurus ingen-15023 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15023</td>
+      <td><a href="pages/15023-ankylosaurus.html">15023 - Ankylosaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15023-ankylosaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15024 - paquicefalosaurio ingen-15024 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15024</td>
+      <td><a href="pages/15024-paquicefalosaurio.html">15024 - Paquicefalosaurio</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/15024-paquicefalosaurio.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15025 - kaprosuchus ingen-15025 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15025</td>
+      <td><a href="pages/15025-kaprosuchus.html">15025 - Kaprosuchus</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15025-kaprosuchus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15026 - mosasaurio ingen-15026 reptil marino / acuático alfa sector marino - laguna central"
+        data-category="REPTIL MARINO / ACUÁTICO"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15026</td>
+      <td><a href="pages/15026-mosasaurio.html">15026 - Mosasaurio</a></td>
+      <td><span style="color: var(--phosphor-amber);">REPTIL MARINO / ACUÁTICO</span></td>
+      <td>Sector Marino - Laguna Central</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/15026-mosasaurio.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15027 - brontosaurio ingen-15027 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15027</td>
+      <td><a href="pages/15027-brontosaurio.html">15027 - Brontosaurio</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15027-brontosaurio.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15028 - quetzalcoatlus ingen-15028 pterosaurio / volador beta sector aéreo - cúpula de pterosaurios"
+        data-category="PTEROSAURIO / VOLADOR"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15028</td>
+      <td><a href="pages/15028-quetzalcoatlus.html">15028 - Quetzalcoatlus</a></td>
+      <td><span style="color: var(--phosphor-amber);">PTEROSAURIO / VOLADOR</span></td>
+      <td>Sector Aéreo - Cúpula de Pterosaurios</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 3</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15028-quetzalcoatlus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15029 - amargasaurus ingen-15029 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15029</td>
+      <td><a href="pages/15029-amargasaurus.html">15029 - Amargasaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 8</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15029-amargasaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15030 - parasaurolophus ingen-15030 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15030</td>
+      <td><a href="pages/15030-parasaurolophus.html">15030 - Parasaurolophus</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 6</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15030-parasaurolophus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15031 - nothosaurus ingen-15031 reptil marino / acuático beta sector marino - laguna central"
+        data-category="REPTIL MARINO / ACUÁTICO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15031</td>
+      <td><a href="pages/15031-nothosaurus.html">15031 - Nothosaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">REPTIL MARINO / ACUÁTICO</span></td>
+      <td>Sector Marino - Laguna Central</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 7</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15031-nothosaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15032 - majungasaurus ingen-15032 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15032</td>
+      <td><a href="pages/15032-majungasaurus.html">15032 - Majungasaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 6</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15032-majungasaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15033 - styracosaurus ingen-15033 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15033</td>
+      <td><a href="pages/15033-styracosaurus.html">15033 - Styracosaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 7</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15033-styracosaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15034 - tarbosaurus ingen-15034 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15034</td>
+      <td><a href="pages/15034-tarbosaurus.html">15034 - Tarbosaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 3</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15034-tarbosaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15035 - monolophosaurus ingen-15035 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15035</td>
+      <td><a href="pages/15035-monolophosaurus.html">15035 - Monolophosaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 3</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/15035-monolophosaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15036 - gastonia ingen-15036 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15036</td>
+      <td><a href="pages/15036-gastonia.html">15036 - Gastonia</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 2</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15036-gastonia.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15037 - edmontosaurus ingen-15037 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15037</td>
+      <td><a href="pages/15037-edmontosaurus.html">15037 - Edmontosaurus</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 2</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15037-edmontosaurus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="15038 - gallimimus ingen-15038 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-15038</td>
+      <td><a href="pages/15038-gallimimus.html">15038 - Gallimimus</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 2</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/15038-gallimimus.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="41461 - set de dinosaurios con cueva ingen-41461 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-41461</td>
+      <td><a href="pages/41461-set-de-dinosaurios-con-cueva.html">41461 - Set de dinosaurios con cueva</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 9</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/41461-set-de-dinosaurios-con-cueva.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="41462 - estación de investigación de dinosaurios grande ingen-41462 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-41462</td>
+      <td><a href="pages/41462-estacion-de-investigacion-de-dinosaurios-grande.html">41462 - Estación de investigación de dinosaurios grande</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 22</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/41462-estacion-de-investigacion-de-dinosaurios-grande.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="41464 - todoterreno con asentamiento de dinosaurios ingen-41464 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-41464</td>
+      <td><a href="pages/41464-todoterreno-con-asentamiento-de-dinosaurios.html">41464 - Todoterreno con asentamiento de dinosaurios</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 9</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/41464-todoterreno-con-asentamiento-de-dinosaurios.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="41465 - ataque de tyrannosaurus rex ingen-41465 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-41465</td>
+      <td><a href="pages/41465-ataque-de-tyrannosaurus-rex.html">41465 - Ataque de Tyrannosaurus rex</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 7</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/41465-ataque-de-tyrannosaurus-rex.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="41466 - huida en quad de un velocirráptor ingen-41466 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-41466</td>
+      <td><a href="pages/41466-huida-en-quad-de-un-velocirraptor.html">41466 - Huida en quad de un velocirráptor</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 8</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/41466-huida-en-quad-de-un-velocirraptor.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="41467 - seguimiento con jet pack ingen-41467 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-41467</td>
+      <td><a href="pages/41467-seguimiento-con-jet-pack.html">41467 - Seguimiento con Jet Pack</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 8</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/41467-seguimiento-con-jet-pack.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="41468 - ataque desde el aire ingen-41468 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-41468</td>
+      <td><a href="pages/41468-ataque-desde-el-aire.html">41468 - Ataque desde el aire</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 10</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/41468-ataque-desde-el-aire.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="41469 - juego complementario «vallado» ingen-41469 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-41469</td>
+      <td><a href="pages/41469-juego-complementario-vallado.html">41469 - Juego complementario «Vallado»</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 6</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/41469-juego-complementario-vallado.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="41470 - juego de proyectiles ingen-41470 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-41470</td>
+      <td><a href="pages/41470-juego-de-proyectiles.html">41470 - Juego de proyectiles</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/41470-juego-de-proyectiles.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="41471 - rescate en paracaídas de dinosaurios ingen-41471 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-41471</td>
+      <td><a href="pages/41471-rescate-en-paracaidas-de-dinosaurios.html">41471 - Rescate en paracaídas de dinosaurios</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 9</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/41471-rescate-en-paracaidas-de-dinosaurios.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="42564 - gran expedición al volcán ingen-42564 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-42564</td>
+      <td><a href="pages/42564-gran-expedicion-al-volcan.html">42564 - Gran Expedición al Volcán</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 15</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/42564-gran-expedicion-al-volcan.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="42565 - camión de rescate de dinosaurios ingen-42565 equipo / instalación equipo sector 0 - base central"
+        data-category="EQUIPO / INSTALACIÓN"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-42565</td>
+      <td><a href="pages/42565-camion-de-rescate-de-dinosaurios.html">42565 - Camión de rescate de dinosaurios</a></td>
+      <td><span style="color: var(--phosphor-amber);">EQUIPO / INSTALACIÓN</span></td>
+      <td>Sector 0 - Base Central</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 21</td>
+      <td><span class="card-hazard-badge equipo">EQUIPO</span></td>
+      <td><a href="pages/42565-camion-de-rescate-de-dinosaurios.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="70154 - raptor de sombra ingen-70154 terópodo carnívoro beta sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-70154</td>
+      <td><a href="pages/70154-raptor-de-sombra.html">70154 - Raptor de sombra</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 2</td>
+      <td><span class="card-hazard-badge beta">BETA</span></td>
+      <td><a href="pages/70154-raptor-de-sombra.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="72068 - tiranosaurio rex, rojo ingen-72068 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-72068</td>
+      <td><a href="pages/72068-tiranosaurio-rex-rojo.html">72068 - Tiranosaurio Rex, rojo</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/72068-tiranosaurio-rex-rojo.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="72155 - tiranosaurio rex azul ingen-72155 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="true">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-72155</td>
+      <td><a href="pages/72155-tiranosaurio-rex-azul.html">72155 - Tiranosaurio Rex azul</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-green); font-weight: bold;">● EN VIVO</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/72155-tiranosaurio-rex-azul.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="72175 - t-rex negro ingen-72175 terópodo carnívoro alfa sector 04 - recinto de máxima seguridad"
+        data-category="TERÓPODO CARNÍVORO"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-72175</td>
+      <td><a href="pages/72175-t-rex-negro.html">72175 - T-Rex Negro</a></td>
+      <td><span style="color: var(--phosphor-amber);">TERÓPODO CARNÍVORO</span></td>
+      <td>Sector 04 - Recinto de Máxima Seguridad</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge alfa">ALFA</span></td>
+      <td><a href="pages/72175-t-rex-negro.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+
+    <tr data-search="cría de therizinosaurio ingen-1055 herbívoro gamma sector 01 - valle de herbívoros"
+        data-category="HERBÍVORO"
+        data-has-video="false">
+      <td style="color: var(--phosphor-cyan); font-weight: bold;">INGEN-1055</td>
+      <td><a href="pages/cria-de-therizinosaurio.html">Cría de Therizinosaurio</a></td>
+      <td><span style="color: var(--phosphor-amber);">HERBÍVORO</span></td>
+      <td>Sector 01 - Valle de Herbívoros</td>
+      <td><span style="color: var(--phosphor-amber);">TELEMETRÍA</span></td>
+      <td>📸 1</td>
+      <td><span class="card-hazard-badge gamma">GAMMA</span></td>
+      <td><a href="pages/cria-de-therizinosaurio.html" class="btn-terminal" style="padding: 2px 8px; font-size: 0.72rem;">EXPEDIENTE »</a></td>
+    </tr>
+    
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FOOTER STRIP -->
+      <div class="terminal-footer">
+        <div>SISTEMA DE CONTROL DE FAUNA ISLA NUBLAR // NÚCLEO INGEN UNIX IRIX 5.3</div>
+        <div>ATAJO RÁPIDO: PULSA [/] PARA BUSCAR | [ESC] PARA LIMPIAR</div>
+      </div>
+
+    </div>
+
+    
+    <!-- CRT MONITOR BEZEL BOTTOM WITH CONTROLS -->
+    <div class="monitor-bottom-bezel">
+      <div>INGEN CORP. (C) 1993-2026 // RESTRICTED ACCESS — AUTHORIZED PARK PERSONNEL ONLY</div>
+      <div class="monitor-buttons">
+        <button id="btn-sound-toggle" class="crt-ctrl-btn" title="Activar/Desactivar efectos de audio retro">🔊 SONIDO: NO</button>
+        <button id="btn-scanlines-toggle" class="crt-ctrl-btn active" title="Alternar efecto de líneas de escaneo CRT">▦ SCANLINES: SÍ</button>
+        <button id="btn-curve-toggle" class="crt-ctrl-btn active" title="Alternar curvatura y reflejo de pantalla CRT">◯ CRT CURVA: SÍ</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <script src="js/terminal.js"></script>
+</body>
+</html>

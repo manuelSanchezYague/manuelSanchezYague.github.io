@@ -1,0 +1,1186 @@
+/* ==========================================================================
+   INGEN NETWORK - ISLA NUBLAR TERMINAL SYSTEM
+   Aesthetic: 1993 SGI IRIX / Unix CRT Jurassic Park Workstation
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Chakra+Petch:wght@400;600;700&family=VT323&display=swap');
+
+:root {
+  --bg-space: #070a08;
+  --bg-monitor: #121614;
+  --bg-screen: #0a0f0d;
+  --bg-surface: #0e1612;
+  --bg-card: #111b16;
+  --bg-card-hover: #16241d;
+  --border-dim: #1f3328;
+  --border-bright: #00ff66;
+  --border-amber: #ffaa00;
+  
+  --phosphor-green: #00ff66;
+  --phosphor-green-glow: rgba(0, 255, 102, 0.45);
+  --phosphor-amber: #ffaa00;
+  --phosphor-amber-glow: rgba(255, 170, 0, 0.45);
+  --phosphor-red: #ff3344;
+  --phosphor-red-glow: rgba(255, 51, 68, 0.5);
+  --phosphor-cyan: #00e5ff;
+  --phosphor-cyan-glow: rgba(0, 229, 255, 0.4);
+  --text-muted: #628270;
+  --text-dim: #8ba898;
+  --text-bright: #d4f7e2;
+  
+  --font-mono: 'Share Tech Mono', 'Courier New', Consolas, Monaco, monospace;
+  --font-display: 'Chakra Petch', 'Share Tech Mono', sans-serif;
+  --font-retro: 'VT323', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-space);
+  color: var(--text-bright);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   CRT MONITOR CHASSIS & SCREEN ENCLOSURE
+   ========================================================================== */
+
+.monitor-frame {
+  max-width: 1440px;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  background: linear-gradient(145deg, #1f2522, #141816);
+  border-radius: 20px;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.9),
+    inset 0 2px 4px rgba(255, 255, 255, 0.08),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.6);
+  border: 3px solid #2a332d;
+  position: relative;
+}
+
+.monitor-top-bezel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 0.8rem 1rem;
+  color: #718779;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #1c241f;
+  margin-bottom: 0.8rem;
+}
+
+.monitor-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  color: #8fa899;
+}
+
+.monitor-brand .brand-logo {
+  display: inline-block;
+  background: #ffaa00;
+  color: #000;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.monitor-led-cluster {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.led-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+}
+
+.led-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.led-dot.green {
+  background: #00ff66;
+  box-shadow: 0 0 8px #00ff66;
+  animation: pulse-led 2s infinite ease-in-out;
+}
+
+.led-dot.amber {
+  background: #ffaa00;
+  box-shadow: 0 0 8px #ffaa00;
+}
+
+.led-dot.red {
+  background: #ff3344;
+  box-shadow: 0 0 8px #ff3344;
+  animation: blink-rec 1s infinite steps(2, start);
+}
+
+@keyframes pulse-led {
+  0%, 100% { opacity: 0.7; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes blink-rec {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* CRT Screen Area */
+.crt-screen {
+  background-color: var(--bg-screen);
+  border-radius: 12px;
+  border: 2px solid #1a2a20;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 255, 102, 0.05);
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  min-height: 85vh;
+}
+
+/* Scanlines overlay */
+.crt-screen::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%),
+              linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.7;
+}
+
+/* Vignette & glass curve overlay */
+.crt-screen::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at center, transparent 65%, rgba(0, 0, 0, 0.55) 100%);
+  pointer-events: none;
+  z-index: 101;
+}
+
+/* Scanline and Curvature toggles */
+body.no-scanlines .crt-screen::before {
+  display: none !important;
+}
+
+body.no-curvature .crt-screen::after {
+  display: none !important;
+}
+
+/* Monitor bottom bezel with hardware controls */
+.monitor-bottom-bezel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem 0 1rem;
+  margin-top: 0.8rem;
+  border-top: 2px solid #1c241f;
+  font-size: 0.75rem;
+  color: #718779;
+}
+
+.monitor-buttons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.crt-ctrl-btn {
+  background: #141b17;
+  color: #8da899;
+  border: 1px solid #2a3a30;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.crt-ctrl-btn:hover {
+  background: #1f2e25;
+  color: var(--phosphor-green);
+  border-color: var(--phosphor-green);
+}
+
+.crt-ctrl-btn.active {
+  background: #1b3827;
+  color: var(--phosphor-green);
+  border-color: var(--phosphor-green);
+  box-shadow: 0 0 6px var(--phosphor-green-glow);
+}
+
+/* ==========================================================================
+   HEADER & TERMINAL TELEMETRY STRIP
+   ========================================================================== */
+
+.terminal-header {
+  border-bottom: 2px solid var(--border-bright);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.terminal-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.system-title-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.jurassic-logo {
+  font-size: 1.6rem;
+  color: var(--phosphor-amber);
+  text-shadow: 0 0 10px var(--phosphor-amber-glow);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.jurassic-logo .badge-ingen {
+  background: #ffaa00;
+  color: #000;
+  font-weight: 900;
+  padding: 3px 8px;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  border-radius: 2px;
+}
+
+.jurassic-logo .title-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.telemetry-summary {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+
+.telemetry-badge {
+  background: rgba(0, 255, 102, 0.08);
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  padding: 4px 10px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--phosphor-green);
+}
+
+.telemetry-badge.amber {
+  background: rgba(255, 170, 0, 0.08);
+  border-color: rgba(255, 170, 0, 0.4);
+  color: var(--phosphor-amber);
+}
+
+.telemetry-badge.red {
+  background: rgba(255, 51, 68, 0.08);
+  border-color: rgba(255, 51, 68, 0.4);
+  color: var(--phosphor-red);
+}
+
+.terminal-sub-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  border-top: 1px dashed #1c3024;
+  padding-top: 0.6rem;
+}
+
+.status-line {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.status-item span {
+  color: var(--text-bright);
+}
+
+.status-item .highlight-green {
+  color: var(--phosphor-green);
+  font-weight: bold;
+}
+
+.status-item .highlight-amber {
+  color: var(--phosphor-amber);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   NAVIGATION & CONTROLS BAR
+   ========================================================================== */
+
+.nav-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: rgba(14, 22, 18, 0.8);
+  border: 1px solid var(--border-dim);
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.btn-terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #112017;
+  color: var(--phosphor-green);
+  border: 1px solid rgba(0, 255, 102, 0.4);
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.btn-terminal:hover {
+  background: var(--phosphor-green);
+  color: #000;
+  box-shadow: 0 0 12px var(--phosphor-green-glow);
+}
+
+.btn-terminal.amber {
+  color: var(--phosphor-amber);
+  border-color: rgba(255, 170, 0, 0.4);
+}
+
+.btn-terminal.amber:hover {
+  background: var(--phosphor-amber);
+  color: #000;
+  box-shadow: 0 0 12px var(--phosphor-amber-glow);
+}
+
+.btn-terminal.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  border-color: #2a3a30;
+  color: #556b60;
+}
+
+/* ==========================================================================
+   INDEX PAGE - SEARCH & FILTERS
+   ========================================================================== */
+
+.search-filter-section {
+  background: rgba(14, 24, 19, 0.7);
+  border: 1px solid var(--border-dim);
+  padding: 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  background: #090e0b;
+  border: 1px solid var(--border-bright);
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.search-prompt {
+  color: var(--phosphor-green);
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-right: 0.75rem;
+  user-select: none;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  outline: none;
+  letter-spacing: 1px;
+}
+
+.search-input::placeholder {
+  color: #4a6355;
+}
+
+.filter-pills-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-label {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 0.5rem;
+}
+
+.filter-chip {
+  background: #0d1612;
+  border: 1px solid #1f3328;
+  color: #8da899;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 5px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.filter-chip:hover {
+  border-color: var(--phosphor-green);
+  color: var(--phosphor-green);
+}
+
+.filter-chip.active {
+  background: rgba(0, 255, 102, 0.15);
+  border-color: var(--phosphor-green);
+  color: var(--phosphor-green);
+  box-shadow: 0 0 8px var(--phosphor-green-glow);
+  font-weight: bold;
+}
+
+.filter-chip.active.amber {
+  background: rgba(255, 170, 0, 0.15);
+  border-color: var(--phosphor-amber);
+  color: var(--phosphor-amber);
+  box-shadow: 0 0 8px var(--phosphor-amber-glow);
+}
+
+.filter-chip.active.red {
+  background: rgba(255, 51, 68, 0.15);
+  border-color: var(--phosphor-red);
+  color: var(--phosphor-red);
+  box-shadow: 0 0 8px var(--phosphor-red-glow);
+}
+
+.view-mode-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+/* ==========================================================================
+   SPECIMEN CARDS GRID (INDEX)
+   ========================================================================== */
+
+.specimen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.specimen-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.specimen-card:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
+  border-color: var(--phosphor-green);
+  box-shadow: 0 8px 24px rgba(0, 255, 102, 0.12), 0 0 15px rgba(0, 255, 102, 0.08);
+}
+
+.card-tech-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.9rem;
+  background: #0d1612;
+  border-bottom: 1px solid #1a2a20;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.card-id-code {
+  color: var(--phosphor-cyan);
+  font-weight: bold;
+}
+
+.card-hazard-badge {
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.card-hazard-badge.alfa {
+  background: rgba(255, 51, 68, 0.2);
+  color: #ff3344;
+  border: 1px solid #ff3344;
+}
+
+.card-hazard-badge.beta {
+  background: rgba(255, 170, 0, 0.2);
+  color: #ffaa00;
+  border: 1px solid #ffaa00;
+}
+
+.card-hazard-badge.gamma {
+  background: rgba(0, 255, 102, 0.2);
+  color: #00ff66;
+  border: 1px solid #00ff66;
+}
+
+.card-hazard-badge.equipo {
+  background: rgba(0, 229, 255, 0.2);
+  color: #00e5ff;
+  border: 1px solid #00e5ff;
+}
+
+.card-thumb-wrap {
+  width: 100%;
+  height: 200px;
+  background: #080d0a;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #16241c;
+}
+
+.card-thumb-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: contrast(1.05) brightness(0.95);
+}
+
+.specimen-card:hover .card-thumb-img {
+  transform: scale(1.06);
+  filter: contrast(1.1) brightness(1.05);
+}
+
+.card-cctv-overlay {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.75);
+  letter-spacing: 1px;
+}
+
+.card-cctv-overlay.live {
+  color: var(--phosphor-green);
+  border: 1px solid rgba(0, 255, 102, 0.4);
+}
+
+.card-cctv-overlay.offline {
+  color: #7a8f82;
+  border: 1px solid rgba(122, 143, 130, 0.3);
+}
+
+.card-img-count {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #1f3328;
+  color: #8da899;
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.card-category {
+  font-size: 0.75rem;
+  color: var(--phosphor-amber);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.5px;
+}
+
+.card-desc-snippet {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.8rem;
+  border-top: 1px dashed #1c2e23;
+  font-size: 0.8rem;
+  color: var(--phosphor-green);
+}
+
+/* ==========================================================================
+   UNIX DATABASE TABLE VIEW (INDEX)
+   ========================================================================== */
+
+.table-view-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-dim);
+  border-radius: 6px;
+  background: var(--bg-surface);
+  position: relative;
+  z-index: 10;
+}
+
+.unix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.unix-table th {
+  background: #09120e;
+  color: var(--phosphor-green);
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--border-bright);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.unix-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #16241c;
+  color: var(--text-dim);
+}
+
+.unix-table tr:hover {
+  background: rgba(0, 255, 102, 0.08);
+}
+
+.unix-table tr:hover td {
+  color: #ffffff;
+}
+
+.unix-table tr a {
+  color: var(--phosphor-green);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.unix-table tr a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   SPECIMEN DETAIL PAGE
+   ========================================================================== */
+
+/* H1 REQUIREMENT 1: Folder title as H1 */
+.specimen-h1 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+  margin-bottom: 0.4rem;
+  word-break: break-word;
+}
+
+.specimen-header-box {
+  background: rgba(14, 24, 19, 0.8);
+  border: 1px solid var(--border-dim);
+  border-left: 4px solid var(--phosphor-green);
+  padding: 1.2rem 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.specimen-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.specimen-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 992px) {
+  .specimen-grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Surveillance Video Panel */
+.surveillance-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dim);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.panel-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.2rem;
+  background: #0b1410;
+  border-bottom: 1px solid #192b21;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+}
+
+.panel-title {
+  color: var(--phosphor-green);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.video-container {
+  width: 100%;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Video element REQUIREMENT 2 */
+.video-container video {
+  width: 100%;
+  max-height: 540px;
+  display: block;
+  background: #000;
+  outline: none;
+}
+
+.video-cctv-hud {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  font-size: 0.75rem;
+  color: var(--phosphor-green);
+  text-shadow: 0 0 4px #000;
+  z-index: 10;
+}
+
+.rec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2px 8px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 51, 68, 0.4);
+  color: #ff3344;
+  font-weight: bold;
+}
+
+.feed-offline-box {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: repeating-linear-gradient(0deg, #090e0b, #090e0b 2px, #060907 2px, #060907 4px);
+  color: var(--phosphor-amber);
+}
+
+.feed-offline-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  animation: pulse-led 2s infinite ease-in-out;
+}
+
+/* Image Gallery Panel REQUIREMENT 3 */
+.gallery-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dim);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-main-view {
+  width: 100%;
+  min-height: 380px;
+  max-height: 520px;
+  background: #080d0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+  border-bottom: 1px solid #16241c;
+}
+
+.gallery-main-img {
+  max-width: 95%;
+  max-height: 480px;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.gallery-main-view:hover .gallery-main-img {
+  transform: scale(1.02);
+}
+
+.gallery-strip {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  overflow-x: auto;
+  background: #0a110e;
+}
+
+.gallery-strip::-webkit-scrollbar {
+  height: 6px;
+}
+.gallery-strip::-webkit-scrollbar-thumb {
+  background: #1f3328;
+  border-radius: 3px;
+}
+
+.thumb-item {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border: 2px solid #1c2e24;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #050806;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thumb-item:hover {
+  border-color: var(--phosphor-green);
+}
+
+.thumb-item.active {
+  border-color: var(--phosphor-green);
+  box-shadow: 0 0 10px var(--phosphor-green-glow);
+}
+
+/* Dossier Sidebar */
+.dossier-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dossier-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dim);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.dossier-title {
+  color: var(--phosphor-amber);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #1f3026;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dossier-text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #cfdfd6;
+  margin-bottom: 1rem;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed #16241c;
+  font-size: 0.8rem;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.data-label {
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.data-val {
+  color: #ffffff;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Hazard Meter */
+.hazard-meter {
+  display: flex;
+  height: 8px;
+  background: #141f19;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.hazard-meter-bar {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.hazard-meter-bar.alfa {
+  width: 95%;
+  background: linear-gradient(90deg, #ffaa00, #ff3344);
+  box-shadow: 0 0 8px rgba(255, 51, 68, 0.6);
+}
+
+.hazard-meter-bar.beta {
+  width: 65%;
+  background: #ffaa00;
+  box-shadow: 0 0 8px rgba(255, 170, 0, 0.6);
+}
+
+.hazard-meter-bar.gamma {
+  width: 30%;
+  background: #00ff66;
+  box-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+}
+
+.hazard-meter-bar.equipo {
+  width: 15%;
+  background: #00e5ff;
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+}
+
+/* Modal Lightbox for Fullscreen Image */
+.img-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  backdrop-filter: blur(4px);
+}
+
+.img-modal.open {
+  display: flex;
+}
+
+.modal-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border: 2px solid var(--phosphor-green);
+  box-shadow: 0 0 30px var(--phosphor-green-glow);
+  border-radius: 4px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: var(--phosphor-green);
+  font-size: 1.5rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.modal-caption {
+  margin-top: 0.8rem;
+  color: var(--phosphor-amber);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   FOOTER STRIP
+   ========================================================================== */
+
+.terminal-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #1c2e24;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #5d7568;
+  position: relative;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   RESPONSIVE QUERIES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .monitor-frame {
+    margin: 0;
+    padding: 0.6rem;
+    border-radius: 0;
+    border: none;
+  }
+  
+  .crt-screen {
+    padding: 1rem;
+    min-height: 100vh;
+    border-radius: 4px;
+  }
+  
+  .specimen-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .specimen-h1 {
+    font-size: 1.4rem;
+  }
+  
+  .terminal-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
